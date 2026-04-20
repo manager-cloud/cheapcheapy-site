@@ -1,50 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Hotels - CheapCheapy</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial; margin:0; background:#f5f5f5;">
-<div style="background:black; color:white; padding:20px;">
-  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;">
+
+  <!-- Header -->
+  <div style="background:black; color:white; padding:20px;">
+    <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+      <div>
+        <h1 style="margin:0;">CheapCheapy ✈️</h1>
+        <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
+      </div>
+
+      <div style="margin-top:10px;">
+        <a href="index.html" style="color:white; margin-right:15px; text-decoration:none;">Home</a>
+        <a href="about.html" style="color:white; margin-right:15px; text-decoration:none;">About</a>
+        <a href="flights.html" style="color:white; margin-right:15px; text-decoration:none;">Flights</a>
+        <a href="hotels.html" style="color:white; margin-right:15px; text-decoration:none;">Hotels</a>
+        <a href="trains.html" style="color:white; margin-right:15px; text-decoration:none;">Trains</a>
+        <a href="transfer.html" style="color:white; margin-right:15px; text-decoration:none;">Transfer</a>
+        <a href="offers.html" style="color:white; margin-right:15px; text-decoration:none;">Offers</a>
+        <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div style="width:100%; height:350px; overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
+         style="width:100%; height:100%; object-fit:cover; display:block;">
+  </div>
+
+  <!-- Search Box -->
+  <div style="max-width:1100px; margin:-80px auto 40px auto; background:white; padding:25px; border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,0.15); position:relative; z-index:10;">
+
+    <h2 style="margin-top:0;">Hotels Search</h2>
+    <p style="color:#555; margin-bottom:20px;">Search hotels, stays, apartments, and accommodation worldwide.</p>
+
+    <!-- Row 1 -->
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+      <input placeholder="Destination / Hotel name"
+             style="flex:2; min-width:260px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+
+      <input type="date"
+             style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+
+      <input type="date"
+             style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px; align-items:flex-start;">
+      <!-- Guests / Rooms selector -->
+      <div style="flex:1; min-width:260px; position:relative;">
+        <button type="button" onclick="toggleGuestsBox()"
+                style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; background:white; text-align:left; box-sizing:border-box; cursor:pointer;">
+          <span id="guestsSummary">1 Room, 2 Adults, 0 Children</span>
+        </button>
+
+        <div id="guestsBox"
+             style="display:none; position:absolute; top:58px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.12); padding:18px; z-index:50; box-sizing:border-box;">
+
+          <!-- Rooms -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <div>
+              <div style="font-weight:bold;">Rooms</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <button type="button" onclick="changeGuests('rooms', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+              <span id="roomsCount" style="min-width:20px; text-align:center;">1</span>
+              <button type="button" onclick="changeGuests('rooms', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+            </div>
+          </div>
+
+          <!-- Adults -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <div>
+              <div style="font-weight:bold;">Adults</div>
+              <div style="font-size:13px; color:#666;">Age 12+</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <button type="button" onclick="changeGuests('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+              <span id="adultsCount" style="min-width:20px; text-align:center;">2</span>
+              <button type="button" onclick="changeGuests('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+            </div>
+          </div>
+
+          <!-- Children -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <div>
+              <div style="font-weight:bold;">Children</div>
+              <div style="font-size:13px; color:#666;">Age 0-11</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <button type="button" onclick="changeGuests('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+              <span id="childrenCount" style="min-width:20px; text-align:center;">0</span>
+              <button type="button" onclick="changeGuests('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+            </div>
+          </div>
+
+          <!-- Children Ages -->
+          <div id="childrenAgesBox" style="display:none; margin-bottom:15px;">
+            <div style="font-weight:bold; margin-bottom:10px;">Children Ages</div>
+            <div id="childrenAgesWrapper" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+          </div>
+
+          <button type="button" onclick="closeGuestsBox()"
+                  style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+            Done
+          </button>
+        </div>
+      </div>
+
+      <!-- Star Rating -->
+      <select style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <option>Any Rating</option>
+        <option>5 Stars</option>
+        <option>4 Stars</option>
+        <option>3 Stars</option>
+        <option>2 Stars</option>
+        <option>1 Star</option>
+      </select>
+
+      <!-- Meal Plan -->
+      <select style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <option>Any Meal Plan</option>
+        <option>Room Only</option>
+        <option>Breakfast Included</option>
+        <option>Half Board</option>
+        <option>Full Board</option>
+        <option>All Inclusive</option>
+      </select>
+    </div>
+
+    <!-- Row 3 -->
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:20px;">
+      <label style="min-width:200px;">
+        <input type="checkbox"> Free cancellation
+      </label>
+
+      <label style="min-width:200px;">
+        <input type="checkbox"> Breakfast included
+      </label>
+
+      <label style="min-width:200px;">
+        <input type="checkbox"> Pay at property
+      </label>
+
+      <label style="min-width:200px;">
+        <input type="checkbox"> Only available properties
+      </label>
+    </div>
+
     <div>
-      <h1 style="margin:0;">CheapCheapy ✈️</h1>
-      <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
-    </div>
-
-    <div style="margin-top:10px;">
-      <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-      <a href="about.html" style="color:white; margin-right:15px;">About</a>
-      <a href="flights.html" style="color:white; margin-right:15px;">Flights</a>
-      <a href="hotels.html" style="color:white; margin-right:15px;">Hotels</a>
-      <a href="trains.html" style="color:white; margin-right:15px;">Trains</a>
-      <a href="transfer.html" style="color:white; margin-right:15px;">Transfer</a>
-      <a href="offers.html" style="color:white; margin-right:15px;">Offers</a>
-      <a href="contact.html" style="color:white;">Contact</a>
-    </div>
-  </div>
-</div>
-  <div style="background:black; color:white; padding:20px; text-align:center;">
-    <h1>CheapCheapy ✈️</h1>
-    <p>Powered by Auchen Travel</p>
-  </div>
-
-  <div style="max-width:900px; margin:auto; padding:40px;">
-    <h2>Hotels Search</h2>
-
-    <p>Find hotel deals worldwide.</p>
-
-    <div style="background:white; padding:20px; border-radius:10px;">
-      <input placeholder="Destination" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input type="date" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input type="date" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input placeholder="Guests" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <button style="padding:12px 20px; background:black; color:white; border:none;">
+      <button style="padding:14px 28px; background:black; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
         Search Hotels
       </button>
     </div>
   </div>
+
+  <script>
+    let rooms = 1;
+    let adults = 2;
+    let children = 0;
+    let childAges = [];
+
+    function toggleGuestsBox() {
+      const box = document.getElementById('guestsBox');
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function closeGuestsBox() {
+      document.getElementById('guestsBox').style.display = 'none';
+    }
+
+    function updateGuestsUI() {
+      document.getElementById('roomsCount').textContent = rooms;
+      document.getElementById('adultsCount').textContent = adults;
+      document.getElementById('childrenCount').textContent = children;
+
+      const summary =
+        `${rooms} Room${rooms > 1 ? 's' : ''}, ${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}`;
+      document.getElementById('guestsSummary').textContent = summary;
+
+      const childrenAgesBox = document.getElementById('childrenAgesBox');
+      const childrenAgesWrapper = document.getElementById('childrenAgesWrapper');
+
+      if (children > 0) {
+        childrenAgesBox.style.display = 'block';
+        childrenAgesWrapper.innerHTML = '';
+
+        while (childAges.length < children) childAges.push('1');
+        while (childAges.length > children) childAges.pop();
+
+        for (let i = 0; i < children; i++) {
+          const select = document.createElement('select');
+          select.style.padding = '10px';
+          select.style.border = '1px solid #ccc';
+          select.style.borderRadius = '8px';
+          select.style.minWidth = '100px';
+          select.onchange = function () {
+            childAges[i] = this.value;
+          };
+
+          for (let age = 0; age <= 11; age++) {
+            const option = document.createElement('option');
+            option.value = age;
+            option.text = `Child ${i + 1}: ${age}`;
+            if (String(childAges[i]) === String(age)) option.selected = true;
+            select.appendChild(option);
+          }
+
+          childrenAgesWrapper.appendChild(select);
+        }
+      } else {
+        childrenAgesBox.style.display = 'none';
+        childrenAgesWrapper.innerHTML = '';
+      }
+    }
+
+    function changeGuests(type, delta) {
+      let newRooms = rooms;
+      let newAdults = adults;
+      let newChildren = children;
+
+      if (type === 'rooms') newRooms += delta;
+      if (type === 'adults') newAdults += delta;
+      if (type === 'children') newChildren += delta;
+
+      if (newRooms < 1) return;
+      if (newAdults < 1) return;
+      if (newChildren < 0) return;
+
+      if ((newAdults + newChildren) > 9) return;
+
+      rooms = newRooms;
+      adults = newAdults;
+      children = newChildren;
+
+      updateGuestsUI();
+    }
+
+    window.onload = function () {
+      updateGuestsUI();
+    };
+
+    document.addEventListener('click', function(event) {
+      const box = document.getElementById('guestsBox');
+      if (!box) return;
+
+      if (!box.contains(event.target) && !event.target.closest('button[onclick="toggleGuestsBox()"]')) {
+        box.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>
