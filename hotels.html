@@ -10,7 +10,7 @@
 
   <!-- Header -->
   <div style="background:black; color:white; padding:20px;">
-    <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
       <div>
         <h1 style="margin:0;">CheapCheapy ✈️</h1>
         <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
@@ -30,136 +30,172 @@
   </div>
 
   <!-- Hero Image -->
-  <div style="width:100%; height:350px; overflow:hidden;">
-    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80"
+  <div style="width:100%; height:420px; overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1800&q=80"
          style="width:100%; height:100%; object-fit:cover; display:block;">
   </div>
-  
-  <!-- Search Box -->
-  <div style="max-width:1100px; margin:-80px auto 40px auto; background:white; padding:25px; border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,0.15); position:relative; z-index:10;">
 
-    <h2 style="margin-top:0;">Hotels Search</h2>
-    <p style="color:#555; margin-bottom:20px;">Search hotels, stays, apartments, and accommodation worldwide.</p>
+  <!-- Search Panel -->
+  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
 
-    <!-- Row 1 -->
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-      <input placeholder="Destination / Hotel name"
-             style="flex:2; min-width:260px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
-
-      <input type="date"
-             style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
-
-      <input type="date"
-             style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+    <!-- Tabs -->
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <a href="hotels.html" style="background:white; color:#111; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">Hotels and apartments</a>
+      <a href="flights.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Air tickets</a>
+      <a href="transfer.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Transfers</a>
+      <a href="#" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Car rental</a>
+      <a href="trains.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Train tickets</a>
     </div>
 
-    <!-- Row 2 -->
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px; align-items:flex-start;">
-      <!-- Guests / Rooms selector -->
-      <div style="flex:1; min-width:260px; position:relative;">
-        <button type="button" onclick="toggleGuestsBox()"
-                style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; background:white; text-align:left; box-sizing:border-box; cursor:pointer;">
-          <span id="guestsSummary">1 Room, 2 Adults, 0 Children</span>
-        </button>
+    <!-- Main Box -->
+    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
 
-        <div id="guestsBox"
-             style="display:none; position:absolute; top:58px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.12); padding:18px; z-index:50; box-sizing:border-box;">
+      <!-- Top Row -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px;">
 
-          <!-- Rooms -->
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-            <div>
-              <div style="font-weight:bold;">Rooms</div>
-            </div>
-            <div style="display:flex; align-items:center; gap:10px;">
-              <button type="button" onclick="changeGuests('rooms', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-              <span id="roomsCount" style="min-width:20px; text-align:center;">1</span>
-              <button type="button" onclick="changeGuests('rooms', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-            </div>
-          </div>
+        <div style="flex:2; min-width:280px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Destination</div>
+          <input placeholder="Maldives / Beach villa / Resort / Suite"
+                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        </div>
 
-          <!-- Adults -->
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-            <div>
-              <div style="font-weight:bold;">Adults</div>
-              <div style="font-size:13px; color:#666;">Age 12+</div>
-            </div>
-            <div style="display:flex; align-items:center; gap:10px;">
-              <button type="button" onclick="changeGuests('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-              <span id="adultsCount" style="min-width:20px; text-align:center;">2</span>
-              <button type="button" onclick="changeGuests('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-            </div>
-          </div>
+        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Check-in</div>
+          <input type="date"
+                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        </div>
 
-          <!-- Children -->
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-            <div>
-              <div style="font-weight:bold;">Children</div>
-              <div style="font-size:13px; color:#666;">Age 0-11</div>
-            </div>
-            <div style="display:flex; align-items:center; gap:10px;">
-              <button type="button" onclick="changeGuests('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-              <span id="childrenCount" style="min-width:20px; text-align:center;">0</span>
-              <button type="button" onclick="changeGuests('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-            </div>
-          </div>
+        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Check-out</div>
+          <input type="date"
+                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        </div>
 
-          <!-- Children Ages -->
-          <div id="childrenAgesBox" style="display:none; margin-bottom:15px;">
-            <div style="font-weight:bold; margin-bottom:10px;">Children Ages</div>
-            <div id="childrenAgesWrapper" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
-          </div>
-
-          <button type="button" onclick="closeGuestsBox()"
-                  style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
-            Done
+        <div style="flex:1; min-width:220px; position:relative;">
+          <button type="button" onclick="toggleGuestsBox()"
+                  style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
+            <div style="font-size:14px; color:#777; margin-bottom:4px;">Rooms & Guests</div>
+            <div id="guestsSummary" style="font-size:18px;">1 room for 2 guests</div>
           </button>
+
+          <div id="guestsBox"
+               style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div style="font-weight:bold;">Rooms</div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <button type="button" onclick="changeGuests('rooms', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
+                <span id="roomsCount">1</span>
+                <button type="button" onclick="changeGuests('rooms', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div>
+                <div style="font-weight:bold;">Adults</div>
+                <div style="font-size:13px; color:#666;">Age 12+</div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <button type="button" onclick="changeGuests('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
+                <span id="adultsCount">2</span>
+                <button type="button" onclick="changeGuests('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div>
+                <div style="font-weight:bold;">Children</div>
+                <div style="font-size:13px; color:#666;">Age 0-11</div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <button type="button" onclick="changeGuests('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
+                <span id="childrenCount">0</span>
+                <button type="button" onclick="changeGuests('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+              </div>
+            </div>
+
+            <div id="childrenAgesBox" style="display:none; margin-bottom:15px;">
+              <div style="font-weight:bold; margin-bottom:10px;">Children Ages</div>
+              <div id="childrenAgesWrapper" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+            </div>
+
+            <button type="button" onclick="closeGuestsBox()"
+                    style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+              Done
+            </button>
+          </div>
+        </div>
+
+        <button style="min-width:170px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:18px; cursor:pointer; padding:0 24px;">
+          Search
+        </button>
+      </div>
+
+      <!-- Additional parameters title -->
+      <div style="font-size:17px; color:#777; margin-bottom:18px;">Additional parameters</div>
+
+      <!-- Middle Row -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+
+        <div style="flex:2; min-width:260px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Guests' citizenship</div>
+          <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <option>United Arab Emirates</option>
+            <option>Saudi Arabia</option>
+            <option>Egypt</option>
+            <option>Kuwait</option>
+            <option>Qatar</option>
+            <option>United Kingdom</option>
+          </select>
+        </div>
+
+        <div style="flex:3; min-width:320px; display:flex; gap:0; flex-wrap:wrap; background:white; border:1px solid #d6d6d6; border-radius:18px; overflow:hidden;">
+          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">No stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">2 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">3 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">4 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; cursor:pointer;">5 stars</button>
+        </div>
+
+        <div style="flex:2; min-width:260px; display:flex; gap:0; flex-wrap:wrap; background:white; border:1px solid #d6d6d6; border-radius:18px; overflow:hidden;">
+          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">RO</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">BB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">HB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">FB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; cursor:pointer;">AI</button>
         </div>
       </div>
 
-      <!-- Star Rating -->
-      <select style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
-        <option>Any Rating</option>
-        <option>5 Stars</option>
-        <option>4 Stars</option>
-        <option>3 Stars</option>
-        <option>2 Stars</option>
-        <option>1 Star</option>
-      </select>
+      <!-- Bottom Row -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
 
-      <!-- Meal Plan -->
-      <select style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
-        <option>Any Meal Plan</option>
-        <option>Room Only</option>
-        <option>Breakfast Included</option>
-        <option>Half Board</option>
-        <option>Full Board</option>
-        <option>All Inclusive</option>
-      </select>
-    </div>
+        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Early check-in</div>
+          <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <option>Select the time</option>
+            <option>06:00</option>
+            <option>08:00</option>
+            <option>10:00</option>
+            <option>12:00</option>
+          </select>
+        </div>
 
-    <!-- Row 3 -->
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:20px;">
-      <label style="min-width:200px;">
-        <input type="checkbox"> Free cancellation
-      </label>
+        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div style="font-size:14px; color:#777; margin-bottom:4px;">Late check-out</div>
+          <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <option>Select the time</option>
+            <option>14:00</option>
+            <option>16:00</option>
+            <option>18:00</option>
+            <option>20:00</option>
+          </select>
+        </div>
 
-      <label style="min-width:200px;">
-        <input type="checkbox"> Breakfast included
-      </label>
+        <label style="min-width:220px; font-size:18px;">
+          <input type="checkbox" style="transform:scale(1.2); margin-right:8px;"> Free cancellation
+        </label>
+      </div>
 
-      <label style="min-width:200px;">
-        <input type="checkbox"> Pay at property
-      </label>
-
-      <label style="min-width:200px;">
-        <input type="checkbox"> Only available properties
-      </label>
-    </div>
-
-    <div>
-      <button style="padding:14px 28px; background:black; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
-        Search Hotels
-      </button>
     </div>
   </div>
 
@@ -183,8 +219,8 @@
       document.getElementById('adultsCount').textContent = adults;
       document.getElementById('childrenCount').textContent = children;
 
-      const summary =
-        `${rooms} Room${rooms > 1 ? 's' : ''}, ${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}`;
+      const totalGuests = adults + children;
+      const summary = `${rooms} room${rooms > 1 ? 's' : ''} for ${totalGuests} guest${totalGuests > 1 ? 's' : ''}`;
       document.getElementById('guestsSummary').textContent = summary;
 
       const childrenAgesBox = document.getElementById('childrenAgesBox');
@@ -202,7 +238,7 @@
           select.style.padding = '10px';
           select.style.border = '1px solid #ccc';
           select.style.borderRadius = '8px';
-          select.style.minWidth = '100px';
+          select.style.minWidth = '120px';
           select.onchange = function () {
             childAges[i] = this.value;
           };
@@ -235,7 +271,6 @@
       if (newRooms < 1) return;
       if (newAdults < 1) return;
       if (newChildren < 0) return;
-
       if ((newAdults + newChildren) > 9) return;
 
       rooms = newRooms;
@@ -243,6 +278,26 @@
       children = newChildren;
 
       updateGuestsUI();
+    }
+
+    function selectStar(button) {
+      const buttons = document.querySelectorAll('.star-btn');
+      buttons.forEach(btn => {
+        btn.style.background = 'white';
+        btn.style.fontWeight = 'normal';
+      });
+      button.style.background = '#f3f3f3';
+      button.style.fontWeight = 'bold';
+    }
+
+    function selectMeal(button) {
+      const buttons = document.querySelectorAll('.meal-btn');
+      buttons.forEach(btn => {
+        btn.style.background = 'white';
+        btn.style.fontWeight = 'normal';
+      });
+      button.style.background = '#f3f3f3';
+      button.style.fontWeight = 'bold';
     }
 
     window.onload = function () {
