@@ -39,16 +39,51 @@
 
     <p>Search and compare global flight options.</p>
 
-    <div style="background:white; padding:20px; border-radius:10px;">
-      <input placeholder="From" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input placeholder="To" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input type="date" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input placeholder="Passengers" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <button style="padding:12px 20px; background:black; color:white; border:none;">
-        Search Flights
-      </button>
-    </div>
+    <div style="max-width:1100px; margin:-60px auto 40px auto; background:white; padding:25px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.12); position:relative;">
+  
+  <div style="margin-bottom:20px;">
+    <label style="margin-right:20px;">
+      <input type="radio" name="tripType" checked> One way
+    </label>
+    <label style="margin-right:20px;">
+      <input type="radio" name="tripType"> Round trip
+    </label>
+    <label>
+      <input type="radio" name="tripType"> Multi-city
+    </label>
   </div>
+
+  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+    <input placeholder="From" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+    <input placeholder="To" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+  </div>
+
+  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+    <input type="date" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+    <input type="date" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+  </div>
+
+  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+    <input placeholder="1 Adult" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+    
+    <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      <option>Economy</option>
+      <option>Premium Economy</option>
+      <option>Business</option>
+      <option>First</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <label>
+      <input type="checkbox"> Direct flights only
+    </label>
+  </div>
+
+  <button style="padding:14px 28px; background:black; color:white; border:none; border-radius:10px; font-size:16px;">
+    Search Flights
+  </button>
+</div>
 
 </body>
 </html>
