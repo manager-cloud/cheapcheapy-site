@@ -155,27 +155,34 @@
       <h3 style="margin-top:0;">Multi-city Trips</h3>
 
       <div id="segmentsWrapper">
-        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
           <input placeholder="From"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
           <input placeholder="To"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
           <input type="date"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <button type="button" onclick="removeSegment(this)"
+                  style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+            ✕
+          </button>
         </div>
 
-        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
           <input placeholder="From"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
           <input placeholder="To"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
           <input type="date"
-                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+                 style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <button type="button" onclick="removeSegment(this)"
+                  style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+            ✕
+          </button>
         </div>
       </div>
 
       <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px; align-items:flex-start;">
-        <!-- Travelers Selector Multi -->
         <div style="flex:1; min-width:260px; position:relative;">
           <button type="button" onclick="toggleTravelersBox()"
                   style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; background:white; text-align:left; box-sizing:border-box; cursor:pointer;">
@@ -183,7 +190,6 @@
           </button>
         </div>
 
-        <!-- Cabin -->
         <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
           <option>Economy</option>
           <option>Premium Economy</option>
@@ -246,7 +252,7 @@
       document.getElementById('childrenCount').textContent = children;
       document.getElementById('infantsCount').textContent = infants;
 
-      const summary = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children !== 1 ? 'ren' : ''}, ${infants} Infant${infants !== 1 ? 's' : ''}`;
+      const summary = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}, ${infants} Infant${infants > 1 ? 's' : ''}`;
       document.getElementById('travelersSummary').textContent = summary;
 
       const multi = document.getElementById('travelersSummaryMulti');
@@ -265,7 +271,6 @@
       if (newAdults < 1) return;
       if (newChildren < 0) return;
       if (newInfants < 0) return;
-
       if ((newAdults + newChildren) > 9) return;
       if (newInfants > newAdults) return;
 
@@ -285,17 +290,34 @@
       segment.style.gap = '15px';
       segment.style.flexWrap = 'wrap';
       segment.style.marginBottom = '15px';
+      segment.style.alignItems = 'center';
 
       segment.innerHTML = `
         <input placeholder="From"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+               style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
         <input placeholder="To"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+               style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
         <input type="date"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+               style="flex:1; min-width:180px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <button type="button" onclick="removeSegment(this)"
+                style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+          ✕
+        </button>
       `;
 
       wrapper.appendChild(segment);
+    }
+
+    function removeSegment(button) {
+      const wrapper = document.getElementById('segmentsWrapper');
+
+      if (wrapper.children.length <= 2) {
+        alert("At least 2 flights are required.");
+        return;
+      }
+
+      const segment = button.parentElement;
+      segment.remove();
     }
 
     window.onload = function () {
@@ -305,9 +327,9 @@
 
     document.addEventListener('click', function(event) {
       const box = document.getElementById('travelersBox');
-      const summaryBtn = document.getElementById('travelersSummary');
       if (!box) return;
-      if (!box.contains(event.target) && event.target !== summaryBtn && !event.target.closest('button[onclick="toggleTravelersBox()"]')) {
+
+      if (!box.contains(event.target) && !event.target.closest('button[onclick="toggleTravelersBox()"]')) {
         box.style.display = 'none';
       }
     });
