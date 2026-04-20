@@ -241,6 +241,16 @@
       <!-- Parameters Row -->
       <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
 
+        <div style="flex:2; min-width:260px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div data-en="Guests' citizenship"
+               data-ar="جنسية النزيل"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Guests' citizenship
+          </div>
+          <input placeholder="Will be activated with API"
+                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        </div>
+
         <div style="flex:3; min-width:320px; display:flex; gap:0; flex-wrap:wrap; background:white; border:1px solid #d6d6d6; border-radius:18px; overflow:hidden;">
           <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">No stars</button>
           <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">2 stars</button>
@@ -256,45 +266,6 @@
           <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">FB</button>
           <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; cursor:pointer;">AI</button>
         </div>
-      </div>
-
-      <!-- Bottom Row -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
-
-        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div data-en="Early check-in"
-               data-ar="دخول مبكر"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
-            Early check-in
-          </div>
-          <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
-            <option>Select the time</option>
-            <option>06:00</option>
-            <option>08:00</option>
-            <option>10:00</option>
-            <option>12:00</option>
-          </select>
-        </div>
-
-        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div data-en="Late check-out"
-               data-ar="خروج متأخر"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
-            Late check-out
-          </div>
-          <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
-            <option>Select the time</option>
-            <option>14:00</option>
-            <option>16:00</option>
-            <option>18:00</option>
-            <option>20:00</option>
-          </select>
-        </div>
-
-        <label style="min-width:220px; font-size:18px;">
-          <input type="checkbox" style="transform:scale(1.2); margin-right:8px;">
-          <span data-en="Free cancellation" data-ar="إلغاء مجاني">Free cancellation</span>
-        </label>
       </div>
 
     </div>
