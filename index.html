@@ -17,8 +17,7 @@
         <h1 style="margin:0; font-size:42px;">
           <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
         </h1>
-        <p id="poweredBy"
-           data-en="Powered by Auchen Travel"
+        <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
            style="margin:6px 0 0 0; font-size:16px;">
           Powered by Auchen Travel
@@ -29,12 +28,12 @@
       <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
 
         <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none; min-width:120px;">
+                style="padding:10px; border-radius:10px; border:none;">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none; min-width:90px;">
+        <select style="padding:10px; border-radius:10px; border:none;">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -43,7 +42,6 @@
         </select>
 
         <a href="#"
-           id="loginBtn"
            data-en="Login"
            data-ar="تسجيل الدخول"
            style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
@@ -62,100 +60,87 @@
   </div>
 
   <!-- Content -->
-  <div style="max-width:1200px; margin:-80px auto 40px auto;">
+  <div style="max-width:1200px; margin:-90px auto 40px auto;">
 
-    <!-- Tabs -->
-    <div id="tabsBar" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+    <!-- Tabs (زي الفنادق بالظبط) -->
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
 
       <a href="index.html"
-         id="tabHome"
          data-en="Home"
          data-ar="الرئيسية"
-         style="background:white; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
         Home
       </a>
 
       <a href="hotels.html"
-         id="tabHotels"
-         data-en="Hotels"
-         data-ar="الفنادق"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
-        Hotels
+         data-en="Hotels and apartments"
+         data-ar="الفنادق والشقق"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Hotels and apartments
       </a>
 
       <a href="flights.html"
-         id="tabFlights"
-         data-en="Flights"
-         data-ar="الطيران"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
-        Flights
+         data-en="Air tickets"
+         data-ar="تذاكر الطيران"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Air tickets
       </a>
 
       <a href="transfer.html"
-         id="tabTransfers"
          data-en="Transfers"
          data-ar="الانتقالات"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
         Transfers
       </a>
 
       <a href="trains.html"
-         id="tabTrains"
-         data-en="Trains"
-         data-ar="القطارات"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
-        Trains
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Train tickets
       </a>
 
       <a href="offers.html"
-         id="tabOffers"
          data-en="Offers"
          data-ar="العروض"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
         Offers
       </a>
 
-      <a href="about.html"
-         id="tabAbout"
-         data-en="About"
-         data-ar="من نحن"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
-        About
-      </a>
-
       <a href="contact.html"
-         id="tabContact"
          data-en="Contact"
          data-ar="اتصل بنا"
-         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
         Contact
+      </a>
+
+      <a href="about.html"
+         data-en="About us"
+         data-ar="من نحن"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        About us
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; padding:30px; border-radius:24px;">
+    <div style="background:#efefef; padding:30px; border-radius:26px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
 
-      <h2 id="mainTitle"
-          data-en="Your smart travel platform"
+      <h2 data-en="Your smart travel platform"
           data-ar="منصة السفر الذكية الخاصة بك"
           style="margin-top:0;">
         Your smart travel platform
       </h2>
 
-      <p id="mainText"
-         data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place. Built for modern travel booking with scalable solutions and global suppliers."
-         data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد. تم تصميمه لتجربة حجز سفر حديثة مع حلول قابلة للتوسع وموردين عالميين."
-         style="font-size:18px; color:#444; line-height:1.6;">
+      <p data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place."
+         data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد."
+         style="font-size:18px; color:#444;">
         CheapCheapy helps you search flights, hotels, trains, and transfers in one place.
-        Built for modern travel booking with scalable solutions and global suppliers.
       </p>
 
       <!-- Buttons -->
-      <div id="ctaButtons" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-
+      <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
         <a href="flights.html"
-           id="btnFlights"
            data-en="Search Flights"
            data-ar="ابحث عن رحلات"
            style="background:black; color:white; padding:12px 20px; border-radius:12px; text-decoration:none;">
@@ -163,102 +148,56 @@
         </a>
 
         <a href="hotels.html"
-           id="btnHotels"
            data-en="Search Hotels"
            data-ar="ابحث عن فنادق"
            style="background:white; color:black; padding:12px 20px; border-radius:12px; text-decoration:none;">
           Search Hotels
         </a>
-
       </div>
 
       <!-- Cards -->
-      <div id="serviceCards" style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
-
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 id="card1Title"
-              data-en="Flights"
-              data-ar="الرحلات">
-            Flights
-          </h3>
-          <p id="card1Text"
-             data-en="One way, round trip, and multi-city booking."
-             data-ar="حجز ذهاب فقط أو ذهاب وعودة أو رحلات متعددة المدن.">
-            One way, round trip, and multi-city booking.
+          <h3 data-en="Flights" data-ar="الرحلات">Flights</h3>
+          <p data-en="One way, round trip, and multi-city."
+             data-ar="ذهاب فقط أو ذهاب وعودة أو رحلات متعددة المدن.">
+            One way, round trip, and multi-city.
           </p>
         </div>
 
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 id="card2Title"
-              data-en="Hotels"
-              data-ar="الفنادق">
-            Hotels
-          </h3>
-          <p id="card2Text"
-             data-en="Resorts, villas, apartments, and luxury stays."
-             data-ar="منتجعات وفيلات وشقق وإقامات فاخرة.">
-            Resorts, villas, apartments, and luxury stays.
+          <h3 data-en="Hotels" data-ar="الفنادق">Hotels</h3>
+          <p data-en="Luxury stays, resorts, and villas."
+             data-ar="إقامات فاخرة ومنتجعات وفيلات.">
+            Luxury stays, resorts, and villas.
           </p>
         </div>
 
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 id="card3Title"
-              data-en="Transfers"
-              data-ar="الانتقالات">
-            Transfers
-          </h3>
-          <p id="card3Text"
-             data-en="Airport and city transportation solutions."
-             data-ar="حلول انتقال من وإلى المطار وداخل المدن.">
-            Airport and city transportation solutions.
+          <h3 data-en="Transfers" data-ar="الانتقالات">Transfers</h3>
+          <p data-en="Airport and city transport."
+             data-ar="خدمات النقل من وإلى المطار وداخل المدن.">
+            Airport and city transport.
           </p>
         </div>
-
-      </div>
-
-      <!-- Loyalty -->
-      <div style="margin-top:30px; background:white; padding:20px; border-radius:16px;">
-        <h3 id="loyaltyTitle"
-            data-en="Loyalty Program"
-            data-ar="برنامج الولاء">
-          Loyalty Program
-        </h3>
-        <p id="loyaltyText"
-           data-en="Earn points with every booking and use them later for discounts and rewards."
-           data-ar="اكسب نقاطًا مع كل حجز واستخدمها لاحقًا في الخصومات والمكافآت.">
-          Earn points with every booking and use them later for discounts and rewards.
-        </p>
       </div>
 
     </div>
 
   </div>
 
+  <!-- Language Script -->
   <script>
     function changeLanguage(lang) {
       const elements = document.querySelectorAll('[data-en]');
-
-      elements.forEach(function(el) {
-        const text = el.getAttribute('data-' + lang);
-        if (text) {
-          el.textContent = text;
-        }
+      elements.forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
 
       if (lang === 'ar') {
-        document.documentElement.lang = 'ar';
         document.body.style.direction = 'rtl';
-        document.body.style.textAlign = 'right';
-        document.getElementById('tabsBar').style.justifyContent = 'flex-start';
-        document.getElementById('ctaButtons').style.justifyContent = 'flex-start';
-        document.getElementById('serviceCards').style.direction = 'rtl';
       } else {
-        document.documentElement.lang = 'en';
         document.body.style.direction = 'ltr';
-        document.body.style.textAlign = 'left';
-        document.getElementById('tabsBar').style.justifyContent = 'flex-start';
-        document.getElementById('ctaButtons').style.justifyContent = 'flex-start';
-        document.getElementById('serviceCards').style.direction = 'ltr';
       }
     }
   </script>
