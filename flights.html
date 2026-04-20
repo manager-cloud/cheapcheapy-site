@@ -1,89 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Flights - CheapCheapy</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial; margin:0; background:#f5f5f5;">
-<div style="background:black; color:white; padding:20px;">
-  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-    <div>
-      <h1 style="margin:0;">CheapCheapy ✈️</h1>
-      <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
+<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;">
+
+  <!-- Header -->
+  <div style="background:black; color:white; padding:20px;">
+    <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+      <div>
+        <h1 style="margin:0;">CheapCheapy ✈️</h1>
+        <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
+      </div>
+
+      <div style="margin-top:10px;">
+        <a href="index.html" style="color:white; margin-right:15px; text-decoration:none;">Home</a>
+        <a href="about.html" style="color:white; margin-right:15px; text-decoration:none;">About</a>
+        <a href="flights.html" style="color:white; margin-right:15px; text-decoration:none;">Flights</a>
+        <a href="hotels.html" style="color:white; margin-right:15px; text-decoration:none;">Hotels</a>
+        <a href="trains.html" style="color:white; margin-right:15px; text-decoration:none;">Trains</a>
+        <a href="transfer.html" style="color:white; margin-right:15px; text-decoration:none;">Transfer</a>
+        <a href="offers.html" style="color:white; margin-right:15px; text-decoration:none;">Offers</a>
+        <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div style="width:100%; height:350px; overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1599143139820-7d6fbef4f189?q=80&w=1600&auto=format&fit=crop"
+         style="width:100%; height:100%; object-fit:cover; display:block;">
+  </div>
+
+  <!-- Search Box -->
+  <div style="max-width:1100px; margin:-80px auto 40px auto; background:white; padding:25px; border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,0.15); position:relative; z-index:10;">
+
+    <h2 style="margin-top:0;">Flights Search</h2>
+    <p style="color:#555; margin-bottom:20px;">Search and compare global flight options.</p>
+
+    <div style="margin-bottom:20px;">
+      <label style="margin-right:20px;">
+        <input type="radio" name="tripType" value="oneway" checked onclick="changeTripType()"> One way
+      </label>
+      <label style="margin-right:20px;">
+        <input type="radio" name="tripType" value="roundtrip" onclick="changeTripType()"> Round trip
+      </label>
+      <label>
+        <input type="radio" name="tripType" value="multicity" onclick="changeTripType()"> Multi-city
+      </label>
     </div>
 
-    <div style="margin-top:10px;">
-      <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-      <a href="about.html" style="color:white; margin-right:15px;">About</a>
-      <a href="flights.html" style="color:white; margin-right:15px;">Flights</a>
-      <a href="hotels.html" style="color:white; margin-right:15px;">Hotels</a>
-      <a href="trains.html" style="color:white; margin-right:15px;">Trains</a>
-      <a href="transfer.html" style="color:white; margin-right:15px;">Transfer</a>
-      <a href="offers.html" style="color:white; margin-right:15px;">Offers</a>
-      <a href="contact.html" style="color:white;">Contact</a>
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+      <input placeholder="From"
+             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      <input placeholder="To"
+             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
     </div>
 
-</div>
-  <div style="background:black; color:white; padding:20px; text-align:center;">
-   
-<div style="width:100%; height:350px; overflow:hidden;">
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+      <input type="date"
+             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
 
-  <img src="https://images.unsplash.com/photo-1599143139820-7d6fbef4f189?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-       style="width:100%; height:100%; object-fit:cover">
+      <div id="returnDateBox" style="flex:1; min-width:200px; display:none;">
+        <input type="date"
+               style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+      </div>
+    </div>
 
-</div>
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+      <input placeholder="1 Adult"
+             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
 
-  <div style="max-width:900px; margin:auto; padding:40px;">
-    <h2>Flights Search</h2>
+      <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+        <option>Economy</option>
+        <option>Premium Economy</option>
+        <option>Business</option>
+        <option>First</option>
+      </select>
+    </div>
 
-    <p>Search and compare global flight options.</p>
+    <div style="margin-bottom:20px;">
+      <label>
+        <input type="checkbox"> Direct flights only
+      </label>
+    </div>
 
-    <div style="max-width:1100px; margin:-60px auto 40px auto; background:white; padding:25px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.12); position:relative;">
-  
-  <div style="margin-bottom:20px;">
-    <label style="margin-right:20px;">
-      <input type="radio" name="tripType" checked> One way
-    </label>
-    <label style="margin-right:20px;">
-      <input type="radio" name="tripType"> Round trip
-    </label>
-    <label>
-      <input type="radio" name="tripType"> Multi-city
-    </label>
+    <div id="multiCityBox" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid #eee;">
+      <h3 style="margin-top:0;">Multi-city Trips</h3>
+
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <input placeholder="From"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+        <input placeholder="To"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+        <input type="date"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      </div>
+
+      <div style="display:flex; gap:15px; flex-wrap:wrap;">
+        <input placeholder="From"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+        <input placeholder="To"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+        <input type="date"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      </div>
+    </div>
+
+    <div style="margin-top:25px;">
+      <button style="padding:14px 28px; background:black; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+        Search Flights
+      </button>
+    </div>
   </div>
 
-  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-    <input placeholder="From" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-    <input placeholder="To" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-  </div>
+  <script>
+    function changeTripType() {
+      const selected = document.querySelector('input[name="tripType"]:checked').value;
+      const returnDateBox = document.getElementById('returnDateBox');
+      const multiCityBox = document.getElementById('multiCityBox');
 
-  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-    <input type="date" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-    <input type="date" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-  </div>
+      if (selected === 'oneway') {
+        returnDateBox.style.display = 'none';
+        multiCityBox.style.display = 'none';
+      } else if (selected === 'roundtrip') {
+        returnDateBox.style.display = 'block';
+        multiCityBox.style.display = 'none';
+      } else if (selected === 'multicity') {
+        returnDateBox.style.display = 'none';
+        multiCityBox.style.display = 'block';
+      }
+    }
 
-  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-    <input placeholder="1 Adult" style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-    
-    <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-      <option>Economy</option>
-      <option>Premium Economy</option>
-      <option>Business</option>
-      <option>First</option>
-    </select>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <label>
-      <input type="checkbox"> Direct flights only
-    </label>
-  </div>
-
-  <button style="padding:14px 28px; background:black; color:white; border:none; border-radius:10px; font-size:16px;">
-    Search Flights
-  </button>
-</div>
+    window.onload = changeTripType;
+  </script>
 
 </body>
 </html>
