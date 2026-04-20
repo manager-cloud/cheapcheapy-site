@@ -41,6 +41,7 @@
     <h2 style="margin-top:0;">Flights Search</h2>
     <p style="color:#555; margin-bottom:20px;">Search and compare global flight options.</p>
 
+    <!-- Trip Type -->
     <div style="margin-bottom:20px;">
       <label style="margin-right:20px;">
         <input type="radio" name="tripType" value="oneway" checked onclick="changeTripType()"> One way
@@ -53,61 +54,99 @@
       </label>
     </div>
 
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-      <input placeholder="From"
-             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-      <input placeholder="To"
-             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-    </div>
+    <!-- Main Search Fields -->
+    <div id="mainSearchBox">
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <input placeholder="From"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <input placeholder="To"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+      </div>
 
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-      <input type="date"
-             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-
-      <div id="returnDateBox" style="flex:1; min-width:200px; display:none;">
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
         <input type="date"
-               style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+
+        <div id="returnDateBox" style="flex:1; min-width:200px; display:none;">
+          <input type="date"
+                 style="width:100%; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        </div>
+      </div>
+
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <select style="flex:1; min-width:260px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <option>1 Adult, 0 Children, 0 Infants</option>
+          <option>2 Adults, 0 Children, 0 Infants</option>
+          <option>2 Adults, 1 Child, 0 Infants</option>
+          <option>2 Adults, 2 Children, 0 Infants</option>
+          <option>1 Adult, 1 Child, 1 Infant</option>
+          <option>2 Adults, 1 Child, 1 Infant</option>
+          <option>2 Adults, 2 Children, 1 Infant</option>
+        </select>
+
+        <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <option>Economy</option>
+          <option>Premium Economy</option>
+          <option>Business</option>
+          <option>First</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label>
+          <input type="checkbox"> Direct flights only
+        </label>
       </div>
     </div>
 
-    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-      <input placeholder="1 Adult"
-             style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-
-      <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-        <option>Economy</option>
-        <option>Premium Economy</option>
-        <option>Business</option>
-        <option>First</option>
-      </select>
-    </div>
-
-    <div style="margin-bottom:20px;">
-      <label>
-        <input type="checkbox"> Direct flights only
-      </label>
-    </div>
-
+    <!-- Multi-city Box -->
     <div id="multiCityBox" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid #eee;">
       <h3 style="margin-top:0;">Multi-city Trips</h3>
 
-      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-        <input placeholder="From"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-        <input placeholder="To"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-        <input type="date"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      <div id="segmentsWrapper">
+        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+          <input placeholder="From"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <input placeholder="To"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <input type="date"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        </div>
+
+        <div class="segment" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+          <input placeholder="From"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <input placeholder="To"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <input type="date"
+                 style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        </div>
       </div>
 
-      <div style="display:flex; gap:15px; flex-wrap:wrap;">
-        <input placeholder="From"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-        <input placeholder="To"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
-        <input type="date"
-               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px;">
+      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+        <select style="flex:1; min-width:260px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <option>1 Adult, 0 Children, 0 Infants</option>
+          <option>2 Adults, 0 Children, 0 Infants</option>
+          <option>2 Adults, 1 Child, 0 Infants</option>
+          <option>2 Adults, 2 Children, 0 Infants</option>
+          <option>1 Adult, 1 Child, 1 Infant</option>
+          <option>2 Adults, 1 Child, 1 Infant</option>
+          <option>2 Adults, 2 Children, 1 Infant</option>
+        </select>
+
+        <select style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+          <option>Economy</option>
+          <option>Premium Economy</option>
+          <option>Business</option>
+          <option>First</option>
+        </select>
       </div>
+
+      <button type="button"
+              onclick="addSegment()"
+              style="padding:12px 20px; background:#f3f3f3; color:#111; border:1px solid #ccc; border-radius:10px; font-size:15px; cursor:pointer; margin-bottom:20px;">
+        Add another flight
+      </button>
     </div>
 
     <div style="margin-top:25px;">
@@ -122,17 +161,43 @@
       const selected = document.querySelector('input[name="tripType"]:checked').value;
       const returnDateBox = document.getElementById('returnDateBox');
       const multiCityBox = document.getElementById('multiCityBox');
+      const mainSearchBox = document.getElementById('mainSearchBox');
 
       if (selected === 'oneway') {
         returnDateBox.style.display = 'none';
         multiCityBox.style.display = 'none';
+        mainSearchBox.style.display = 'block';
       } else if (selected === 'roundtrip') {
         returnDateBox.style.display = 'block';
         multiCityBox.style.display = 'none';
+        mainSearchBox.style.display = 'block';
       } else if (selected === 'multicity') {
         returnDateBox.style.display = 'none';
         multiCityBox.style.display = 'block';
+        mainSearchBox.style.display = 'none';
       }
+    }
+
+    function addSegment() {
+      const wrapper = document.getElementById('segmentsWrapper');
+
+      const segment = document.createElement('div');
+      segment.className = 'segment';
+      segment.style.display = 'flex';
+      segment.style.gap = '15px';
+      segment.style.flexWrap = 'wrap';
+      segment.style.marginBottom = '15px';
+
+      segment.innerHTML = `
+        <input placeholder="From"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <input placeholder="To"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+        <input type="date"
+               style="flex:1; min-width:200px; padding:14px; border:1px solid #ccc; border-radius:10px; box-sizing:border-box;">
+      `;
+
+      wrapper.appendChild(segment);
     }
 
     window.onload = changeTripType;
