@@ -6,15 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;">
+<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:24px 20px;">
-    <div style="max-width:1200px; margin:auto;">
-      <h1 style="margin:0; font-size:46px; font-weight:bold; letter-spacing:0.5px;">
-        <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
-      </h1>
-      <p style="margin:8px 0 0 0; font-size:20px; color:#f2f2f2;">Powered by Auchen Travel</p>
+  <div style="background:black; color:white; padding:22px 20px;">
+    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+
+      <!-- Logo -->
+      <div>
+        <h1 style="margin:0; font-size:42px;">
+          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
+        </h1>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مقدم من Auchen Travel"
+           style="margin:6px 0 0 0; font-size:16px;">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <!-- Controls -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+
+        <a href="about.html"
+           data-en="About"
+           data-ar="من نحن"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          About
+        </a>
+
+        <a href="offers.html"
+           data-en="Offers"
+           data-ar="العروض"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          Offers
+        </a>
+
+        <a href="contact.html"
+           data-en="Contact"
+           data-ar="اتصل بنا"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          Contact
+        </a>
+
+        <select onchange="changeLanguage(this.value)"
+                style="padding:10px; border-radius:10px; border:none;">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+
+        <select style="padding:10px; border-radius:10px; border:none;">
+          <option>AED</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>SAR</option>
+          <option>EGP</option>
+        </select>
+
+        <a href="#"
+           data-en="Login"
+           data-ar="تسجيل الدخول"
+           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+          Login
+        </a>
+
+      </div>
+
     </div>
   </div>
 
@@ -28,14 +84,43 @@
   <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
-      <a href="hotels.html" style="background:white; color:#111; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">Hotels and apartments</a>
-      <a href="flights.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Air tickets</a>
-      <a href="transfer.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Transfers</a>
-      <a href="trains.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Train tickets</a>
-      <a href="offers.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Offers</a>
-      <a href="contact.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">Contact</a>
-      <a href="about.html" style="background:#efe8a7; color:#333; padding:16px 28px; border-radius:20px; text-decoration:none; font-size:18px;">About us</a>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+
+      <a href="index.html"
+         data-en="Home"
+         data-ar="الرئيسية"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Home
+      </a>
+
+      <a href="hotels.html"
+         data-en="Hotels and apartments"
+         data-ar="الفنادق والشقق"
+         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+        Hotels and apartments
+      </a>
+
+      <a href="flights.html"
+         data-en="Air tickets"
+         data-ar="تذاكر الطيران"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Air tickets
+      </a>
+
+      <a href="transfer.html"
+         data-en="Transfers"
+         data-ar="الانتقالات"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Transfers
+      </a>
+
+      <a href="trains.html"
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Train tickets
+      </a>
+
     </div>
 
     <!-- Main Box -->
@@ -45,19 +130,31 @@
       <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px;">
 
         <div style="flex:2; min-width:280px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">Destination</div>
+          <div data-en="Destination"
+               data-ar="الوجهة"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Destination
+          </div>
           <input placeholder="City, hotel, resort, villa or apartment"
                  style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
         </div>
 
         <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">Check-in</div>
+          <div data-en="Check-in"
+               data-ar="تاريخ الوصول"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Check-in
+          </div>
           <input type="date"
                  style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
         </div>
 
         <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">Check-out</div>
+          <div data-en="Check-out"
+               data-ar="تاريخ المغادرة"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Check-out
+          </div>
           <input type="date"
                  style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
         </div>
@@ -65,7 +162,11 @@
         <div style="flex:1; min-width:220px; position:relative;">
           <button type="button" onclick="toggleGuestsBox()"
                   style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
-            <div style="font-size:14px; color:#777; margin-bottom:4px;">Rooms & Guests</div>
+            <div data-en="Rooms & Guests"
+                 data-ar="الغرف والنزلاء"
+                 style="font-size:14px; color:#777; margin-bottom:4px;">
+              Rooms & Guests
+            </div>
             <div id="guestsSummary" style="font-size:18px;">1 room for 2 guests</div>
           </button>
 
@@ -73,7 +174,7 @@
                style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-              <div style="font-weight:bold;">Rooms</div>
+              <div data-en="Rooms" data-ar="الغرف" style="font-weight:bold;">Rooms</div>
               <div style="display:flex; gap:10px; align-items:center;">
                 <button type="button" onclick="changeGuests('rooms', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
                 <span id="roomsCount">1</span>
@@ -83,8 +184,8 @@
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
               <div>
-                <div style="font-weight:bold;">Adults</div>
-                <div style="font-size:13px; color:#666;">Age 12+</div>
+                <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
+                <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
               </div>
               <div style="display:flex; gap:10px; align-items:center;">
                 <button type="button" onclick="changeGuests('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
@@ -95,8 +196,8 @@
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
               <div>
-                <div style="font-weight:bold;">Children</div>
-                <div style="font-size:13px; color:#666;">Age 0-11</div>
+                <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
+                <div data-en="Age 0-11" data-ar="من 0 إلى 11 سنة" style="font-size:13px; color:#666;">Age 0-11</div>
               </div>
               <div style="display:flex; gap:10px; align-items:center;">
                 <button type="button" onclick="changeGuests('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
@@ -106,24 +207,36 @@
             </div>
 
             <div id="childrenAgesBox" style="display:none; margin-bottom:15px;">
-              <div style="font-weight:bold; margin-bottom:10px;">Children Ages</div>
+              <div data-en="Children Ages"
+                   data-ar="أعمار الأطفال"
+                   style="font-weight:bold; margin-bottom:10px;">
+                Children Ages
+              </div>
               <div id="childrenAgesWrapper" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
             </div>
 
             <button type="button" onclick="closeGuestsBox()"
+                    data-en="Done"
+                    data-ar="تم"
                     style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
               Done
             </button>
           </div>
         </div>
 
-        <button style="min-width:170px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:18px; cursor:pointer; padding:0 24px;">
+        <button data-en="Search"
+                data-ar="بحث"
+                style="min-width:170px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:18px; cursor:pointer; padding:0 24px;">
           Search
         </button>
       </div>
 
       <!-- Additional parameters -->
-      <div style="font-size:17px; color:#777; margin-bottom:18px;">Additional parameters</div>
+      <div data-en="Additional parameters"
+           data-ar="خيارات إضافية"
+           style="font-size:17px; color:#777; margin-bottom:18px;">
+        Additional parameters
+      </div>
 
       <!-- Parameters Row -->
       <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
@@ -149,7 +262,11 @@
       <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
 
         <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">Early check-in</div>
+          <div data-en="Early check-in"
+               data-ar="دخول مبكر"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Early check-in
+          </div>
           <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             <option>Select the time</option>
             <option>06:00</option>
@@ -160,7 +277,11 @@
         </div>
 
         <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">Late check-out</div>
+          <div data-en="Late check-out"
+               data-ar="خروج متأخر"
+               style="font-size:14px; color:#777; margin-bottom:4px;">
+            Late check-out
+          </div>
           <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             <option>Select the time</option>
             <option>14:00</option>
@@ -171,7 +292,8 @@
         </div>
 
         <label style="min-width:220px; font-size:18px;">
-          <input type="checkbox" style="transform:scale(1.2); margin-right:8px;"> Free cancellation
+          <input type="checkbox" style="transform:scale(1.2); margin-right:8px;">
+          <span data-en="Free cancellation" data-ar="إلغاء مجاني">Free cancellation</span>
         </label>
       </div>
 
@@ -199,8 +321,13 @@
       document.getElementById('childrenCount').textContent = children;
 
       const totalGuests = adults + children;
-      const summary = `${rooms} room${rooms > 1 ? 's' : ''} for ${totalGuests} guest${totalGuests > 1 ? 's' : ''}`;
-      document.getElementById('guestsSummary').textContent = summary;
+      const bodyDir = document.body.style.direction;
+
+      if (bodyDir === 'rtl') {
+        document.getElementById('guestsSummary').textContent = `${rooms} غرفة لـ ${totalGuests} نزيل`;
+      } else {
+        document.getElementById('guestsSummary').textContent = `${rooms} room${rooms > 1 ? 's' : ''} for ${totalGuests} guest${totalGuests > 1 ? 's' : ''}`;
+      }
 
       const childrenAgesBox = document.getElementById('childrenAgesBox');
       const childrenAgesWrapper = document.getElementById('childrenAgesWrapper');
@@ -225,7 +352,7 @@
           for (let age = 0; age <= 11; age++) {
             const option = document.createElement('option');
             option.value = age;
-            option.text = `Child ${i + 1}: ${age}`;
+            option.text = document.body.style.direction === 'rtl' ? `الطفل ${i + 1}: ${age}` : `Child ${i + 1}: ${age}`;
             if (String(childAges[i]) === String(age)) option.selected = true;
             select.appendChild(option);
           }
@@ -277,6 +404,21 @@
       });
       button.style.background = '#f3f3f3';
       button.style.fontWeight = 'bold';
+    }
+
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-en]');
+      elements.forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      if (lang === 'ar') {
+        document.body.style.direction = 'rtl';
+      } else {
+        document.body.style.direction = 'ltr';
+      }
+
+      updateGuestsUI();
     }
 
     window.onload = function () {
