@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;">
+<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
 
   <!-- Header -->
   <div style="background:black; color:white; padding:22px 20px;">
@@ -17,18 +17,24 @@
         <h1 style="margin:0; font-size:42px;">
           <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
         </h1>
-        <p style="margin:6px 0 0 0; font-size:16px;">Powered by Auchen Travel</p>
+        <p id="poweredBy"
+           data-en="Powered by Auchen Travel"
+           data-ar="مقدم من Auchen Travel"
+           style="margin:6px 0 0 0; font-size:16px;">
+          Powered by Auchen Travel
+        </p>
       </div>
 
       <!-- Controls -->
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
 
-        <select style="padding:10px; border-radius:10px; border:none;">
-          <option>English</option>
-          <option>العربية</option>
+        <select onchange="changeLanguage(this.value)"
+                style="padding:10px; border-radius:10px; border:none; min-width:120px;">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select style="padding:10px; border-radius:10px; border:none; min-width:90px;">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -36,7 +42,11 @@
           <option>EGP</option>
         </select>
 
-        <a href="#" style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+        <a href="#"
+           id="loginBtn"
+           data-en="Login"
+           data-ar="تسجيل الدخول"
+           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
           Login
         </a>
 
@@ -55,34 +65,70 @@
   <div style="max-width:1200px; margin:-80px auto 40px auto;">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+    <div id="tabsBar" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
 
-      <a href="index.html" style="background:white; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="index.html"
+         id="tabHome"
+         data-en="Home"
+         data-ar="الرئيسية"
+         style="background:white; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Home
       </a>
 
-      <a href="hotels.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="hotels.html"
+         id="tabHotels"
+         data-en="Hotels"
+         data-ar="الفنادق"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Hotels
       </a>
 
-      <a href="flights.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="flights.html"
+         id="tabFlights"
+         data-en="Flights"
+         data-ar="الطيران"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Flights
       </a>
 
-      <a href="transfer.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="transfer.html"
+         id="tabTransfers"
+         data-en="Transfers"
+         data-ar="الانتقالات"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Transfers
       </a>
 
-      <a href="trains.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="trains.html"
+         id="tabTrains"
+         data-en="Trains"
+         data-ar="القطارات"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Trains
       </a>
 
-      <a href="offers.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="offers.html"
+         id="tabOffers"
+         data-en="Offers"
+         data-ar="العروض"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         Offers
       </a>
 
-      <a href="about.html" style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+      <a href="about.html"
+         id="tabAbout"
+         data-en="About"
+         data-ar="من نحن"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
         About
+      </a>
+
+      <a href="contact.html"
+         id="tabContact"
+         data-en="Contact"
+         data-ar="اتصل بنا"
+         style="background:#efe8a7; padding:14px 24px; border-radius:18px; text-decoration:none; color:black;">
+        Contact
       </a>
 
     </div>
@@ -90,55 +136,132 @@
     <!-- Main Box -->
     <div style="background:#efefef; padding:30px; border-radius:24px;">
 
-      <h2 style="margin-top:0;">Your smart travel platform</h2>
+      <h2 id="mainTitle"
+          data-en="Your smart travel platform"
+          data-ar="منصة السفر الذكية الخاصة بك"
+          style="margin-top:0;">
+        Your smart travel platform
+      </h2>
 
-      <p style="font-size:18px; color:#444; line-height:1.6;">
+      <p id="mainText"
+         data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place. Built for modern travel booking with scalable solutions and global suppliers."
+         data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد. تم تصميمه لتجربة حجز سفر حديثة مع حلول قابلة للتوسع وموردين عالميين."
+         style="font-size:18px; color:#444; line-height:1.6;">
         CheapCheapy helps you search flights, hotels, trains, and transfers in one place.
         Built for modern travel booking with scalable solutions and global suppliers.
       </p>
 
       <!-- Buttons -->
-      <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+      <div id="ctaButtons" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
 
-        <a href="flights.html" style="background:black; color:white; padding:12px 20px; border-radius:12px; text-decoration:none;">
+        <a href="flights.html"
+           id="btnFlights"
+           data-en="Search Flights"
+           data-ar="ابحث عن رحلات"
+           style="background:black; color:white; padding:12px 20px; border-radius:12px; text-decoration:none;">
           Search Flights
         </a>
 
-        <a href="hotels.html" style="background:white; color:black; padding:12px 20px; border-radius:12px; text-decoration:none;">
+        <a href="hotels.html"
+           id="btnHotels"
+           data-en="Search Hotels"
+           data-ar="ابحث عن فنادق"
+           style="background:white; color:black; padding:12px 20px; border-radius:12px; text-decoration:none;">
           Search Hotels
         </a>
 
       </div>
 
       <!-- Cards -->
-      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
+      <div id="serviceCards" style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
 
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3>Flights</h3>
-          <p>One way, round trip, and multi-city booking.</p>
+          <h3 id="card1Title"
+              data-en="Flights"
+              data-ar="الرحلات">
+            Flights
+          </h3>
+          <p id="card1Text"
+             data-en="One way, round trip, and multi-city booking."
+             data-ar="حجز ذهاب فقط أو ذهاب وعودة أو رحلات متعددة المدن.">
+            One way, round trip, and multi-city booking.
+          </p>
         </div>
 
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3>Hotels</h3>
-          <p>Resorts, villas, apartments, and luxury stays.</p>
+          <h3 id="card2Title"
+              data-en="Hotels"
+              data-ar="الفنادق">
+            Hotels
+          </h3>
+          <p id="card2Text"
+             data-en="Resorts, villas, apartments, and luxury stays."
+             data-ar="منتجعات وفيلات وشقق وإقامات فاخرة.">
+            Resorts, villas, apartments, and luxury stays.
+          </p>
         </div>
 
         <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3>Transfers</h3>
-          <p>Airport and city transportation solutions.</p>
+          <h3 id="card3Title"
+              data-en="Transfers"
+              data-ar="الانتقالات">
+            Transfers
+          </h3>
+          <p id="card3Text"
+             data-en="Airport and city transportation solutions."
+             data-ar="حلول انتقال من وإلى المطار وداخل المدن.">
+            Airport and city transportation solutions.
+          </p>
         </div>
 
       </div>
 
       <!-- Loyalty -->
       <div style="margin-top:30px; background:white; padding:20px; border-radius:16px;">
-        <h3>Loyalty Program</h3>
-        <p>Earn points with every booking and use them for discounts and rewards.</p>
+        <h3 id="loyaltyTitle"
+            data-en="Loyalty Program"
+            data-ar="برنامج الولاء">
+          Loyalty Program
+        </h3>
+        <p id="loyaltyText"
+           data-en="Earn points with every booking and use them later for discounts and rewards."
+           data-ar="اكسب نقاطًا مع كل حجز واستخدمها لاحقًا في الخصومات والمكافآت.">
+          Earn points with every booking and use them later for discounts and rewards.
+        </p>
       </div>
 
     </div>
 
   </div>
+
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-en]');
+
+      elements.forEach(function(el) {
+        const text = el.getAttribute('data-' + lang);
+        if (text) {
+          el.textContent = text;
+        }
+      });
+
+      if (lang === 'ar') {
+        document.documentElement.lang = 'ar';
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
+        document.getElementById('tabsBar').style.justifyContent = 'flex-start';
+        document.getElementById('ctaButtons').style.justifyContent = 'flex-start';
+        document.getElementById('serviceCards').style.direction = 'rtl';
+      } else {
+        document.documentElement.lang = 'en';
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'left';
+        document.getElementById('tabsBar').style.justifyContent = 'flex-start';
+        document.getElementById('ctaButtons').style.justifyContent = 'flex-start';
+        document.getElementById('serviceCards').style.direction = 'ltr';
+      }
+    }
+  </script>
 
 </body>
 </html>
