@@ -24,16 +24,23 @@
         </p>
       </div>
 
-      <!-- Controls -->
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <!-- Top Right -->
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
 
+        <!-- Top links -->
+        <a href="about.html" style="color:white; text-decoration:none; font-size:15px;">About</a>
+        <a href="offers.html" style="color:white; text-decoration:none; font-size:15px;">Offers</a>
+        <a href="contact.html" style="color:white; text-decoration:none; font-size:15px;">Contact</a>
+
+        <!-- Language -->
         <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
-          <option value="en">English</option>
-          <option value="ar">العربية</option>
+                style="padding:8px; border-radius:10px; border:none;">
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <!-- Currency -->
+        <select style="padding:8px; border-radius:10px; border:none;">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -41,10 +48,8 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+        <!-- Login -->
+        <a href="#" style="background:white; color:black; padding:8px 14px; border-radius:10px; text-decoration:none; font-weight:bold;">
           Login
         </a>
 
@@ -62,131 +67,54 @@
   <!-- Content -->
   <div style="max-width:1200px; margin:-90px auto 40px auto;">
 
-    <!-- Tabs (زي الفنادق بالظبط) -->
+    <!-- Tabs (محركات البحث بس) -->
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
 
       <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+         style="background:white; padding:18px 30px; border-radius:22px; text-decoration:none; color:black; font-size:19px;">
         Home
       </a>
 
       <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Hotels and apartments
+         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none; color:black; font-size:19px;">
+        Hotels
       </a>
 
       <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Air tickets
+         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none; color:black; font-size:19px;">
+        Flights
       </a>
 
       <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none; color:black; font-size:19px;">
         Transfers
       </a>
 
       <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Train tickets
-      </a>
-
-      <a href="offers.html"
-         data-en="Offers"
-         data-ar="العروض"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Offers
-      </a>
-
-      <a href="contact.html"
-         data-en="Contact"
-         data-ar="اتصل بنا"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Contact
-      </a>
-
-      <a href="about.html"
-         data-en="About us"
-         data-ar="من نحن"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        About us
+         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none; color:black; font-size:19px;">
+        Trains
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; padding:30px; border-radius:26px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div style="background:#efefef; padding:30px; border-radius:26px;">
 
       <h2 data-en="Your smart travel platform"
-          data-ar="منصة السفر الذكية الخاصة بك"
-          style="margin-top:0;">
+          data-ar="منصة السفر الذكية الخاصة بك">
         Your smart travel platform
       </h2>
 
-      <p data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place."
-         data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد."
+      <p data-en="Search flights, hotels, trains, and transfers in one place."
+         data-ar="ابحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد."
          style="font-size:18px; color:#444;">
-        CheapCheapy helps you search flights, hotels, trains, and transfers in one place.
+        Search flights, hotels, trains, and transfers in one place.
       </p>
-
-      <!-- Buttons -->
-      <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="flights.html"
-           data-en="Search Flights"
-           data-ar="ابحث عن رحلات"
-           style="background:black; color:white; padding:12px 20px; border-radius:12px; text-decoration:none;">
-          Search Flights
-        </a>
-
-        <a href="hotels.html"
-           data-en="Search Hotels"
-           data-ar="ابحث عن فنادق"
-           style="background:white; color:black; padding:12px 20px; border-radius:12px; text-decoration:none;">
-          Search Hotels
-        </a>
-      </div>
-
-      <!-- Cards -->
-      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 data-en="Flights" data-ar="الرحلات">Flights</h3>
-          <p data-en="One way, round trip, and multi-city."
-             data-ar="ذهاب فقط أو ذهاب وعودة أو رحلات متعددة المدن.">
-            One way, round trip, and multi-city.
-          </p>
-        </div>
-
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 data-en="Hotels" data-ar="الفنادق">Hotels</h3>
-          <p data-en="Luxury stays, resorts, and villas."
-             data-ar="إقامات فاخرة ومنتجعات وفيلات.">
-            Luxury stays, resorts, and villas.
-          </p>
-        </div>
-
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
-          <h3 data-en="Transfers" data-ar="الانتقالات">Transfers</h3>
-          <p data-en="Airport and city transport."
-             data-ar="خدمات النقل من وإلى المطار وداخل المدن.">
-            Airport and city transport.
-          </p>
-        </div>
-      </div>
 
     </div>
 
   </div>
 
-  <!-- Language Script -->
   <script>
     function changeLanguage(lang) {
       const elements = document.querySelectorAll('[data-en]');
@@ -194,11 +122,7 @@
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-      } else {
-        document.body.style.direction = 'ltr';
-      }
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
     }
   </script>
 
