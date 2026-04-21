@@ -1037,3 +1037,35 @@ body.ar .content-box ul {
   flex: 1;
   min-width: 220px;
 }
+.transfer-intro {
+  margin-bottom: 22px;
+}
+
+.transfer-location-field {
+  flex: 1;
+  min-width: 260px;
+}
+
+.transfer-grid-four {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.transfer-date-field {
+  flex: 1;
+  min-width: 220px;
+}
+
+.transfer-bottom-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.transfer-select-field {
+  flex: 1;
+  min-width: 220px;
+}
