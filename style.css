@@ -247,3 +247,11 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.logo-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logo-link:hover {
+  opacity: 0.9;
+}
