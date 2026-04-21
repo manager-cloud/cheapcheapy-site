@@ -258,3 +258,253 @@ body {
 .powered-text {
   color: white;
 }
+.logo-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.powered-text {
+  color: white;
+}
+
+.service-tab-active {
+  background: white;
+  color: #111;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.flight-intro {
+  margin-bottom: 22px;
+}
+
+.trip-type-row {
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  margin-right: 20px;
+}
+
+.flight-grid-two {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.flight-grid-two-top {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.field-box {
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+.flight-field {
+  flex: 1;
+  min-width: 240px;
+}
+
+.date-field {
+  min-width: 220px;
+}
+
+.return-date-box {
+  flex: 1;
+  min-width: 220px;
+  display: none;
+}
+
+.field-label {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.field-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+}
+
+.field-select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+}
+
+.travelers-wrap {
+  flex: 1;
+  min-width: 260px;
+  position: relative;
+}
+
+.travelers-toggle {
+  width: 100%;
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  text-align: left;
+  cursor: pointer;
+}
+
+.travelers-summary {
+  font-size: 18px;
+}
+
+.travelers-box {
+  display: none;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 18px;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.traveler-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.traveler-title {
+  font-weight: bold;
+}
+
+.traveler-subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+.traveler-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.counter-value {
+  min-width: 20px;
+  text-align: center;
+}
+
+.travelers-note {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.done-btn {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cabin-field {
+  flex: 1;
+  min-width: 220px;
+}
+
+.search-btn-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.search-btn {
+  min-width: 220px;
+  height: 58px;
+  background: #e8c93d;
+  color: #111;
+  border: none;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 28px;
+}
+
+.checkbox-row {
+  margin-top: 16px;
+}
+
+.multi-city-box {
+  display: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.multi-city-title {
+  margin-top: 0;
+}
+
+.flight-segment {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.segment-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.remove-segment-btn {
+  padding: 10px 14px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-flight-btn {
+  padding: 12px 20px;
+  background: #f3f3f3;
+  color: #111;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+body[style*="rtl"] .travelers-toggle {
+  text-align: right;
+}
