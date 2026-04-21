@@ -1,50 +1,171 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Transfers - CheapCheapy</title>
-  <meta charset="UTF-8">
-</head>
+export default function TransferPageApiReady() {
+  return (
+    <div className="min-h-screen bg-[#f5f5f5] text-[#111]" dir="ltr" style={{ fontFamily: 'Arial, sans-serif' }}>
+      <div style={{ background: 'black', color: 'white', padding: '22px 20px' }}>
+        <div style={{ maxWidth: '1200px', margin: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
+          <div>
+            <h1 style={{ margin: 0, fontSize: '42px' }}>
+              <span style={{ color: 'white' }}>Cheap</span><span style={{ color: '#e8c93d' }}>Cheapy</span> ✈️
+            </h1>
+            <p style={{ margin: '6px 0 0 0', fontSize: '16px' }}>Powered by Auchen Travel</p>
+          </div>
 
-<body style="font-family: Arial; margin:0; background:#f5f5f5;">
-<div style="background:black; color:white; padding:20px;">
-  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-    <div>
-      <h1 style="margin:0;">CheapCheapy ✈️</h1>
-      <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <a href="about.html" style={{ color: '#e8c93d', textDecoration: 'none', fontSize: '17px', fontWeight: 'bold' }}>About</a>
+            <a href="offers.html" style={{ color: '#e8c93d', textDecoration: 'none', fontSize: '17px', fontWeight: 'bold' }}>Offers</a>
+            <a href="contact.html" style={{ color: '#e8c93d', textDecoration: 'none', fontSize: '17px', fontWeight: 'bold' }}>Contact</a>
+            <select style={{ padding: '10px', borderRadius: '10px', border: 'none' }} defaultValue="en">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+            </select>
+            <select style={{ padding: '10px', borderRadius: '10px', border: 'none' }} defaultValue="AED">
+              <option>AED</option>
+              <option>USD</option>
+              <option>EUR</option>
+              <option>SAR</option>
+              <option>EGP</option>
+            </select>
+            <a href="#" style={{ background: 'white', color: 'black', padding: '10px 16px', borderRadius: '12px', textDecoration: 'none', fontWeight: 'bold' }}>Login</a>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ width: '100%', height: '420px', overflow: 'hidden' }}>
+        <img
+          src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1800&auto=format&fit=crop"
+          alt="Transfers"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
+
+      <div style={{ maxWidth: '1200px', margin: '-90px auto 40px auto', position: 'relative', zIndex: 10, paddingLeft: '12px', paddingRight: '12px' }}>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
+          <a href="index.html" style={{ background: '#efe8a7', color: '#333', padding: '18px 30px', borderRadius: '22px', textDecoration: 'none', fontSize: '19px' }}>Home</a>
+          <a href="hotels.html" style={{ background: '#efe8a7', color: '#333', padding: '18px 30px', borderRadius: '22px', textDecoration: 'none', fontSize: '19px' }}>Hotels and apartments</a>
+          <a href="flights.html" style={{ background: '#efe8a7', color: '#333', padding: '18px 30px', borderRadius: '22px', textDecoration: 'none', fontSize: '19px' }}>Air tickets</a>
+          <a href="transfer.html" style={{ background: 'white', color: '#111', padding: '18px 30px', borderRadius: '22px', textDecoration: 'none', fontSize: '19px', boxShadow: '0 4px 10px rgba(0,0,0,0.08)' }}>Transfers</a>
+          <a href="trains.html" style={{ background: '#efe8a7', color: '#333', padding: '18px 30px', borderRadius: '22px', textDecoration: 'none', fontSize: '19px' }}>Train tickets</a>
+        </div>
+
+        <div style={{ background: '#efefef', borderRadius: '26px', padding: '28px', boxShadow: '0 16px 35px rgba(0,0,0,0.14)' }}>
+          <h2 style={{ marginTop: 0 }}>Transfers Search</h2>
+          <p style={{ fontSize: '18px', color: '#444', marginBottom: '22px' }}>
+            Search and book airport transfers, private cars, and group rides worldwide.
+          </p>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Pickup location</div>
+              <input placeholder="Airport, hotel or address" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Drop-off location</div>
+              <input placeholder="Destination hotel, airport or address" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Pickup date</div>
+              <input type="date" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Pickup time</div>
+              <input type="time" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Passengers</div>
+              <input placeholder="Filled from API" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Vehicle type</div>
+              <input placeholder="Filled from API" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Transfer route / product</div>
+              <input placeholder="Selected from RateHawk / Daytrip API" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Supplier</div>
+              <input placeholder="RateHawk / Daytrip" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Flight number (optional)</div>
+              <input placeholder="e.g. EK203" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '240px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Special request</div>
+              <input placeholder="Child seat, extra luggage, meet & greet..." style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Estimated price</div>
+              <input placeholder="Returned by API" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: '220px', background: 'white', border: '1px solid #d6d6d6', borderRadius: '18px', padding: '12px 16px', boxSizing: 'border-box' }}>
+              <div style={{ fontSize: '14px', color: '#777', marginBottom: '4px' }}>Cancellation policy</div>
+              <input placeholder="Returned by API" style={{ width: '100%', border: 'none', outline: 'none', fontSize: '18px', background: 'transparent' }} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '12px' }}>
+            <button style={{ minWidth: '220px', height: '58px', background: '#e8c93d', color: '#111', border: 'none', borderRadius: '18px', fontSize: '22px', fontWeight: 'bold', cursor: 'pointer', padding: '0 28px' }}>
+              Search
+            </button>
+          </div>
+
+          <div style={{ marginTop: '16px', display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+            <label><input type="checkbox" /> Meet & Greet</label>
+            <label><input type="checkbox" /> Free cancellation</label>
+            <label><input type="checkbox" /> Airport pickup</label>
+          </div>
+
+          <div style={{ marginTop: '18px', background: '#fff8d9', border: '1px solid #ead98a', borderRadius: '16px', padding: '14px 16px', color: '#5c4b00', lineHeight: 1.6 }}>
+            API-ready UI: dropdown-heavy fields were intentionally replaced with lightweight inputs/placeholders so your website can populate them directly from RateHawk or Daytrip without loading static option lists.
+          </div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: '1200px', margin: '0 auto 50px auto', paddingLeft: '12px', paddingRight: '12px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px' }}>
+          {[
+            {
+              title: 'Airport Transfers',
+              text: 'Reliable pickup and drop-off service for airports, hotels, and city locations.',
+            },
+            {
+              title: 'Private Cars',
+              text: 'Choose from sedan, SUV, and luxury options for a smooth experience.',
+            },
+            {
+              title: 'Group Transport',
+              text: 'Vans and minibuses for families, events, and business groups.',
+            },
+          ].map((item) => (
+            <div key={item.title} style={{ background: 'white', borderRadius: '22px', padding: '22px', boxShadow: '0 6px 18px rgba(0,0,0,0.08)' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '10px' }}>{item.title}</h3>
+              <p style={{ margin: 0, color: '#555', lineHeight: 1.6 }}>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-
-    <div style="margin-top:10px;">
-      <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-      <a href="about.html" style="color:white; margin-right:15px;">About</a>
-      <a href="flights.html" style="color:white; margin-right:15px;">Flights</a>
-      <a href="hotels.html" style="color:white; margin-right:15px;">Hotels</a>
-      <a href="trains.html" style="color:white; margin-right:15px;">Trains</a>
-      <a href="transfer.html" style="color:white; margin-right:15px;">Transfer</a>
-      <a href="offers.html" style="color:white; margin-right:15px;">Offers</a>
-      <a href="contact.html" style="color:white;">Contact</a>
-    </div>
-  </div>
-</div>
-  <div style="background:black; color:white; padding:20px; text-align:center;">
-    <h1>CheapCheapy ✈️</h1>
-    <p>Powered by Auchen Travel</p>
-  </div>
-
-  <div style="max-width:900px; margin:auto; padding:40px;">
-    <h2>Airport Transfers</h2>
-
-    <p>Book airport pickup, drop-off, and private transfer services.</p>
-
-    <div style="background:white; padding:20px; border-radius:10px;">
-      <input placeholder="Pickup Location" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input placeholder="Drop-off Location" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input type="date" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <input placeholder="Passengers" style="display:block; width:100%; padding:12px; margin-bottom:10px;">
-      <button style="padding:12px 20px; background:black; color:white; border:none;">
-        Search Transfers
-      </button>
-    </div>
-  </div>
-
-</body>
-</html>
+  );
+}
