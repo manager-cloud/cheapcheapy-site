@@ -1022,3 +1022,18 @@ body.ar .content-box ul {
     grid-template-columns: 1fr;
   }
 }
+.train-intro {
+  margin-bottom: 22px;
+}
+
+.train-bottom-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.train-passenger-field {
+  flex: 1;
+  min-width: 220px;
+}
