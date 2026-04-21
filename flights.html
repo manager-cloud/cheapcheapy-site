@@ -4,55 +4,57 @@
   <title>Flights - CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="flights-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
-        </h1>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
         <a href="about.html"
            data-en="About"
            data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           About
         </a>
 
         <a href="offers.html"
            data-en="Offers"
            data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Offers
         </a>
 
         <a href="contact.html"
            data-en="Contact"
            data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Contact
         </a>
 
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -63,7 +65,7 @@
         <a href="#"
            data-en="Login"
            data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+           class="login-btn">
           Login
         </a>
 
@@ -73,80 +75,81 @@
   </div>
 
   <!-- Hero Image -->
-  <div style="width:100%; height:420px; overflow:hidden;">
+  <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1599143139820-7d6fbef4f189?q=80&w=1800&auto=format&fit=crop"
-         style="width:100%; height:100%; object-fit:cover; display:block;">
+         class="hero-image"
+         alt="Flights">
   </div>
 
   <!-- Search Panel -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+  <div class="container about-content-wrap">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <div class="service-tabs">
 
       <a href="index.html"
          data-en="Home"
          data-ar="الرئيسية"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Home
       </a>
 
       <a href="hotels.html"
          data-en="Hotels and apartments"
          data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Hotels and apartments
       </a>
 
       <a href="flights.html"
          data-en="Air tickets"
          data-ar="تذاكر الطيران"
-         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+         class="service-tab service-tab-active">
         Air tickets
       </a>
 
       <a href="transfer.html"
          data-en="Transfers"
          data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Transfers
       </a>
 
       <a href="trains.html"
          data-en="Train tickets"
          data-ar="تذاكر القطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Train tickets
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div class="main-box">
 
       <h2 data-en="Flights Search"
           data-ar="البحث عن الرحلات"
-          style="margin-top:0;">
+          class="section-title">
         Flights Search
       </h2>
 
       <p data-en="Search and compare global flight options."
          data-ar="ابحث وقارن بين خيارات الرحلات العالمية."
-         style="font-size:18px; color:#444; margin-bottom:22px;">
+         class="lead-text flight-intro">
         Search and compare global flight options.
       </p>
 
       <!-- Trip Type -->
-      <div style="margin-bottom:20px;">
-        <label style="margin-right:20px;">
+      <div class="trip-type-row">
+        <label class="radio-label">
           <input type="radio" name="tripType" value="oneway" checked onclick="changeTripType()">
           <span data-en="One way" data-ar="ذهاب فقط">One way</span>
         </label>
-        <label style="margin-right:20px;">
+        <label class="radio-label">
           <input type="radio" name="tripType" value="roundtrip" onclick="changeTripType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
-        <label>
+        <label class="radio-label">
           <input type="radio" name="tripType" value="multicity" onclick="changeTripType()">
           <span data-en="Multi-city" data-ar="رحلات متعددة المدن">Multi-city</span>
         </label>
@@ -154,123 +157,119 @@
 
       <!-- One way / Round trip -->
       <div id="mainSearchBox">
-        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+        <div class="flight-grid-two">
 
-          <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">
+          <div class="field-box flight-field">
+            <div data-en="From" data-ar="من" class="field-label">
               From
             </div>
             <input placeholder="Departure city or airport"
-                   style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+                   class="field-input">
           </div>
 
-          <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">
+          <div class="field-box flight-field">
+            <div data-en="To" data-ar="إلى" class="field-label">
               To
             </div>
             <input placeholder="Arrival city or airport"
-                   style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+                   class="field-input">
           </div>
 
         </div>
 
-        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+        <div class="flight-grid-two">
 
-          <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="Departure date" data-ar="تاريخ السفر" style="font-size:14px; color:#777; margin-bottom:4px;">
+          <div class="field-box flight-field date-field">
+            <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">
               Departure date
             </div>
-            <input type="date"
-                   style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <input type="date" class="field-input">
           </div>
 
-          <div id="returnDateBox" style="flex:1; min-width:220px; display:none;">
-            <div style="background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="Return date" data-ar="تاريخ العودة" style="font-size:14px; color:#777; margin-bottom:4px;">
+          <div id="returnDateBox" class="return-date-box">
+            <div class="field-box flight-field date-field">
+              <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">
                 Return date
               </div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input type="date" class="field-input">
             </div>
           </div>
 
         </div>
 
-        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
+        <div class="flight-grid-two-top">
 
           <!-- Travelers Selector -->
-          <div style="flex:1; min-width:260px; position:relative;">
-            <button type="button" onclick="toggleTravelersBox('main')"
-                    style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
+          <div class="travelers-wrap">
+            <button type="button" onclick="toggleTravelersBox('main')" class="travelers-toggle">
               <div data-en="Travelers"
                    data-ar="المسافرون"
-                   style="font-size:14px; color:#777; margin-bottom:4px;">
+                   class="field-label">
                 Travelers
               </div>
-              <div id="travelersSummary" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
+              <div id="travelersSummary" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
             </button>
 
-            <div id="travelersBoxMain"
-                 style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
+            <div id="travelersBoxMain" class="travelers-box">
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
-                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
+                  <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
+                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" class="traveler-subtitle">Age 12+</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="adultsCount" style="min-width:20px; text-align:center;">1</span>
-                  <button type="button" onclick="changeTravelers('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('adults', -1)" class="counter-btn">-</button>
+                  <span id="adultsCount" class="counter-value">1</span>
+                  <button type="button" onclick="changeTravelers('adults', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
-                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" style="font-size:13px; color:#666;">Age 2-11</div>
+                  <div data-en="Children" data-ar="الأطفال" class="traveler-title">Children</div>
+                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" class="traveler-subtitle">Age 2-11</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="childrenCount" style="min-width:20px; text-align:center;">0</span>
-                  <button type="button" onclick="changeTravelers('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('children', -1)" class="counter-btn">-</button>
+                  <span id="childrenCount" class="counter-value">0</span>
+                  <button type="button" onclick="changeTravelers('children', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Infants" data-ar="الرضع" style="font-weight:bold;">Infants</div>
-                  <div data-en="Under 2" data-ar="أقل من سنتين" style="font-size:13px; color:#666;">Under 2</div>
+                  <div data-en="Infants" data-ar="الرضع" class="traveler-title">Infants</div>
+                  <div data-en="Under 2" data-ar="أقل من سنتين" class="traveler-subtitle">Under 2</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('infants', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="infantsCount" style="min-width:20px; text-align:center;">0</span>
-                  <button type="button" onclick="changeTravelers('infants', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('infants', -1)" class="counter-btn">-</button>
+                  <span id="infantsCount" class="counter-value">0</span>
+                  <button type="button" onclick="changeTravelers('infants', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
               <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
                    data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                   style="font-size:13px; color:#777; margin-bottom:15px;">
+                   class="travelers-note">
                 Maximum adults + children: 9. Infants cannot exceed adults.
               </div>
 
               <button type="button" onclick="closeTravelersBox('main')"
                       data-en="Done"
                       data-ar="تم"
-                      style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+                      class="done-btn">
                 Done
               </button>
             </div>
           </div>
 
-          <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div class="field-box flight-field cabin-field">
             <div data-en="Cabin class"
                  data-ar="درجة السفر"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
+                 class="field-label">
               Cabin class
             </div>
-            <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <select class="field-select">
               <option>Economy</option>
               <option>Premium Economy</option>
               <option>Business</option>
@@ -280,15 +279,15 @@
 
         </div>
 
-        <div style="display:flex; justify-content:flex-start; margin-top:12px;">
+        <div class="search-btn-row">
           <button data-en="Search"
                   data-ar="بحث"
-                  style="min-width:220px; height:58px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:22px; font-weight:bold; cursor:pointer; padding:0 28px;">
+                  class="search-btn">
             Search
           </button>
         </div>
 
-        <div style="margin-top:16px;">
+        <div class="checkbox-row">
           <label>
             <input type="checkbox">
             <span data-en="Direct flights only" data-ar="رحلات مباشرة فقط">Direct flights only</span>
@@ -297,138 +296,128 @@
       </div>
 
       <!-- Multi-city Box -->
-      <div id="multiCityBox" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid #ddd;">
+      <div id="multiCityBox" class="multi-city-box">
         <h3 data-en="Multi-city Trips"
             data-ar="رحلات متعددة المدن"
-            style="margin-top:0;">
+            class="multi-city-title">
           Multi-city Trips
         </h3>
 
         <div id="segmentsWrapper">
-          <div class="segment" style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">From</div>
-              <input placeholder="Departure city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+          <div class="segment flight-segment">
+            <div class="field-box segment-field">
+              <div data-en="From" data-ar="من" class="field-label">From</div>
+              <input placeholder="Departure city or airport" class="field-input">
             </div>
 
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">To</div>
-              <input placeholder="Arrival city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <div class="field-box segment-field">
+              <div data-en="To" data-ar="إلى" class="field-label">To</div>
+              <input placeholder="Arrival city or airport" class="field-input">
             </div>
 
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="Date" data-ar="التاريخ" style="font-size:14px; color:#777; margin-bottom:4px;">Date</div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <div class="field-box segment-field">
+              <div data-en="Date" data-ar="التاريخ" class="field-label">Date</div>
+              <input type="date" class="field-input">
             </div>
 
-            <button type="button" onclick="removeSegment(this)"
-                    style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
               ✕
             </button>
           </div>
 
-          <div class="segment" style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">From</div>
-              <input placeholder="Departure city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+          <div class="segment flight-segment">
+            <div class="field-box segment-field">
+              <div data-en="From" data-ar="من" class="field-label">From</div>
+              <input placeholder="Departure city or airport" class="field-input">
             </div>
 
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">To</div>
-              <input placeholder="Arrival city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <div class="field-box segment-field">
+              <div data-en="To" data-ar="إلى" class="field-label">To</div>
+              <input placeholder="Arrival city or airport" class="field-input">
             </div>
 
-            <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="Date" data-ar="التاريخ" style="font-size:14px; color:#777; margin-bottom:4px;">Date</div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <div class="field-box segment-field">
+              <div data-en="Date" data-ar="التاريخ" class="field-label">Date</div>
+              <input type="date" class="field-input">
             </div>
 
-            <button type="button" onclick="removeSegment(this)"
-                    style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
               ✕
             </button>
           </div>
         </div>
 
-        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
-          <div style="flex:1; min-width:260px; position:relative;">
-            <button type="button" onclick="toggleTravelersBox('multi')"
-                    style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
+        <div class="flight-grid-two-top">
+          <div class="travelers-wrap">
+            <button type="button" onclick="toggleTravelersBox('multi')" class="travelers-toggle">
               <div data-en="Travelers"
                    data-ar="المسافرون"
-                   style="font-size:14px; color:#777; margin-bottom:4px;">
+                   class="field-label">
                 Travelers
               </div>
-              <div id="travelersSummaryMulti" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
+              <div id="travelersSummaryMulti" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
             </button>
 
-            <div id="travelersBoxMulti"
-                 style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
+            <div id="travelersBoxMulti" class="travelers-box">
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
-                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
+                  <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
+                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" class="traveler-subtitle">Age 12+</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span style="min-width:20px; text-align:center;">1</span>
-                  <button type="button" onclick="changeTravelers('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('adults', -1)" class="counter-btn">-</button>
+                  <span class="counter-value traveler-adults-multi">1</span>
+                  <button type="button" onclick="changeTravelers('adults', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
-                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" style="font-size:13px; color:#666;">Age 2-11</div>
+                  <div data-en="Children" data-ar="الأطفال" class="traveler-title">Children</div>
+                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" class="traveler-subtitle">Age 2-11</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span>0</span>
-                  <button type="button" onclick="changeTravelers('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('children', -1)" class="counter-btn">-</button>
+                  <span class="counter-value traveler-children-multi">0</span>
+                  <button type="button" onclick="changeTravelers('children', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <div class="traveler-row">
                 <div>
-                  <div data-en="Infants" data-ar="الرضع" style="font-weight:bold;">Infants</div>
-                  <div data-en="Under 2" data-ar="أقل من سنتين" style="font-size:13px; color:#666;">Under 2</div>
+                  <div data-en="Infants" data-ar="الرضع" class="traveler-title">Infants</div>
+                  <div data-en="Under 2" data-ar="أقل من سنتين" class="traveler-subtitle">Under 2</div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('infants', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span>0</span>
-                  <button type="button" onclick="changeTravelers('infants', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+                <div class="traveler-controls">
+                  <button type="button" onclick="changeTravelers('infants', -1)" class="counter-btn">-</button>
+                  <span class="counter-value traveler-infants-multi">0</span>
+                  <button type="button" onclick="changeTravelers('infants', 1)" class="counter-btn">+</button>
                 </div>
               </div>
 
               <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
                    data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                   style="font-size:13px; color:#777; margin-bottom:15px;">
+                   class="travelers-note">
                 Maximum adults + children: 9. Infants cannot exceed adults.
               </div>
 
               <button type="button" onclick="closeTravelersBox('multi')"
                       data-en="Done"
                       data-ar="تم"
-                      style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+                      class="done-btn">
                 Done
               </button>
             </div>
           </div>
 
-          <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+          <div class="field-box flight-field cabin-field">
             <div data-en="Cabin class"
                  data-ar="درجة السفر"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
+                 class="field-label">
               Cabin class
             </div>
-            <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <select class="field-select">
               <option>Economy</option>
               <option>Premium Economy</option>
               <option>Business</option>
@@ -441,14 +430,14 @@
                 onclick="addSegment()"
                 data-en="Add another flight"
                 data-ar="إضافة رحلة أخرى"
-                style="padding:12px 20px; background:#f3f3f3; color:#111; border:1px solid #ccc; border-radius:10px; font-size:15px; cursor:pointer; margin-bottom:18px;">
+                class="add-flight-btn">
           Add another flight
         </button>
 
-        <div style="display:flex; justify-content:flex-start; margin-top:10px;">
+        <div class="search-btn-row">
           <button data-en="Search"
                   data-ar="بحث"
-                  style="min-width:220px; height:58px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:22px; font-weight:bold; cursor:pointer; padding:0 28px;">
+                  class="search-btn">
             Search
           </button>
         </div>
@@ -505,9 +494,17 @@
     }
 
     function updateTravelersUI() {
-      document.getElementById('adultsCount').textContent = adults;
-      document.getElementById('childrenCount').textContent = children;
-      document.getElementById('infantsCount').textContent = infants;
+      const adultsMain = document.getElementById('adultsCount');
+      const childrenMain = document.getElementById('childrenCount');
+      const infantsMain = document.getElementById('infantsCount');
+
+      if (adultsMain) adultsMain.textContent = adults;
+      if (childrenMain) childrenMain.textContent = children;
+      if (infantsMain) infantsMain.textContent = infants;
+
+      document.querySelectorAll('.traveler-adults-multi').forEach(el => el.textContent = adults);
+      document.querySelectorAll('.traveler-children-multi').forEach(el => el.textContent = children);
+      document.querySelectorAll('.traveler-infants-multi').forEach(el => el.textContent = infants);
 
       const bodyDir = document.body.style.direction;
       let summary = '';
@@ -555,31 +552,25 @@
       const toPlaceholder = bodyDir === 'rtl' ? 'مدينة أو مطار الوصول' : 'Arrival city or airport';
 
       const segment = document.createElement('div');
-      segment.className = 'segment';
-      segment.style.display = 'flex';
-      segment.style.gap = '14px';
-      segment.style.flexWrap = 'wrap';
-      segment.style.marginBottom = '15px';
-      segment.style.alignItems = 'center';
+      segment.className = 'segment flight-segment';
 
       segment.innerHTML = `
-        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">${fromLabel}</div>
-          <input placeholder="${fromPlaceholder}" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        <div class="field-box segment-field">
+          <div class="field-label">${fromLabel}</div>
+          <input placeholder="${fromPlaceholder}" class="field-input">
         </div>
 
-        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">${toLabel}</div>
-          <input placeholder="${toPlaceholder}" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        <div class="field-box segment-field">
+          <div class="field-label">${toLabel}</div>
+          <input placeholder="${toPlaceholder}" class="field-input">
         </div>
 
-        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-          <div style="font-size:14px; color:#777; margin-bottom:4px;">${dateLabel}</div>
-          <input type="date" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+        <div class="field-box segment-field">
+          <div class="field-label">${dateLabel}</div>
+          <input type="date" class="field-input">
         </div>
 
-        <button type="button" onclick="removeSegment(this)"
-                style="padding:10px 14px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer;">
+        <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
           ✕
         </button>
       `;
@@ -629,32 +620,34 @@
       }
     });
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel"
+           class="powered-text">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
+           data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+          © 2026 CheapCheapy / Auchen Travel. All rights reserved.
+        </p>
+      </div>
+
     </div>
-
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
