@@ -60,41 +60,41 @@
     </div>
   </div>
 
-  <!-- Hero Image (تم التصحيح هنا) -->
+  <!-- Hero Image -->
   <div style="width:100%; height:420px; overflow:hidden;">
     <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover; display:block;">
+         style="width:100%; height:100%; object-fit:cover;">
   </div>
 
   <!-- Search Panel -->
   <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
 
-    <!-- Tabs -->
+    <!-- Tabs (نفس ستايل باقي الصفحات) -->
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
 
       <a href="index.html"
-         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none;">
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
         Home
       </a>
 
       <a href="hotels.html"
-         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none;">
-        Hotels
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Hotels and apartments
       </a>
 
       <a href="flights.html"
-         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none;">
-        Flights
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Air tickets
       </a>
 
       <a href="transfer.html"
-         style="background:#efe8a7; padding:18px 30px; border-radius:22px; text-decoration:none;">
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
         Transfers
       </a>
 
       <a href="trains.html"
-         style="background:white; padding:18px 30px; border-radius:22px; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
-        Trains
+         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+        Train tickets
       </a>
 
     </div>
@@ -126,39 +126,44 @@
         </label>
       </div>
 
-      <!-- Search Row -->
+      <!-- Row 1 -->
       <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
 
-        <div style="flex:1; min-width:220px; background:white; padding:12px 16px; border-radius:18px;">
-          <div data-en="From" data-ar="من" style="font-size:14px;">From</div>
-          <input placeholder="City or station" style="width:100%; border:none; outline:none;">
+        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
+          <div data-en="From" data-ar="من" style="font-size:14px; color:#777;">From</div>
+          <input placeholder="City or station" style="width:100%; border:none; outline:none; font-size:18px;">
         </div>
 
-        <div style="flex:1; min-width:220px; background:white; padding:12px 16px; border-radius:18px;">
-          <div data-en="To" data-ar="إلى" style="font-size:14px;">To</div>
-          <input placeholder="City or station" style="width:100%; border:none; outline:none;">
+        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
+          <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777;">To</div>
+          <input placeholder="City or station" style="width:100%; border:none; outline:none; font-size:18px;">
         </div>
 
-        <div style="flex:1; min-width:180px; background:white; padding:12px 16px; border-radius:18px;">
-          <div data-en="Departure date" data-ar="تاريخ السفر">Date</div>
-          <input type="date" style="width:100%; border:none;">
+      </div>
+
+      <!-- Row 2 -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+
+        <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
+          <div data-en="Departure date" data-ar="تاريخ السفر" style="font-size:14px; color:#777;">Departure</div>
+          <input type="date" style="width:100%; border:none; outline:none; font-size:18px;">
         </div>
 
-        <div id="returnBox" style="flex:1; min-width:180px; display:none;">
-          <div style="background:white; padding:12px 16px; border-radius:18px;">
-            <div data-en="Return date" data-ar="تاريخ العودة">Return</div>
-            <input type="date" style="width:100%; border:none;">
+        <div id="returnBox" style="flex:1; min-width:220px; display:none;">
+          <div style="background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
+            <div data-en="Return date" data-ar="تاريخ العودة" style="font-size:14px; color:#777;">Return</div>
+            <input type="date" style="width:100%; border:none; outline:none; font-size:18px;">
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Row -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
 
-        <div style="flex:1; min-width:220px; background:white; padding:12px 16px; border-radius:18px;">
-          <div data-en="Passengers" data-ar="عدد الركاب">Passengers</div>
-          <select style="width:100%; border:none;">
+        <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
+          <div data-en="Passengers" data-ar="عدد الركاب" style="font-size:14px; color:#777;">Passengers</div>
+          <select style="width:100%; border:none; outline:none; font-size:18px;">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -167,7 +172,7 @@
         </div>
 
         <button
-          style="min-width:220px; height:58px; background:#e8c93d; border:none; border-radius:18px; font-size:22px; font-weight:bold; cursor:pointer;">
+          style="min-width:220px; height:58px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:22px; font-weight:bold; cursor:pointer;">
           Search
         </button>
 
