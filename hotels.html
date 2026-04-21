@@ -4,57 +4,57 @@
   <title>Hotels - CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="hotels-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
-      <!-- Logo -->
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
-        </h1>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <!-- Controls -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
         <a href="about.html"
            data-en="About"
            data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           About
         </a>
 
         <a href="offers.html"
            data-en="Offers"
            data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Offers
         </a>
 
         <a href="contact.html"
            data-en="Contact"
            data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Contact
         </a>
 
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -65,7 +65,7 @@
         <a href="#"
            data-en="Login"
            data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+           class="login-btn">
           Login
         </a>
 
@@ -75,150 +75,147 @@
   </div>
 
   <!-- Hero Image -->
-  <div style="width:100%; height:420px; overflow:hidden;">
+  <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover; display:block;">
+         class="hero-image"
+         alt="Hotels">
   </div>
 
   <!-- Search Panel -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+  <div class="container about-content-wrap">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <div class="service-tabs">
 
       <a href="index.html"
          data-en="Home"
          data-ar="الرئيسية"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Home
       </a>
 
       <a href="hotels.html"
          data-en="Hotels and apartments"
          data-ar="الفنادق والشقق"
-         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+         class="service-tab service-tab-active">
         Hotels and apartments
       </a>
 
       <a href="flights.html"
          data-en="Air tickets"
          data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Air tickets
       </a>
 
       <a href="transfer.html"
          data-en="Transfers"
          data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Transfers
       </a>
 
       <a href="trains.html"
          data-en="Train tickets"
          data-ar="تذاكر القطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Train tickets
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div class="main-box">
 
       <!-- Top Row -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px;">
+      <div class="hotels-top-row">
 
-        <div style="flex:2; min-width:280px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+        <div class="field-box hotel-destination-field">
           <div data-en="Destination"
                data-ar="الوجهة"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
+               class="field-label">
             Destination
           </div>
           <input placeholder="City, hotel, resort, villa or apartment"
-                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+                 class="field-input">
         </div>
 
-        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+        <div class="field-box hotel-date-field">
           <div data-en="Check-in"
                data-ar="تاريخ الوصول"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
+               class="field-label">
             Check-in
           </div>
-          <input type="date"
-                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+          <input type="date" class="field-input">
         </div>
 
-        <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+        <div class="field-box hotel-date-field">
           <div data-en="Check-out"
                data-ar="تاريخ المغادرة"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
+               class="field-label">
             Check-out
           </div>
-          <input type="date"
-                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+          <input type="date" class="field-input">
         </div>
 
-        <div style="flex:1; min-width:220px; position:relative;">
-          <button type="button" onclick="toggleGuestsBox()"
-                  style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
+        <div class="hotel-guests-wrap">
+          <button type="button" onclick="toggleGuestsBox()" class="travelers-toggle">
             <div data-en="Rooms & Guests"
                  data-ar="الغرف والنزلاء"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
+                 class="field-label">
               Rooms & Guests
             </div>
-            <div id="guestsSummary" style="font-size:18px;">1 room for 2 guests</div>
+            <div id="guestsSummary" class="travelers-summary">1 room for 2 guests</div>
           </button>
 
-          <div id="guestsBox"
-               style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
+          <div id="guestsBox" class="travelers-box">
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-              <div data-en="Rooms" data-ar="الغرف" style="font-weight:bold;">Rooms</div>
-              <div style="display:flex; gap:10px; align-items:center;">
-                <button type="button" onclick="changeGuests('rooms', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
-                <span id="roomsCount">1</span>
-                <button type="button" onclick="changeGuests('rooms', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+            <div class="traveler-row">
+              <div data-en="Rooms" data-ar="الغرف" class="traveler-title">Rooms</div>
+              <div class="traveler-controls">
+                <button type="button" onclick="changeGuests('rooms', -1)" class="counter-btn">-</button>
+                <span id="roomsCount" class="counter-value">1</span>
+                <button type="button" onclick="changeGuests('rooms', 1)" class="counter-btn">+</button>
               </div>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <div class="traveler-row">
               <div>
-                <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
-                <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
+                <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
+                <div data-en="Age 12+" data-ar="12 سنة فأكثر" class="traveler-subtitle">Age 12+</div>
               </div>
-              <div style="display:flex; gap:10px; align-items:center;">
-                <button type="button" onclick="changeGuests('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
-                <span id="adultsCount">2</span>
-                <button type="button" onclick="changeGuests('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+              <div class="traveler-controls">
+                <button type="button" onclick="changeGuests('adults', -1)" class="counter-btn">-</button>
+                <span id="hotelAdultsCount" class="counter-value">2</span>
+                <button type="button" onclick="changeGuests('adults', 1)" class="counter-btn">+</button>
               </div>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <div class="traveler-row">
               <div>
-                <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
-                <div data-en="Age 0-11" data-ar="من 0 إلى 11 سنة" style="font-size:13px; color:#666;">Age 0-11</div>
+                <div data-en="Children" data-ar="الأطفال" class="traveler-title">Children</div>
+                <div data-en="Age 0-11" data-ar="من 0 إلى 11 سنة" class="traveler-subtitle">Age 0-11</div>
               </div>
-              <div style="display:flex; gap:10px; align-items:center;">
-                <button type="button" onclick="changeGuests('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">-</button>
-                <span id="childrenCount">0</span>
-                <button type="button" onclick="changeGuests('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #bbb; background:white; cursor:pointer;">+</button>
+              <div class="traveler-controls">
+                <button type="button" onclick="changeGuests('children', -1)" class="counter-btn">-</button>
+                <span id="hotelChildrenCount" class="counter-value">0</span>
+                <button type="button" onclick="changeGuests('children', 1)" class="counter-btn">+</button>
               </div>
             </div>
 
-            <div id="childrenAgesBox" style="display:none; margin-bottom:15px;">
+            <div id="childrenAgesBox" class="children-ages-box">
               <div data-en="Children Ages"
                    data-ar="أعمار الأطفال"
-                   style="font-weight:bold; margin-bottom:10px;">
+                   class="traveler-title children-ages-title">
                 Children Ages
               </div>
-              <div id="childrenAgesWrapper" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+              <div id="childrenAgesWrapper" class="children-ages-wrapper"></div>
             </div>
 
             <button type="button" onclick="closeGuestsBox()"
                     data-en="Done"
                     data-ar="تم"
-                    style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+                    class="done-btn">
               Done
             </button>
           </div>
@@ -226,7 +223,7 @@
 
         <button data-en="Search"
                 data-ar="بحث"
-                style="min-width:170px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:18px; cursor:pointer; padding:0 24px;">
+                class="hotel-search-btn">
           Search
         </button>
       </div>
@@ -234,37 +231,37 @@
       <!-- Additional parameters -->
       <div data-en="Additional parameters"
            data-ar="خيارات إضافية"
-           style="font-size:17px; color:#777; margin-bottom:18px;">
+           class="additional-params-title">
         Additional parameters
       </div>
 
       <!-- Parameters Row -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+      <div class="hotel-params-row">
 
-        <div style="flex:2; min-width:260px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
+        <div class="field-box citizenship-field">
           <div data-en="Guests' citizenship"
                data-ar="جنسية النزيل"
-               style="font-size:14px; color:#777; margin-bottom:4px;">
+               class="field-label">
             Guests' citizenship
           </div>
           <input placeholder="Will be activated with API"
-                 style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+                 class="field-input">
         </div>
 
-        <div style="flex:3; min-width:320px; display:flex; gap:0; flex-wrap:wrap; background:white; border:1px solid #d6d6d6; border-radius:18px; overflow:hidden;">
-          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">No stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">2 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">3 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">4 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)" style="flex:1; min-width:100px; padding:18px; background:white; border:none; cursor:pointer;">5 stars</button>
+        <div class="stars-wrap">
+          <button type="button" class="star-btn" onclick="selectStar(this)">No stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)">2 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)">3 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)">4 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this)">5 stars</button>
         </div>
 
-        <div style="flex:2; min-width:260px; display:flex; gap:0; flex-wrap:wrap; background:white; border:1px solid #d6d6d6; border-radius:18px; overflow:hidden;">
-          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">RO</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">BB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">HB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; border-right:1px solid #e3e3e3; cursor:pointer;">FB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)" style="flex:1; min-width:70px; padding:18px; background:white; border:none; cursor:pointer;">AI</button>
+        <div class="meal-wrap">
+          <button type="button" class="meal-btn" onclick="selectMeal(this)">RO</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)">BB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)">HB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)">FB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this)">AI</button>
         </div>
       </div>
 
@@ -288,8 +285,8 @@
 
     function updateGuestsUI() {
       document.getElementById('roomsCount').textContent = rooms;
-      document.getElementById('adultsCount').textContent = adults;
-      document.getElementById('childrenCount').textContent = children;
+      document.getElementById('hotelAdultsCount').textContent = adults;
+      document.getElementById('hotelChildrenCount').textContent = children;
 
       const totalGuests = adults + children;
       const bodyDir = document.body.style.direction;
@@ -312,10 +309,7 @@
 
         for (let i = 0; i < children; i++) {
           const select = document.createElement('select');
-          select.style.padding = '10px';
-          select.style.border = '1px solid #ccc';
-          select.style.borderRadius = '8px';
-          select.style.minWidth = '120px';
+          select.className = 'child-age-select';
           select.onchange = function () {
             childAges[i] = this.value;
           };
@@ -405,32 +399,34 @@
       }
     });
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel"
+           class="powered-text">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
+           data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+          © 2026 CheapCheapy / Auchen Travel. All rights reserved.
+        </p>
+      </div>
+
     </div>
-
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
