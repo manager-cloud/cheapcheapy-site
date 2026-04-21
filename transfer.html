@@ -27,9 +27,27 @@
       </div>
 
       <div class="header-actions">
-        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
-        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
-        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
+
+        <a href="about.html"
+           data-en="About"
+           data-ar="من نحن"
+           class="top-link">
+          About
+        </a>
+
+        <a href="offers.html"
+           data-en="Offers"
+           data-ar="العروض"
+           class="top-link">
+          Offers
+        </a>
+
+        <a href="contact.html"
+           data-en="Contact"
+           data-ar="اتصل بنا"
+           class="top-link">
+          Contact
+        </a>
 
         <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
@@ -44,35 +62,73 @@
           <option>EGP</option>
         </select>
 
-        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
+        <a href="#"
+           data-en="Login"
+           data-ar="تسجيل الدخول"
+           class="login-btn">
+          Login
+        </a>
+
       </div>
+
     </div>
   </div>
 
-  <!-- Hero -->
+  <!-- Hero Image -->
   <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1800&q=80"
          class="hero-image"
          alt="Transfers">
   </div>
 
-  <!-- Content -->
+  <!-- Search Panel -->
   <div class="container about-content-wrap">
 
     <!-- Tabs -->
     <div class="service-tabs">
-      <a href="index.html" data-en="Home" data-ar="الرئيسية" class="service-tab">Home</a>
-      <a href="hotels.html" data-en="Hotels and apartments" data-ar="الفنادق والشقق" class="service-tab">Hotels and apartments</a>
-      <a href="flights.html" data-en="Air tickets" data-ar="تذاكر الطيران" class="service-tab">Air tickets</a>
-      <a href="transfer.html" data-en="Transfers" data-ar="الانتقالات" class="service-tab service-tab-active">Transfers</a>
-      <a href="trains.html" data-en="Train tickets" data-ar="تذاكر القطارات" class="service-tab">Train tickets</a>
+
+      <a href="index.html"
+         data-en="Home"
+         data-ar="الرئيسية"
+         class="service-tab">
+        Home
+      </a>
+
+      <a href="hotels.html"
+         data-en="Hotels and apartments"
+         data-ar="الفنادق والشقق"
+         class="service-tab">
+        Hotels and apartments
+      </a>
+
+      <a href="flights.html"
+         data-en="Air tickets"
+         data-ar="تذاكر الطيران"
+         class="service-tab">
+        Air tickets
+      </a>
+
+      <a href="transfer.html"
+         data-en="Transfers"
+         data-ar="الانتقالات"
+         class="service-tab service-tab-active">
+        Transfers
+      </a>
+
+      <a href="trains.html"
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         class="service-tab">
+        Train tickets
+      </a>
+
     </div>
 
     <!-- Main Box -->
-    <div class="main-box transfer-main-box-clean">
+    <div class="main-box transfer-search-box">
 
-      <!-- Type -->
-      <div class="transfer-type-row-clean">
+      <!-- Transfer Type -->
+      <div class="transfer-type-row">
         <label class="radio-label">
           <input type="radio" name="transferType" value="oneway" checked onclick="changeTransferType()">
           <span data-en="One way" data-ar="اتجاه واحد">One way</span>
@@ -84,18 +140,19 @@
         </label>
       </div>
 
-      <!-- Route -->
-      <div class="transfer-route-box-clean">
+      <!-- Route Box -->
+      <div class="transfer-route-box">
         <div class="transfer-route-side">
           <div class="field-label"
                data-en="Pick-up point"
                data-ar="مكان الاستلام">
             Pick-up point
           </div>
-          <input class="field-input"
-                 placeholder="Airport, hotel, address"
-                 data-en-placeholder="Airport, hotel, address"
-                 data-ar-placeholder="المطار، الفندق، العنوان">
+          <input
+            class="field-input"
+            placeholder="Airport, hotel, address"
+            data-en-placeholder="Airport, hotel, address"
+            data-ar-placeholder="المطار، الفندق، العنوان">
         </div>
 
         <div class="transfer-route-icon">↔</div>
@@ -106,75 +163,77 @@
                data-ar="إلى">
             To
           </div>
-          <input class="field-input"
-                 placeholder="Airport, hotel, address"
-                 data-en-placeholder="Airport, hotel, address"
-                 data-ar-placeholder="المطار، الفندق، العنوان">
+          <input
+            class="field-input"
+            placeholder="Airport, hotel, address"
+            data-en-placeholder="Airport, hotel, address"
+            data-ar-placeholder="المطار، الفندق، العنوان">
         </div>
       </div>
 
-      <!-- Bottom row -->
-      <div class="transfer-search-row-clean">
+      <!-- Bottom Row -->
+      <div class="transfer-bottom-row-v2">
 
         <div class="field-box transfer-small-field">
-          <div class="field-label"
-               data-en="When"
-               data-ar="متى">
+          <div data-en="When"
+               data-ar="متى"
+               class="field-label">
             When
           </div>
           <input type="date" class="field-input">
         </div>
 
         <div class="field-box transfer-small-field">
-          <div class="field-label"
-               data-en="Pick-up time"
-               data-ar="وقت الاستلام">
+          <div data-en="Pick-up time"
+               data-ar="وقت الاستلام"
+               class="field-label">
             Pick-up time
           </div>
           <input type="time" class="field-input">
         </div>
 
-        <div id="returnDateWrap" class="field-box transfer-small-field transfer-return-hidden">
-          <div class="field-label"
-               data-en="Return date"
-               data-ar="تاريخ العودة">
+        <div id="returnDateBox" class="field-box transfer-small-field transfer-return-hidden">
+          <div data-en="Return date"
+               data-ar="تاريخ العودة"
+               class="field-label">
             Return date
           </div>
           <input type="date" class="field-input">
         </div>
 
-        <div id="returnTimeWrap" class="field-box transfer-small-field transfer-return-hidden">
-          <div class="field-label"
-               data-en="Return time"
-               data-ar="وقت العودة">
+        <div id="returnTimeBox" class="field-box transfer-small-field transfer-return-hidden">
+          <div data-en="Return time"
+               data-ar="وقت العودة"
+               class="field-label">
             Return time
           </div>
           <input type="time" class="field-input">
         </div>
 
         <div class="field-box transfer-small-field">
-          <div class="field-label"
-               data-en="Passengers"
-               data-ar="الركاب">
+          <div data-en="Passengers"
+               data-ar="عدد الركاب"
+               class="field-label">
             Passengers
           </div>
           <select class="field-select">
-            <option>1 adult</option>
-            <option>2 adults</option>
-            <option>3 adults</option>
-            <option>4 adults</option>
-            <option>5 adults</option>
-            <option>6 adults</option>
-            <option>7 adults</option>
-            <option>8 adults</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
           </select>
         </div>
 
-        <button class="search-btn transfer-search-btn-clean"
-                data-en="Search"
-                data-ar="بحث">
+        <button data-en="Search"
+                data-ar="بحث"
+                class="transfer-search-btn-v2">
           Search
         </button>
+
       </div>
 
     </div>
@@ -183,15 +242,15 @@
   <script>
     function changeTransferType() {
       const selected = document.querySelector('input[name="transferType"]:checked').value;
-      const returnDateWrap = document.getElementById('returnDateWrap');
-      const returnTimeWrap = document.getElementById('returnTimeWrap');
+      const returnDateBox = document.getElementById('returnDateBox');
+      const returnTimeBox = document.getElementById('returnTimeBox');
 
-      if (selected === 'roundtrip') {
-        returnDateWrap.style.display = 'block';
-        returnTimeWrap.style.display = 'block';
+      if (selected === 'oneway') {
+        returnDateBox.style.display = 'none';
+        returnTimeBox.style.display = 'none';
       } else {
-        returnDateWrap.style.display = 'none';
-        returnTimeWrap.style.display = 'none';
+        returnDateBox.style.display = 'block';
+        returnTimeBox.style.display = 'block';
       }
     }
 
@@ -217,6 +276,7 @@
 
   <footer class="footer">
     <div class="footer-container">
+
       <div class="footer-logo">
         <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
         <p data-en="Powered by Auchen Travel"
@@ -239,8 +299,8 @@
           © 2026 CheapCheapy / Auchen Travel. All rights reserved.
         </p>
       </div>
+
     </div>
   </footer>
-
 </body>
 </html>
