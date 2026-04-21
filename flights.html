@@ -155,145 +155,166 @@
         </label>
       </div>
 
-      <!-- One way / Round trip -->
-      <div id="mainSearchBox">
-        <div class="flight-grid-two">
+      <!-- Main Search Form -->
+      <form id="searchForm">
+        <!-- One way / Round trip -->
+        <div id="mainSearchBox">
+          <div class="flight-grid-two">
 
-          <div class="field-box flight-field">
-            <div data-en="From" data-ar="من" class="field-label">
-              From
+            <div class="field-box flight-field">
+              <div data-en="From" data-ar="من" class="field-label">
+                From
+              </div>
+              <input
+                name="from"
+                id="from"
+                placeholder="Departure city or airport"
+                class="field-input"
+                required>
             </div>
-            <input placeholder="Departure city or airport"
-                   class="field-input">
+
+            <div class="field-box flight-field">
+              <div data-en="To" data-ar="إلى" class="field-label">
+                To
+              </div>
+              <input
+                name="to"
+                id="to"
+                placeholder="Arrival city or airport"
+                class="field-input"
+                required>
+            </div>
+
           </div>
 
-          <div class="field-box flight-field">
-            <div data-en="To" data-ar="إلى" class="field-label">
-              To
-            </div>
-            <input placeholder="Arrival city or airport"
-                   class="field-input">
-          </div>
+          <div class="flight-grid-two">
 
-        </div>
-
-        <div class="flight-grid-two">
-
-          <div class="field-box flight-field date-field">
-            <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">
-              Departure date
-            </div>
-            <input type="date" class="field-input">
-          </div>
-
-          <div id="returnDateBox" class="return-date-box">
             <div class="field-box flight-field date-field">
-              <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">
-                Return date
+              <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">
+                Departure date
               </div>
-              <input type="date" class="field-input">
+              <input
+                name="date"
+                id="date"
+                type="date"
+                class="field-input"
+                required>
             </div>
+
+            <div id="returnDateBox" class="return-date-box">
+              <div class="field-box flight-field date-field">
+                <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">
+                  Return date
+                </div>
+                <input
+                  name="returnDate"
+                  id="returnDate"
+                  type="date"
+                  class="field-input">
+              </div>
+            </div>
+
           </div>
 
-        </div>
+          <div class="flight-grid-two-top">
 
-        <div class="flight-grid-two-top">
-
-          <!-- Travelers Selector -->
-          <div class="travelers-wrap">
-            <button type="button" onclick="toggleTravelersBox('main')" class="travelers-toggle">
-              <div data-en="Travelers"
-                   data-ar="المسافرون"
-                   class="field-label">
-                Travelers
-              </div>
-              <div id="travelersSummary" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
-            </button>
-
-            <div id="travelersBoxMain" class="travelers-box">
-
-              <div class="traveler-row">
-                <div>
-                  <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
-                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" class="traveler-subtitle">Age 12+</div>
+            <!-- Travelers Selector -->
+            <div class="travelers-wrap">
+              <button type="button" onclick="toggleTravelersBox('main')" class="travelers-toggle">
+                <div data-en="Travelers"
+                     data-ar="المسافرون"
+                     class="field-label">
+                  Travelers
                 </div>
-                <div class="traveler-controls">
-                  <button type="button" onclick="changeTravelers('adults', -1)" class="counter-btn">-</button>
-                  <span id="adultsCount" class="counter-value">1</span>
-                  <button type="button" onclick="changeTravelers('adults', 1)" class="counter-btn">+</button>
-                </div>
-              </div>
-
-              <div class="traveler-row">
-                <div>
-                  <div data-en="Children" data-ar="الأطفال" class="traveler-title">Children</div>
-                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" class="traveler-subtitle">Age 2-11</div>
-                </div>
-                <div class="traveler-controls">
-                  <button type="button" onclick="changeTravelers('children', -1)" class="counter-btn">-</button>
-                  <span id="childrenCount" class="counter-value">0</span>
-                  <button type="button" onclick="changeTravelers('children', 1)" class="counter-btn">+</button>
-                </div>
-              </div>
-
-              <div class="traveler-row">
-                <div>
-                  <div data-en="Infants" data-ar="الرضع" class="traveler-title">Infants</div>
-                  <div data-en="Under 2" data-ar="أقل من سنتين" class="traveler-subtitle">Under 2</div>
-                </div>
-                <div class="traveler-controls">
-                  <button type="button" onclick="changeTravelers('infants', -1)" class="counter-btn">-</button>
-                  <span id="infantsCount" class="counter-value">0</span>
-                  <button type="button" onclick="changeTravelers('infants', 1)" class="counter-btn">+</button>
-                </div>
-              </div>
-
-              <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
-                   data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                   class="travelers-note">
-                Maximum adults + children: 9. Infants cannot exceed adults.
-              </div>
-
-              <button type="button" onclick="closeTravelersBox('main')"
-                      data-en="Done"
-                      data-ar="تم"
-                      class="done-btn">
-                Done
+                <div id="travelersSummary" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
               </button>
+
+              <div id="travelersBoxMain" class="travelers-box">
+
+                <div class="traveler-row">
+                  <div>
+                    <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
+                    <div data-en="Age 12+" data-ar="12 سنة فأكثر" class="traveler-subtitle">Age 12+</div>
+                  </div>
+                  <div class="traveler-controls">
+                    <button type="button" onclick="changeTravelers('adults', -1)" class="counter-btn">-</button>
+                    <span id="adultsCount" class="counter-value">1</span>
+                    <button type="button" onclick="changeTravelers('adults', 1)" class="counter-btn">+</button>
+                  </div>
+                </div>
+
+                <div class="traveler-row">
+                  <div>
+                    <div data-en="Children" data-ar="الأطفال" class="traveler-title">Children</div>
+                    <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" class="traveler-subtitle">Age 2-11</div>
+                  </div>
+                  <div class="traveler-controls">
+                    <button type="button" onclick="changeTravelers('children', -1)" class="counter-btn">-</button>
+                    <span id="childrenCount" class="counter-value">0</span>
+                    <button type="button" onclick="changeTravelers('children', 1)" class="counter-btn">+</button>
+                  </div>
+                </div>
+
+                <div class="traveler-row">
+                  <div>
+                    <div data-en="Infants" data-ar="الرضع" class="traveler-title">Infants</div>
+                    <div data-en="Under 2" data-ar="أقل من سنتين" class="traveler-subtitle">Under 2</div>
+                  </div>
+                  <div class="traveler-controls">
+                    <button type="button" onclick="changeTravelers('infants', -1)" class="counter-btn">-</button>
+                    <span id="infantsCount" class="counter-value">0</span>
+                    <button type="button" onclick="changeTravelers('infants', 1)" class="counter-btn">+</button>
+                  </div>
+                </div>
+
+                <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
+                     data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
+                     class="travelers-note">
+                  Maximum adults + children: 9. Infants cannot exceed adults.
+                </div>
+
+                <button type="button" onclick="closeTravelersBox('main')"
+                        data-en="Done"
+                        data-ar="تم"
+                        class="done-btn">
+                  Done
+                </button>
+              </div>
             </div>
+
+            <div class="field-box flight-field cabin-field">
+              <div data-en="Cabin class"
+                   data-ar="درجة السفر"
+                   class="field-label">
+                Cabin class
+              </div>
+              <select class="field-select" name="cabinClass" id="cabinClass">
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First</option>
+              </select>
+            </div>
+
           </div>
 
-          <div class="field-box flight-field cabin-field">
-            <div data-en="Cabin class"
-                 data-ar="درجة السفر"
-                 class="field-label">
-              Cabin class
-            </div>
-            <select class="field-select">
-              <option>Economy</option>
-              <option>Premium Economy</option>
-              <option>Business</option>
-              <option>First</option>
-            </select>
+          <div class="search-btn-row">
+            <button type="submit"
+                    data-en="Search"
+                    data-ar="بحث"
+                    class="search-btn">
+              Search
+            </button>
           </div>
 
+          <div class="checkbox-row">
+            <label>
+              <input type="checkbox" id="directOnly">
+              <span data-en="Direct flights only" data-ar="رحلات مباشرة فقط">Direct flights only</span>
+            </label>
+          </div>
         </div>
-
-        <div class="search-btn-row">
-          <button data-en="Search"
-                  data-ar="بحث"
-                  class="search-btn">
-            Search
-          </button>
-        </div>
-
-        <div class="checkbox-row">
-          <label>
-            <input type="checkbox">
-            <span data-en="Direct flights only" data-ar="رحلات مباشرة فقط">Direct flights only</span>
-          </label>
-        </div>
-      </div>
+      </form>
 
       <!-- Multi-city Box -->
       <div id="multiCityBox" class="multi-city-box">
@@ -435,13 +456,17 @@
         </button>
 
         <div class="search-btn-row">
-          <button data-en="Search"
+          <button type="button"
+                  data-en="Search"
                   data-ar="بحث"
                   class="search-btn">
             Search
           </button>
         </div>
       </div>
+
+      <!-- Results -->
+      <div id="flightResults" style="margin-top: 24px;"></div>
 
     </div>
   </div>
@@ -604,6 +629,28 @@
       updateTravelersUI();
     }
 
+    function renderFlightResults(data) {
+      const resultsBox = document.getElementById("flightResults");
+
+      if (!data.results || !data.results.length) {
+        resultsBox.innerHTML = "<p>No flights found.</p>";
+        return;
+      }
+
+      resultsBox.innerHTML = `
+        <h3 style="margin-bottom:16px;">Available Flights</h3>
+        ${data.results.map(item => `
+          <div style="background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+            <div style="font-weight:700;font-size:18px;margin-bottom:8px;">${item.airline}</div>
+            <div><strong>Route:</strong> ${item.from} → ${item.to}</div>
+            <div><strong>Departure:</strong> ${item.departure}</div>
+            <div><strong>Arrival:</strong> ${item.arrival}</div>
+            <div><strong>Price:</strong> ${item.price} ${item.currency}</div>
+          </div>
+        `).join("")}
+      `;
+    }
+
     window.onload = function () {
       changeTripType();
       updateTravelersUI();
@@ -618,6 +665,39 @@
         if (main && !main.contains(event.target)) main.style.display = 'none';
         if (multi && !multi.contains(event.target)) multi.style.display = 'none';
       }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("searchForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const from = document.getElementById("from").value;
+        const to = document.getElementById("to").value;
+        const date = document.getElementById("date").value;
+
+        fetch("https://api.cheapcheapy.com/api/flights/search", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: from,
+            to: to,
+            date: date
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          renderFlightResults(data);
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Error loading flights");
+        });
+      });
     });
   </script>
 
@@ -649,39 +729,6 @@
 
     </div>
   </footer>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const from = document.querySelector('input[name="from"]').value;
-    const to = document.querySelector('input[name="to"]').value;
-    const date = document.querySelector('input[name="date"]').value;
-
-    fetch("https://api.cheapcheapy.com/api/flights/search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        from: from,
-        to: to,
-        date: date
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      alert("Flights loaded ✔ Check console");
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Error ❌");
-    });
-  });
-});
-</script>
 </body>
 </html>
