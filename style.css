@@ -508,3 +508,118 @@ body {
 body[style*="rtl"] .travelers-toggle {
   text-align: right;
 }
+.hero {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
+  height: 280px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  max-width: 850px;
+}
+
+.content-box {
+  max-width: 1050px;
+  margin: -42px auto 60px;
+  background: #ececec;
+  border-radius: 20px;
+  padding: 36px 30px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.content-box h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: #111;
+}
+
+.content-box p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.content-box ul {
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+.content-box li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #222;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+.note-box {
+  background: #fff;
+  border-left: 5px solid #c9a227;
+  padding: 18px;
+  border-radius: 12px;
+  margin: 22px 0;
+}
+
+body.ar {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ar .content-box ul {
+  padding-left: 0;
+  padding-right: 22px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 240px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .content-box {
+    margin: -30px 14px 40px;
+    padding: 26px 20px;
+  }
+
+  .content-box h2 {
+    font-size: 22px;
+  }
+}
