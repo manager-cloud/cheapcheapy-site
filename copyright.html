@@ -4,417 +4,155 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CheapCheapy - Copyright Notice</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
 
-    body {
-      background: #f5f5f5;
-      color: #111;
-      line-height: 1.7;
-    }
-
-    header {
-      background: #000;
-      color: #fff;
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
-    }
-
-    .logo .cheap {
-      color: #fff;
-    }
-
-    .logo .cheapy {
-      color: #c9a227;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .top-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .top-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    .top-links a:hover {
-      color: #c9a227;
-    }
-
-    .selectors {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .selectors select,
-    .selectors button {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .selectors button {
-      background: #c9a227;
-      color: #000;
-      font-weight: bold;
-      border: none;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
-      height: 280px;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero-content h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .hero-content p {
-      font-size: 18px;
-      max-width: 850px;
-    }
-
-    .content-box {
-      max-width: 1050px;
-      margin: -42px auto 60px;
-      background: #ececec;
-      border-radius: 20px;
-      padding: 36px 30px;
-      position: relative;
-      z-index: 3;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .content-box h2 {
-      font-size: 26px;
-      margin-bottom: 18px;
-      color: #111;
-    }
-
-    .content-box p {
-      font-size: 16px;
-      margin-bottom: 16px;
-      color: #222;
-    }
-
-    .content-box ul {
-      padding-left: 22px;
-      margin-bottom: 18px;
-    }
-
-    .content-box li {
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #222;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #000;
-    }
-
-    .note-box {
-      background: #fff;
-      border-left: 5px solid #c9a227;
-      padding: 18px;
-      border-radius: 12px;
-      margin: 22px 0;
-    }
-
-    .footer {
-      background: #000;
-      color: #fff;
-      padding: 28px 20px;
-      text-align: center;
-    }
-
-    .footer-links {
-      margin-bottom: 12px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .footer-links a:hover {
-      color: #c9a227;
-    }
-
-    .footer p {
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    body.ar {
-      direction: rtl;
-      text-align: right;
-    }
-
-    body.ar .content-box ul {
-      padding-left: 0;
-      padding-right: 22px;
-    }
-
-    body.ar header {
-      direction: rtl;
-    }
-
-    body.ar .header-right,
-    body.ar .top-links,
-    body.ar .selectors,
-    body.ar .footer-links {
-      direction: rtl;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 18px 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .header-right {
-        justify-content: center;
-      }
-
-      .hero {
-        height: 240px;
-      }
-
-      .hero-content h1 {
-        font-size: 30px;
-      }
-
-      .hero-content p {
-        font-size: 16px;
-      }
-
-      .content-box {
-        margin: -30px 14px 40px;
-        padding: 26px 20px;
-      }
-
-      .content-box h2 {
-        font-size: 22px;
-      }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-    </div>
+  <!-- Header -->
+  <div class="site-header">
+    <div class="container header-inner">
 
-    <div class="header-right">
-      <nav class="top-links">
-        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      </nav>
+      <div>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+          </h1>
+        </a>
 
-      <div class="selectors">
-        <select>
-          <option>English</option>
-          <option>العربية</option>
+        <p class="powered-text"
+           data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="header-actions">
+
+        <a href="about.html" class="top-link" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" class="top-link" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" class="top-link" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+
+        <select onchange="changeLanguage(this.value)" class="header-select">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
         </select>
 
-        <select>
+        <select class="header-select">
           <option>USD</option>
           <option>AED</option>
           <option>EUR</option>
           <option>EGP</option>
         </select>
 
-        <button type="button" data-en="Login" data-ar="تسجيل الدخول">Login</button>
+        <a href="#" class="login-btn"
+           data-en="Login"
+           data-ar="تسجيل الدخول">
+          Login
+        </a>
+
       </div>
     </div>
-  </header>
+  </div>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <h1 data-en="Copyright Notice" data-ar="حقوق النشر والملكية الفكرية">Copyright Notice</h1>
+      <h1 data-en="Copyright Notice"
+          data-ar="حقوق النشر والملكية الفكرية">
+        Copyright Notice
+      </h1>
+
       <p
         data-en="Please review the copyright, ownership, and permitted use of content published on CheapCheapy."
-        data-ar="يرجى مراجعة حقوق النشر والملكية والاستخدام المسموح به للمحتوى المنشور على CheapCheapy."
-      >
+        data-ar="يرجى مراجعة حقوق النشر والملكية والاستخدام المسموح به للمحتوى المنشور على CheapCheapy.">
         Please review the copyright, ownership, and permitted use of content published on CheapCheapy.
       </p>
     </div>
   </section>
 
+  <!-- Content -->
   <section class="content-box">
+
     <h2 data-en="Ownership of Content" data-ar="ملكية المحتوى">Ownership of Content</h2>
-    <p
-      data-en="All content available on this website, including but not limited to text, design, layout, graphics, logos, icons, branding elements, interface components, and other materials, is the property of CheapCheapy powered by Auchen Travel, unless otherwise stated."
-      data-ar="جميع المحتويات المتاحة على هذا الموقع، بما في ذلك على سبيل المثال لا الحصر النصوص والتصميم والتخطيط والرسومات والشعارات والأيقونات والعناصر الخاصة بالهوية البصرية ومكونات الواجهة وغيرها من المواد، هي ملك لموقع CheapCheapy التابع لـ Auchen Travel ما لم يُذكر خلاف ذلك."
-    >
-      All content available on this website, including but not limited to text, design, layout, graphics, logos, icons, branding elements, interface components, and other materials, is the property of CheapCheapy powered by Auchen Travel, unless otherwise stated.
+
+    <p data-en="All content available on this website is the property of CheapCheapy powered by Auchen Travel."
+       data-ar="جميع المحتويات على هذا الموقع مملوكة لـ CheapCheapy التابعة لـ Auchen Travel.">
     </p>
 
-    <p
-      data-en="All intellectual property rights related to the content of this website are owned by CheapCheapy powered by Auchen Travel. Any unauthorized use or reproduction is strictly prohibited without prior written permission."
-      data-ar="جميع حقوق الملكية الفكرية المتعلقة بمحتوى هذا الموقع مملوكة لموقع CheapCheapy التابع لـ Auchen Travel، ويُحظر أي استخدام أو إعادة إنتاج غير مصرح به دون موافقة كتابية مسبقة."
-    >
-      All intellectual property rights related to the content of this website are owned by CheapCheapy powered by Auchen Travel. Any unauthorized use or reproduction is strictly prohibited without prior written permission.
+    <p data-en="All intellectual property rights are protected and unauthorized use is strictly prohibited."
+       data-ar="جميع حقوق الملكية الفكرية محمية ويُحظر الاستخدام غير المصرح به.">
     </p>
 
     <div class="note-box">
-      <p
-        data-en="Unauthorized copying, reproduction, distribution, modification, republication, display, or transmission of any part of this website is strictly prohibited without prior written consent from CheapCheapy / Auchen Travel."
-        data-ar="يُمنع منعًا باتًا نسخ أو إعادة إنتاج أو توزيع أو تعديل أو إعادة نشر أو عرض أو نقل أي جزء من هذا الموقع دون موافقة كتابية مسبقة من CheapCheapy / Auchen Travel."
-      >
-        Unauthorized copying, reproduction, distribution, modification, republication, display, or transmission of any part of this website is strictly prohibited without prior written consent from CheapCheapy / Auchen Travel.
+      <p data-en="Unauthorized copying or reproduction is strictly prohibited."
+         data-ar="يُمنع نسخ أو إعادة استخدام المحتوى بدون تصريح.">
       </p>
     </div>
 
     <h2 data-en="Permitted Use" data-ar="الاستخدام المسموح به">Permitted Use</h2>
-    <p
-      data-en="Users may access and view website content solely for personal, informational, and non-commercial use related to browsing and booking travel services through our platform."
-      data-ar="يجوز للمستخدمين الوصول إلى محتوى الموقع واستعراضه فقط للاستخدام الشخصي والمعلوماتي وغير التجاري والمتعلق بتصفح خدمات السفر والحجز من خلال منصتنا."
-    >
-      Users may access and view website content solely for personal, informational, and non-commercial use related to browsing and booking travel services through our platform.
+
+    <p data-en="Content may only be used for personal, non-commercial purposes."
+       data-ar="يُسمح باستخدام المحتوى لأغراض شخصية فقط.">
     </p>
 
     <ul>
-      <li
-        data-en="No content may be copied or republished for commercial use without authorization."
-        data-ar="لا يجوز نسخ أو إعادة نشر أي محتوى للاستخدام التجاري دون تصريح."
-      >
-        No content may be copied or republished for commercial use without authorization.
-      </li>
-      <li
-        data-en="No branding elements, logos, or visual assets may be reused without written approval."
-        data-ar="لا يجوز إعادة استخدام عناصر الهوية أو الشعارات أو المواد البصرية دون موافقة كتابية."
-      >
-        No branding elements, logos, or visual assets may be reused without written approval.
-      </li>
-      <li
-        data-en="Automated scraping, extraction, or reproduction of website content is prohibited."
-        data-ar="يُحظر سحب أو استخراج أو إعادة إنتاج محتوى الموقع بشكل آلي."
-      >
-        Automated scraping, extraction, or reproduction of website content is prohibited.
-      </li>
+      <li data-en="No commercial reuse" data-ar="لا إعادة استخدام تجاري"></li>
+      <li data-en="No copying of branding" data-ar="لا نسخ للهوية البصرية"></li>
+      <li data-en="No automated scraping" data-ar="لا سحب بيانات آلي"></li>
     </ul>
 
     <h2 data-en="Third-Party Content" data-ar="محتوى الجهات الخارجية">Third-Party Content</h2>
-    <p
-      data-en="Third-party trademarks, hotel names, airline names, transport provider names, supplier names, logos, and related content remain the property of their respective owners and are used strictly for identification, informational, and booking-related purposes only."
-      data-ar="تظل العلامات التجارية الخاصة بالجهات الخارجية وأسماء الفنادق وشركات الطيران ومزودي النقل والموردين والشعارات والمحتوى المرتبط بها ملكًا لأصحابها، ويتم استخدامها فقط لأغراض التعريف والمعلومات والخدمات المرتبطة بالحجز."
-    >
-      Third-party trademarks, hotel names, airline names, transport provider names, supplier names, logos, and related content remain the property of their respective owners and are used strictly for identification, informational, and booking-related purposes only.
+
+    <p data-en="Third-party content belongs to its respective owners."
+       data-ar="محتوى الجهات الخارجية ملك لأصحابه.">
     </p>
 
-    <h2 data-en="Updates and Changes" data-ar="التحديثات والتعديلات">Updates and Changes</h2>
-    <p
-      data-en="CheapCheapy reserves the right to update, modify, or remove any website content at any time without prior notice."
-      data-ar="يحتفظ CheapCheapy بالحق في تحديث أو تعديل أو إزالة أي محتوى على الموقع في أي وقت دون إشعار مسبق."
-    >
-      CheapCheapy reserves the right to update, modify, or remove any website content at any time without prior notice.
+    <h2 data-en="Contact" data-ar="التواصل">Contact</h2>
+
+    <p data-en="For any copyright inquiries, please contact us."
+       data-ar="لأي استفسارات، يرجى التواصل معنا.">
     </p>
 
-    <h2 data-en="Contact for Copyright Issues" data-ar="التواصل بخصوص حقوق النشر">Contact for Copyright Issues</h2>
-    <p
-      data-en="For any copyright-related inquiries, permissions, or notices, please contact us through our Contact page."
-      data-ar="لأي استفسارات أو طلبات تصاريح أو إشعارات متعلقة بحقوق النشر، يرجى التواصل معنا عبر صفحة اتصل بنا."
-    >
-      For any copyright-related inquiries, permissions, or notices, please contact us through our Contact page.
-    </p>
-
-    <p class="highlight"
-       data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-       data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+    <p class="highlight">
       © 2026 CheapCheapy / Auchen Travel. All rights reserved.
     </p>
+
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+        <a href="copyright.html">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
+      </div>
+
     </div>
-    <p
-      data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-      data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة."
-    >
-      © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-    </p>
   </footer>
 
+  <!-- Language -->
   <script>
     function changeLanguage(lang) {
-      const isArabic = lang === 'ar';
-      document.documentElement.lang = lang;
-      document.body.classList.toggle('ar', isArabic);
-
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const text = el.getAttribute('data-' + lang);
-        if (text) {
-          el.textContent = text;
-        }
+      const elements = document.querySelectorAll('[data-en]');
+      elements.forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
+      document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
     }
   </script>
 
