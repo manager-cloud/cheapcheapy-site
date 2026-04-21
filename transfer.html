@@ -12,6 +12,7 @@
   <!-- Header -->
   <div class="site-header">
     <div class="container header-inner">
+
       <div>
         <a href="index.html" class="logo-link">
           <h1 class="site-logo">
@@ -48,7 +49,7 @@
     </div>
   </div>
 
-  <!-- Hero Image -->
+  <!-- Hero -->
   <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1800&q=80"
          class="hero-image"
@@ -68,98 +69,96 @@
     </div>
 
     <!-- Main Box -->
-    <div class="main-box transfer-main-box">
+    <div class="main-box transfer-main-box-clean">
 
-      <!-- Transfer Type -->
-      <div class="transfer-top-options">
-        <label class="transfer-radio">
+      <!-- Type -->
+      <div class="transfer-type-row-clean">
+        <label class="radio-label">
           <input type="radio" name="transferType" value="oneway" checked onclick="changeTransferType()">
           <span data-en="One way" data-ar="اتجاه واحد">One way</span>
         </label>
 
-        <label class="transfer-radio">
+        <label class="radio-label">
           <input type="radio" name="transferType" value="roundtrip" onclick="changeTransferType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
       </div>
 
-      <!-- Main Route Box -->
-      <div class="transfer-route-box">
-        <div class="transfer-route-half">
-          <div class="transfer-label"
+      <!-- Route -->
+      <div class="transfer-route-box-clean">
+        <div class="transfer-route-side">
+          <div class="field-label"
                data-en="Pick-up point"
                data-ar="مكان الاستلام">
             Pick-up point
           </div>
-          <input class="transfer-route-input"
+          <input class="field-input"
                  placeholder="Airport, hotel, address"
                  data-en-placeholder="Airport, hotel, address"
                  data-ar-placeholder="المطار، الفندق، العنوان">
         </div>
 
-        <div class="transfer-route-divider">
-          <span>↔</span>
-        </div>
+        <div class="transfer-route-icon">↔</div>
 
-        <div class="transfer-route-half">
-          <div class="transfer-label"
+        <div class="transfer-route-side">
+          <div class="field-label"
                data-en="To"
                data-ar="إلى">
             To
           </div>
-          <input class="transfer-route-input"
+          <input class="field-input"
                  placeholder="Airport, hotel, address"
                  data-en-placeholder="Airport, hotel, address"
                  data-ar-placeholder="المطار، الفندق، العنوان">
         </div>
       </div>
 
-      <!-- Bottom Search Row -->
-      <div class="transfer-bottom-search">
+      <!-- Bottom row -->
+      <div class="transfer-search-row-clean">
 
-        <div class="transfer-small-box">
-          <div class="transfer-label"
+        <div class="field-box transfer-small-field">
+          <div class="field-label"
                data-en="When"
                data-ar="متى">
             When
           </div>
-          <input type="date" class="transfer-small-input">
+          <input type="date" class="field-input">
         </div>
 
-        <div class="transfer-small-box">
-          <div class="transfer-label"
+        <div class="field-box transfer-small-field">
+          <div class="field-label"
                data-en="Pick-up time"
                data-ar="وقت الاستلام">
             Pick-up time
           </div>
-          <input type="time" class="transfer-small-input">
+          <input type="time" class="field-input">
         </div>
 
-        <div id="returnDateWrap" class="transfer-small-box transfer-return-box">
-          <div class="transfer-label"
+        <div id="returnDateWrap" class="field-box transfer-small-field transfer-return-hidden">
+          <div class="field-label"
                data-en="Return date"
                data-ar="تاريخ العودة">
             Return date
           </div>
-          <input type="date" class="transfer-small-input">
+          <input type="date" class="field-input">
         </div>
 
-        <div id="returnTimeWrap" class="transfer-small-box transfer-return-box">
-          <div class="transfer-label"
+        <div id="returnTimeWrap" class="field-box transfer-small-field transfer-return-hidden">
+          <div class="field-label"
                data-en="Return time"
                data-ar="وقت العودة">
             Return time
           </div>
-          <input type="time" class="transfer-small-input">
+          <input type="time" class="field-input">
         </div>
 
-        <div class="transfer-small-box passengers-box">
-          <div class="transfer-label"
+        <div class="field-box transfer-small-field">
+          <div class="field-label"
                data-en="Passengers"
                data-ar="الركاب">
             Passengers
           </div>
-          <select class="transfer-small-input transfer-select-input">
+          <select class="field-select">
             <option>1 adult</option>
             <option>2 adults</option>
             <option>3 adults</option>
@@ -171,7 +170,7 @@
           </select>
         </div>
 
-        <button class="transfer-search-btn"
+        <button class="search-btn transfer-search-btn-clean"
                 data-en="Search"
                 data-ar="بحث">
           Search
