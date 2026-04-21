@@ -4,43 +4,40 @@
   <title>Trains - CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="trains-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> 🚄
-        </h1>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> 🚄
+          </h1>
+        </a>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
-        <a href="about.html" data-en="About" data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">About</a>
+        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
 
-        <a href="offers.html" data-en="Offers" data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Offers</a>
-
-        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Contact</a>
-
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -51,7 +48,7 @@
         <a href="#"
            data-en="Login"
            data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+           class="login-btn">
           Login
         </a>
 
@@ -61,119 +58,121 @@
   </div>
 
   <!-- Hero Image -->
-  <div style="width:100%; height:420px; overflow:hidden;">
+  <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover;">
+         class="hero-image"
+         alt="Trains">
   </div>
 
   <!-- Search Panel -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+  <div class="container about-content-wrap">
 
-    <!-- Tabs (نفس ستايل باقي الصفحات) -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <!-- Tabs -->
+    <div class="service-tabs">
 
       <a href="index.html"
-        data-en="Home"
+         data-en="Home"
          data-ar="الرئيسية"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Home
       </a>
 
       <a href="hotels.html"
-        data-en="Hotels and apartments"
+         data-en="Hotels and apartments"
          data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Hotels and apartments
       </a>
 
       <a href="flights.html"
-        data-en="Air tickets"
+         data-en="Air tickets"
          data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Air tickets
       </a>
 
       <a href="transfer.html"
-        data-en="Transfers"
+         data-en="Transfers"
          data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Transfers
       </a>
 
       <a href="trains.html"
-        data-en="Train tickets"
+         data-en="Train tickets"
          data-ar="تذاكر القطارات"
-         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+         class="service-tab service-tab-active">
         Train tickets
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div class="main-box">
 
       <h2 data-en="Train Tickets Search"
-          data-ar="البحث عن تذاكر القطارات">
+          data-ar="البحث عن تذاكر القطارات"
+          class="section-title">
         Train Tickets Search
       </h2>
 
       <p data-en="Search and book train tickets easily"
          data-ar="ابحث واحجز تذاكر القطارات بسهولة"
-         style="font-size:18px; color:#444; margin-bottom:22px;">
+         class="lead-text train-intro">
         Search and book train tickets easily
       </p>
 
       <!-- Trip Type -->
-      <div style="margin-bottom:20px;">
-        <label style="margin-right:20px;">
+      <div class="trip-type-row">
+        <label class="radio-label">
           <input type="radio" name="tripType" checked onclick="changeTripType()">
           <span data-en="One way" data-ar="اتجاه واحد">One way</span>
         </label>
 
-        <label>
+        <label class="radio-label">
           <input type="radio" name="tripType" onclick="changeTripType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
       </div>
 
       <!-- Row 1 -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+      <div class="flight-grid-two">
 
-        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
-          <div data-en="From" data-ar="من" style="font-size:14px; color:#777;">From</div>
-          <input placeholder="City or station" style="width:100%; border:none; outline:none; font-size:18px;">
+        <div class="field-box flight-field">
+          <div data-en="From" data-ar="من" class="field-label">From</div>
+          <input placeholder="City or station" class="field-input">
         </div>
 
-        <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
-          <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777;">To</div>
-          <input placeholder="City or station" style="width:100%; border:none; outline:none; font-size:18px;">
+        <div class="field-box flight-field">
+          <div data-en="To" data-ar="إلى" class="field-label">To</div>
+          <input placeholder="City or station" class="field-input">
         </div>
 
       </div>
 
       <!-- Row 2 -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+      <div class="flight-grid-two">
 
-        <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
-          <div data-en="Departure date" data-ar="تاريخ السفر" style="font-size:14px; color:#777;">Departure</div>
-          <input type="date" style="width:100%; border:none; outline:none; font-size:18px;">
+        <div class="field-box date-field">
+          <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">Departure</div>
+          <input type="date" class="field-input">
         </div>
 
-        <div id="returnBox" style="flex:1; min-width:220px; display:none;">
-          <div style="background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
-            <div data-en="Return date" data-ar="تاريخ العودة" style="font-size:14px; color:#777;">Return</div>
-            <input type="date" style="width:100%; border:none; outline:none; font-size:18px;">
+        <div id="returnBox" class="return-date-box">
+          <div class="field-box date-field">
+            <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">Return</div>
+            <input type="date" class="field-input">
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Row -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="train-bottom-row">
 
-        <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px;">
-          <div data-en="Passengers" data-ar="عدد الركاب" style="font-size:14px; color:#777;">Passengers</div>
-          <select style="width:100%; border:none; outline:none; font-size:18px;">
+        <div class="field-box train-passenger-field">
+          <div data-en="Passengers" data-ar="عدد الركاب" class="field-label">Passengers</div>
+          <select class="field-select">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -181,10 +180,7 @@
           </select>
         </div>
 
-        <button
-          style="min-width:220px; height:58px; background:#e8c93d; color:#111; border:none; border-radius:18px; font-size:22px; font-weight:bold; cursor:pointer;">
-          Search
-        </button>
+        <button class="search-btn">Search</button>
 
       </div>
 
@@ -212,32 +208,34 @@
       document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
     }
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel"
+           class="powered-text">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
+           data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+          © 2026 CheapCheapy / Auchen Travel. All rights reserved.
+        </p>
+      </div>
+
     </div>
-
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
