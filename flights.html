@@ -152,6 +152,60 @@
         </label>
       </div>
 
+      <!-- Shared Travelers Box -->
+      <div id="travelersBox"
+           style="display:none; position:absolute; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:100; box-sizing:border-box; width:320px;">
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+          <div>
+            <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
+            <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button type="button" onclick="changeTravelers('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+            <span id="adultsCount" style="min-width:20px; text-align:center;">1</span>
+            <button type="button" onclick="changeTravelers('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+          <div>
+            <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
+            <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" style="font-size:13px; color:#666;">Age 2-11</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button type="button" onclick="changeTravelers('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+            <span id="childrenCount" style="min-width:20px; text-align:center;">0</span>
+            <button type="button" onclick="changeTravelers('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+          <div>
+            <div data-en="Infants" data-ar="الرضع" style="font-weight:bold;">Infants</div>
+            <div data-en="Under 2" data-ar="أقل من سنتين" style="font-size:13px; color:#666;">Under 2</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button type="button" onclick="changeTravelers('infants', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
+            <span id="infantsCount" style="min-width:20px; text-align:center;">0</span>
+            <button type="button" onclick="changeTravelers('infants', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
+          </div>
+        </div>
+
+        <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
+             data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
+             style="font-size:13px; color:#777; margin-bottom:15px;">
+          Maximum adults + children: 9. Infants cannot exceed adults.
+        </div>
+
+        <button type="button" onclick="closeTravelersBox()"
+                data-en="Done"
+                data-ar="تم"
+                style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
+          Done
+        </button>
+      </div>
+
       <!-- Main Search Fields -->
       <div id="mainSearchBox">
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
@@ -206,9 +260,8 @@
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
 
-          <!-- Travelers Selector -->
           <div style="flex:1; min-width:260px; position:relative;">
-            <button type="button" onclick="toggleTravelersBox()"
+            <button type="button" onclick="toggleTravelersBox(this)"
                     style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
               <div data-en="Travelers"
                    data-ar="المسافرون"
@@ -217,59 +270,6 @@
               </div>
               <div id="travelersSummary" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
             </button>
-
-            <div id="travelersBox"
-                 style="display:none; position:absolute; top:88px; left:0; width:100%; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:50; box-sizing:border-box;">
-
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <div>
-                  <div data-en="Adults" data-ar="البالغون" style="font-weight:bold;">Adults</div>
-                  <div data-en="Age 12+" data-ar="12 سنة فأكثر" style="font-size:13px; color:#666;">Age 12+</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('adults', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="adultsCount" style="min-width:20px; text-align:center;">1</span>
-                  <button type="button" onclick="changeTravelers('adults', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-                </div>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <div>
-                  <div data-en="Children" data-ar="الأطفال" style="font-weight:bold;">Children</div>
-                  <div data-en="Age 2-11" data-ar="من 2 إلى 11 سنة" style="font-size:13px; color:#666;">Age 2-11</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('children', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="childrenCount" style="min-width:20px; text-align:center;">0</span>
-                  <button type="button" onclick="changeTravelers('children', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-                </div>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <div>
-                  <div data-en="Infants" data-ar="الرضع" style="font-weight:bold;">Infants</div>
-                  <div data-en="Under 2" data-ar="أقل من سنتين" style="font-size:13px; color:#666;">Under 2</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <button type="button" onclick="changeTravelers('infants', -1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">-</button>
-                  <span id="infantsCount" style="min-width:20px; text-align:center;">0</span>
-                  <button type="button" onclick="changeTravelers('infants', 1)" style="width:32px; height:32px; border-radius:50%; border:1px solid #ccc; background:white; cursor:pointer;">+</button>
-                </div>
-              </div>
-
-              <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
-                   data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                   style="font-size:13px; color:#777; margin-bottom:15px;">
-                Maximum adults + children: 9. Infants cannot exceed adults.
-              </div>
-
-              <button type="button" onclick="closeTravelersBox()"
-                      data-en="Done"
-                      data-ar="تم"
-                      style="width:100%; padding:12px; background:black; color:white; border:none; border-radius:10px; cursor:pointer;">
-                Done
-              </button>
-            </div>
           </div>
 
           <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
@@ -365,26 +365,16 @@
         </div>
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
-          <div style="flex:1; min-width:260px;">
-            <button type="button" onclick="toggleTravelersBox()"
+          <div style="flex:1; min-width:260px; position:relative;">
+            <button type="button" onclick="toggleTravelersBox(this)"
                     style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
               <div data-en="Travelers"
                    data-ar="المسافرون"
                    style="font-size:14px; color:#777; margin-bottom:4px;">
                 Travelers
               </div>
-              <button type="button" onclick="toggleTravelersBox()"
-        style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; text-align:left; cursor:pointer;">
-  
-  <div style="font-size:14px; color:#777; margin-bottom:4px;">
-    Travelers
-  </div>
-
-  <div id="travelersSummaryMulti" style="font-size:18px;">
-    1 Adult, 0 Children, 0 Infants
-  </div>
-
-</button>
+              <div id="travelersSummaryMulti" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
+            </button>
           </div>
 
           <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
@@ -426,6 +416,7 @@
     let adults = 1;
     let children = 0;
     let infants = 0;
+    let currentTravelersButton = null;
 
     function changeTripType() {
       const selected = document.querySelector('input[name="tripType"]:checked').value;
@@ -446,15 +437,30 @@
         multiCityBox.style.display = 'block';
         mainSearchBox.style.display = 'none';
       }
+
+      closeTravelersBox();
     }
 
-    function toggleTravelersBox() {
+    function toggleTravelersBox(button) {
       const box = document.getElementById('travelersBox');
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+
+      if (currentTravelersButton === button && box.style.display === 'block') {
+        box.style.display = 'none';
+        currentTravelersButton = null;
+        return;
+      }
+
+      currentTravelersButton = button;
+      const rect = button.getBoundingClientRect();
+
+      box.style.display = 'block';
+      box.style.top = `${window.scrollY + rect.bottom + 8}px`;
+      box.style.left = `${window.scrollX + rect.left}px`;
     }
 
     function closeTravelersBox() {
       document.getElementById('travelersBox').style.display = 'none';
+      currentTravelersButton = null;
     }
 
     function updateTravelersUI() {
@@ -472,8 +478,7 @@
       }
 
       document.getElementById('travelersSummary').textContent = summary;
-      const multi = document.getElementById('travelersSummaryMulti');
-      if (multi) multi.textContent = summary;
+      document.getElementById('travelersSummaryMulti').textContent = summary;
     }
 
     function changeTravelers(type, delta) {
@@ -563,18 +568,28 @@
         document.body.style.direction = 'ltr';
       }
 
-     function updateTravelersUI() {
-  document.getElementById('adultsCount').textContent = adults;
-  document.getElementById('childrenCount').textContent = children;
-  document.getElementById('infantsCount').textContent = infants;
+      updateTravelersUI();
+      closeTravelersBox();
+    }
 
-  let summary = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}, ${infants} Infant${infants > 1 ? 's' : ''}`;
+    window.onload = function () {
+      changeTripType();
+      updateTravelersUI();
+    };
 
-  document.getElementById('travelersSummary').textContent = summary;
+    document.addEventListener('click', function(event) {
+      const box = document.getElementById('travelersBox');
+      if (!box) return;
 
-  const multi = document.getElementById('travelersSummaryMulti');
-  if (multi) multi.textContent = summary;
-}
-      </script>
+      if (
+        box.style.display === 'block' &&
+        !box.contains(event.target) &&
+        !event.target.closest('button[onclick^="toggleTravelersBox"]')
+      ) {
+        closeTravelersBox();
+      }
+    });
+  </script>
+
 </body>
 </html>
