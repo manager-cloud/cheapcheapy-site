@@ -122,7 +122,7 @@
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14); position:relative;">
 
       <h2 data-en="Flights Search"
           data-ar="البحث عن الرحلات"
@@ -152,9 +152,9 @@
         </label>
       </div>
 
-      <!-- Shared Travelers Popup -->
+      <!-- Travelers Popup -->
       <div id="travelersBox"
-           style="display:none; position:absolute; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:100; box-sizing:border-box; width:320px;">
+           style="display:none; position:absolute; background:white; border:1px solid #ddd; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); padding:18px; z-index:100; width:320px; box-sizing:border-box;">
 
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
           <div>
@@ -192,8 +192,7 @@
           </div>
         </div>
 
-        <div id="travelersRulePopup"
-             data-en="Maximum adults + children: 9. Infants cannot exceed adults."
+        <div data-en="Maximum adults + children: 9. Infants cannot exceed adults."
              data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
              style="font-size:13px; color:#777; margin-bottom:15px;">
           Maximum adults + children: 9. Infants cannot exceed adults.
@@ -207,84 +206,47 @@
         </button>
       </div>
 
-      <!-- Main Search Fields -->
+      <!-- One way / Round trip -->
       <div id="mainSearchBox">
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
-
           <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="From"
-                 data-ar="من"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
-              From
-            </div>
+            <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">From</div>
             <input placeholder="Departure city or airport"
                    style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
           </div>
 
           <div style="flex:1; min-width:240px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="To"
-                 data-ar="إلى"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
-              To
-            </div>
+            <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">To</div>
             <input placeholder="Arrival city or airport"
                    style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
           </div>
-
         </div>
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
-
           <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="Departure date"
-                 data-ar="تاريخ السفر"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
-              Departure date
-            </div>
-            <input type="date"
-                   style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+            <div data-en="Departure date" data-ar="تاريخ السفر" style="font-size:14px; color:#777; margin-bottom:4px;">Departure date</div>
+            <input type="date" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
           </div>
 
           <div id="returnDateBox" style="flex:1; min-width:220px; display:none;">
             <div style="background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-              <div data-en="Return date"
-                   data-ar="تاريخ العودة"
-                   style="font-size:14px; color:#777; margin-bottom:4px;">
-                Return date
-              </div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <div data-en="Return date" data-ar="تاريخ العودة" style="font-size:14px; color:#777; margin-bottom:4px;">Return date</div>
+              <input type="date" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
           </div>
-
         </div>
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
-
-          <div style="flex:1; min-width:260px; position:relative;">
+          <div style="flex:1; min-width:260px;">
             <button type="button" onclick="toggleTravelersBox(this)"
                     style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
-              <div data-en="Travelers"
-                   data-ar="المسافرون"
-                   style="font-size:14px; color:#777; margin-bottom:4px;">
-                Travelers
-              </div>
+              <div data-en="Travelers" data-ar="المسافرون" style="font-size:14px; color:#777; margin-bottom:4px;">Travelers</div>
               <div id="travelersSummary" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
             </button>
-            <div id="travelersRuleMain"
-                 data-en="Maximum adults + children: 9. Infants cannot exceed adults."
-                 data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                 style="font-size:12px; color:#777; margin-top:8px;">
-              Maximum adults + children: 9. Infants cannot exceed adults.
-            </div>
           </div>
 
           <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="Cabin class"
-                 data-ar="درجة السفر"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
-              Cabin class
-            </div>
+            <div data-en="Cabin class" data-ar="درجة السفر" style="font-size:14px; color:#777; margin-bottom:4px;">Cabin class</div>
             <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
               <option>Economy</option>
               <option>Premium Economy</option>
@@ -292,7 +254,6 @@
               <option>First</option>
             </select>
           </div>
-
         </div>
 
         <div style="display:flex; justify-content:flex-start; margin-top:12px;">
@@ -311,7 +272,7 @@
         </div>
       </div>
 
-      <!-- Multi-city Box -->
+      <!-- Multi-city -->
       <div id="multiCityBox" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid #ddd;">
         <h3 data-en="Multi-city Trips"
             data-ar="رحلات متعددة المدن"
@@ -323,20 +284,17 @@
           <div class="segment" style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">From</div>
-              <input placeholder="Departure city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input placeholder="Departure city or airport" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">To</div>
-              <input placeholder="Arrival city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input placeholder="Arrival city or airport" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="Date" data-ar="التاريخ" style="font-size:14px; color:#777; margin-bottom:4px;">Date</div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input type="date" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <button type="button" onclick="removeSegment(this)"
@@ -348,20 +306,17 @@
           <div class="segment" style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:15px; align-items:center;">
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="From" data-ar="من" style="font-size:14px; color:#777; margin-bottom:4px;">From</div>
-              <input placeholder="Departure city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input placeholder="Departure city or airport" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="To" data-ar="إلى" style="font-size:14px; color:#777; margin-bottom:4px;">To</div>
-              <input placeholder="Arrival city or airport"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input placeholder="Arrival city or airport" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <div style="flex:1; min-width:180px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
               <div data-en="Date" data-ar="التاريخ" style="font-size:14px; color:#777; margin-bottom:4px;">Date</div>
-              <input type="date"
-                     style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
+              <input type="date" style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
             </div>
 
             <button type="button" onclick="removeSegment(this)"
@@ -372,30 +327,16 @@
         </div>
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-start;">
-          <div style="flex:1; min-width:260px; position:relative;">
+          <div style="flex:1; min-width:260px;">
             <button type="button" onclick="toggleTravelersBox(this)"
                     style="width:100%; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box; text-align:left; cursor:pointer;">
-              <div data-en="Travelers"
-                   data-ar="المسافرون"
-                   style="font-size:14px; color:#777; margin-bottom:4px;">
-                Travelers
-              </div>
+              <div data-en="Travelers" data-ar="المسافرون" style="font-size:14px; color:#777; margin-bottom:4px;">Travelers</div>
               <div id="travelersSummaryMulti" style="font-size:18px;">1 Adult, 0 Children, 0 Infants</div>
             </button>
-            <div id="travelersRuleMulti"
-                 data-en="Maximum adults + children: 9. Infants cannot exceed adults."
-                 data-ar="الحد الأقصى للبالغين والأطفال: 9. لا يمكن أن يزيد عدد الرضع عن عدد البالغين."
-                 style="font-size:12px; color:#777; margin-top:8px;">
-              Maximum adults + children: 9. Infants cannot exceed adults.
-            </div>
           </div>
 
           <div style="flex:1; min-width:220px; background:white; border:1px solid #d6d6d6; border-radius:18px; padding:12px 16px; box-sizing:border-box;">
-            <div data-en="Cabin class"
-                 data-ar="درجة السفر"
-                 style="font-size:14px; color:#777; margin-bottom:4px;">
-              Cabin class
-            </div>
+            <div data-en="Cabin class" data-ar="درجة السفر" style="font-size:14px; color:#777; margin-bottom:4px;">Cabin class</div>
             <select style="width:100%; border:none; outline:none; font-size:18px; background:transparent;">
               <option>Economy</option>
               <option>Premium Economy</option>
@@ -464,7 +405,6 @@
 
       currentTravelersButton = button;
       const rect = button.getBoundingClientRect();
-
       box.style.display = 'block';
       box.style.top = `${window.scrollY + rect.bottom + 8}px`;
       box.style.left = `${window.scrollX + rect.left}px`;
@@ -480,10 +420,8 @@
       document.getElementById('childrenCount').textContent = children;
       document.getElementById('infantsCount').textContent = infants;
 
-      const bodyDir = document.body.style.direction;
       let summary = '';
-
-      if (bodyDir === 'rtl') {
+      if (document.body.style.direction === 'rtl') {
         summary = `${adults} بالغ، ${children} طفل، ${infants} رضيع`;
       } else {
         summary = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}, ${infants} Infant${infants > 1 ? 's' : ''}`;
@@ -559,12 +497,10 @@
 
     function removeSegment(button) {
       const wrapper = document.getElementById('segmentsWrapper');
-
       if (wrapper.children.length <= 2) {
         alert(document.body.style.direction === 'rtl' ? 'يجب وجود رحلتين على الأقل.' : 'At least 2 flights are required.');
         return;
       }
-
       button.parentElement.remove();
     }
 
@@ -574,12 +510,7 @@
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-      } else {
-        document.body.style.direction = 'ltr';
-      }
-
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
       updateTravelersUI();
       closeTravelersBox();
     }
