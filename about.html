@@ -1,71 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>About - CheapCheapy</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial; margin:0; background:#f5f5f5;">
-<div style="background:black; color:white; padding:20px;">
-  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-    <div>
-      <h1 style="margin:0;">CheapCheapy ✈️</h1>
-      <p style="margin:5px 0 0 0;">Powered by Auchen Travel</p>
+<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+
+  <!-- Header -->
+  <div style="background:black; color:white; padding:22px 20px;">
+    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+
+      <div>
+        <h1 style="margin:0; font-size:42px;">
+          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
+        </h1>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مقدم من Auchen Travel"
+           style="margin:6px 0 0 0; font-size:16px;">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+
+        <a href="about.html"
+           data-en="About"
+           data-ar="من نحن"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          About
+        </a>
+
+        <a href="offers.html"
+           data-en="Offers"
+           data-ar="العروض"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          Offers
+        </a>
+
+        <a href="contact.html"
+           data-en="Contact"
+           data-ar="اتصل بنا"
+           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+          Contact
+        </a>
+
+        <select onchange="changeLanguage(this.value)"
+                style="padding:10px; border-radius:10px; border:none;">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+
+        <select style="padding:10px; border-radius:10px; border:none;">
+          <option>AED</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>SAR</option>
+          <option>EGP</option>
+        </select>
+
+        <a href="#"
+           data-en="Login"
+           data-ar="تسجيل الدخول"
+           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+          Login
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="width:100%; height:420px; overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=80"
+         style="width:100%; height:100%; object-fit:cover; display:block;">
+  </div>
+
+  <!-- Content -->
+  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+
+    <!-- Tabs -->
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+
+      <a href="index.html"
+         data-en="Home"
+         data-ar="الرئيسية"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Home
+      </a>
+
+      <a href="hotels.html"
+         data-en="Hotels and apartments"
+         data-ar="الفنادق والشقق"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Hotels and apartments
+      </a>
+
+      <a href="flights.html"
+         data-en="Air tickets"
+         data-ar="تذاكر الطيران"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Air tickets
+      </a>
+
+      <a href="transfer.html"
+         data-en="Transfers"
+         data-ar="الانتقالات"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Transfers
+      </a>
+
+      <a href="trains.html"
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+        Train tickets
+      </a>
+
     </div>
 
-    <div style="margin-top:10px;">
-      <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-      <a href="about.html" style="color:white; margin-right:15px;">About</a>
-      <a href="flights.html" style="color:white; margin-right:15px;">Flights</a>
-      <a href="hotels.html" style="color:white; margin-right:15px;">Hotels</a>
-      <a href="trains.html" style="color:white; margin-right:15px;">Trains</a>
-      <a href="transfer.html" style="color:white; margin-right:15px;">Transfer</a>
-      <a href="offers.html" style="color:white; margin-right:15px;">Offers</a>
-      <a href="contact.html" style="color:white;">Contact</a>
+    <!-- Main Box -->
+    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+
+      <h2 data-en="About CheapCheapy"
+          data-ar="عن CheapCheapy"
+          style="margin-top:0;">
+        About CheapCheapy
+      </h2>
+
+      <p data-en="CheapCheapy is a modern travel platform powered by Auchen Travel, built to offer flights, hotels, train tickets, and transfers in one place."
+         data-ar="CheapCheapy هي منصة سفر حديثة مقدمة من Auchen Travel، تم إنشاؤها لتقديم الرحلات والفنادق وتذاكر القطارات وخدمات النقل في مكان واحد."
+         style="font-size:18px; color:#444; line-height:1.7;">
+        CheapCheapy is a modern travel platform powered by Auchen Travel, built to offer flights, hotels, train tickets, and transfers in one place.
+      </p>
+
+      <p data-en="Our goal is to create a reliable and scalable online booking experience for travelers, combining competitive offers with simple and user-friendly search tools."
+         data-ar="هدفنا هو إنشاء تجربة حجز أونلاين موثوقة وقابلة للتوسع للمسافرين، تجمع بين الأسعار التنافسية وأدوات البحث السهلة والواضحة."
+         style="font-size:18px; color:#444; line-height:1.7;">
+        Our goal is to create a reliable and scalable online booking experience for travelers, combining competitive offers with simple and user-friendly search tools.
+      </p>
+
+      <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:28px;">
+
+        <div style="flex:1; min-width:260px; background:white; border-radius:20px; padding:22px;">
+          <h3 data-en="Our Vision" data-ar="رؤيتنا" style="margin-top:0;">Our Vision</h3>
+          <p data-en="To become a trusted travel platform for customers looking for convenience, choice, and value."
+             data-ar="أن نصبح منصة سفر موثوقة للعملاء الباحثين عن السهولة والتنوع والقيمة."
+             style="color:#555; line-height:1.6;">
+            To become a trusted travel platform for customers looking for convenience, choice, and value.
+          </p>
+        </div>
+
+        <div style="flex:1; min-width:260px; background:white; border-radius:20px; padding:22px;">
+          <h3 data-en="Our Services" data-ar="خدماتنا" style="margin-top:0;">Our Services</h3>
+          <p data-en="Flights, hotels, transfers, train tickets, and selected travel offers."
+             data-ar="الرحلات الجوية، الفنادق، الانتقالات، تذاكر القطارات، والعروض المختارة."
+             style="color:#555; line-height:1.6;">
+            Flights, hotels, transfers, train tickets, and selected travel offers.
+          </p>
+        </div>
+
+        <div style="flex:1; min-width:260px; background:white; border-radius:20px; padding:22px;">
+          <h3 data-en="Our Platform" data-ar="منصتنا" style="margin-top:0;">Our Platform</h3>
+          <p data-en="A growing in-house booking platform designed for future direct supplier integrations."
+             data-ar="منصة حجز متطورة يتم بناؤها داخليًا ومصممة للتكامل المباشر مع الموردين مستقبلًا."
+             style="color:#555; line-height:1.6;">
+            A growing in-house booking platform designed for future direct supplier integrations.
+          </p>
+        </div>
+
+      </div>
+
     </div>
   </div>
-</div>
-  <div style="background:black; color:white; padding:20px; text-align:center;">
-    <h1>CheapCheapy ✈️</h1>
-    <p>Powered by Auchen Travel</p>
-  </div>
 
-  <div style="max-width:900px; margin:auto; padding:40px;">
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-en]');
+      elements.forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
 
-    <h2>About Us</h2>
-
-    <p>
-      CheapCheapy is a modern travel platform operated by Auchen Travel, focused on providing competitive flight, hotel,
-      rail, and transfer booking solutions worldwide.
-    </p>
-
-    <p>
-      Our goal is to build a scalable and reliable travel booking system that connects users with the best available
-      travel services through advanced technology and global supplier integrations.
-    </p>
-
-    <p>
-      We are currently expanding our platform to support flight APIs, hotel providers, rail systems such as Rail Europe,
-      and multiple payment solutions including bank transfers and online payments.
-    </p>
-
-    <p>
-      CheapCheapy is designed to evolve into a full travel booking engine supporting search, booking, payment,
-      and ticket issuance workflows.
-    </p>
-
-    <h3>Our Vision</h3>
-    <p>
-      To become a trusted global travel platform offering seamless booking experiences across flights, hotels,
-      rail, and ground transportation.
-    </p>
-
-    <h3>Company</h3>
-    <p>
-      Auchen Travel
-    </p>
-
-  </div>
+      document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+    }
+  </script>
 
 </body>
 </html>
