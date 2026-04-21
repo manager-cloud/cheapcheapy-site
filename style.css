@@ -1037,35 +1037,129 @@ body.ar .content-box ul {
   flex: 1;
   min-width: 220px;
 }
-.transfer-intro {
+.transfer-main-box {
+  padding: 26px;
+}
+
+.transfer-top-options {
+  display: flex;
+  gap: 26px;
+  align-items: center;
   margin-bottom: 22px;
-}
-
-.transfer-location-field {
-  flex: 1;
-  min-width: 260px;
-}
-
-.transfer-grid-four {
-  display: flex;
-  gap: 14px;
   flex-wrap: wrap;
+}
+
+.transfer-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.transfer-route-box {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 20px;
+  overflow: hidden;
   margin-bottom: 18px;
 }
 
-.transfer-date-field {
-  flex: 1;
-  min-width: 220px;
+.transfer-route-half {
+  padding: 14px 18px;
 }
 
-.transfer-bottom-row {
+.transfer-route-divider {
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 28px;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
 }
 
-.transfer-select-field {
-  flex: 1;
-  min-width: 220px;
+.transfer-label {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.transfer-route-input,
+.transfer-small-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  color: #1a1a1a;
+}
+
+.transfer-bottom-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1.2fr 1.8fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.transfer-small-box {
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 18px;
+  padding: 12px 16px;
+}
+
+.transfer-return-box {
+  display: none;
+}
+
+.passengers-box {
+  min-width: 0;
+}
+
+.transfer-select-input {
+  appearance: none;
+  cursor: pointer;
+}
+
+.transfer-search-btn {
+  min-height: 72px;
+  border: none;
+  border-radius: 18px;
+  background: #e8c93d;
+  color: #111;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 24px;
+}
+
+.transfer-search-btn:hover {
+  opacity: 0.95;
+}
+
+@media (max-width: 1100px) {
+  .transfer-bottom-search {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .transfer-route-box {
+    grid-template-columns: 1fr;
+  }
+
+  .transfer-route-divider {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    min-height: 46px;
+  }
+
+  .transfer-bottom-search {
+    grid-template-columns: 1fr;
+  }
 }
