@@ -773,7 +773,7 @@ body.ar .content-box ul {
 .home-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  background: linear-gradient(to right, rgba(0,0,0,0.32), rgba(0,0,0,0.12));
   z-index: 1;
 }
 
