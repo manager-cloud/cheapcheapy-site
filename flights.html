@@ -649,5 +649,39 @@
 
     </div>
   </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const from = document.querySelector('input[name="from"]').value;
+    const to = document.querySelector('input[name="to"]').value;
+    const date = document.querySelector('input[name="date"]').value;
+
+    fetch("https://api.cheapcheapy.com/api/flights/search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from: from,
+        to: to,
+        date: date
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      alert("Flights loaded ✔ Check console");
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Error ❌");
+    });
+  });
+});
+</script>
 </body>
 </html>
