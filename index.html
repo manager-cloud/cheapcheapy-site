@@ -4,57 +4,57 @@
   <title>CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="home-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
-      <!-- Logo -->
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
-        </h1>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <!-- Controls -->
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
         <a href="about.html"
            data-en="About"
            data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           About
         </a>
 
         <a href="offers.html"
            data-en="Offers"
            data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Offers
         </a>
 
         <a href="contact.html"
            data-en="Contact"
            data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">
+           class="top-link">
           Contact
         </a>
 
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -65,7 +65,7 @@
         <a href="#"
            data-en="Login"
            data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
+           class="login-btn">
           Login
         </a>
 
@@ -74,90 +74,175 @@
     </div>
   </div>
 
-  <!-- Hero -->
-  <div style="width:100%; height:420px; overflow:hidden;">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover;">
-  </div>
+  <!-- Hero Slider -->
+  <div class="home-hero-slider">
+    <div class="home-hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="home-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="home-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1800&q=80');"></div>
 
-  <!-- Content -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto;">
+    <div class="home-hero-overlay"></div>
 
-    <!-- Tabs (محركات البحث فقط) -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <div class="home-hero-content container">
+      <div class="hero-badge"
+           data-en="Smart travel made easy"
+           data-ar="سفر ذكي بسهولة">
+        Smart travel made easy
+      </div>
 
-      <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         style="background:white; color:#111; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
-        Home
-      </a>
-
-      <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Train tickets
-      </a>
-
-    </div>
-
-    <!-- Main Box -->
-    <div style="background:#efefef; padding:30px; border-radius:26px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
-
-      <h2 data-en="Your smart travel platform"
-          data-ar="منصة السفر الذكية الخاصة بك"
-          style="margin-top:0;">
-        Your smart travel platform
+      <h2 data-en="Discover better trips with CheapCheapy"
+          data-ar="اكتشف رحلات أفضل مع CheapCheapy">
+        Discover better trips with CheapCheapy
       </h2>
 
-      <p data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place."
-         data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد."
-         style="font-size:18px; color:#444;">
-        CheapCheapy helps you search flights, hotels, trains, and transfers in one place.
+      <p data-en="Flights, hotels, transfers, and train tickets — all in one elegant booking experience."
+         data-ar="رحلات جوية وفنادق وانتقالات وتذاكر قطارات — كلها في تجربة حجز واحدة أنيقة.">
+        Flights, hotels, transfers, and train tickets — all in one elegant booking experience.
       </p>
 
-      <!-- Buttons -->
-      <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+      <div class="hero-cta-row">
         <a href="flights.html"
            data-en="Search Flights"
            data-ar="ابحث عن رحلات"
-           style="background:black; color:white; padding:12px 20px; border-radius:12px; text-decoration:none;">
+           class="hero-btn hero-btn-dark">
           Search Flights
         </a>
 
         <a href="hotels.html"
            data-en="Search Hotels"
            data-ar="ابحث عن فنادق"
-           style="background:white; color:black; padding:12px 20px; border-radius:12px; text-decoration:none;">
+           class="hero-btn hero-btn-light">
+          Search Hotels
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container home-content-wrap">
+
+    <!-- Tabs -->
+    <div class="service-tabs">
+
+      <a href="index.html"
+         data-en="Home"
+         data-ar="الرئيسية"
+         class="service-tab service-tab-active">
+        Home
+      </a>
+
+      <a href="hotels.html"
+         data-en="Hotels and apartments"
+         data-ar="الفنادق والشقق"
+         class="service-tab">
+        Hotels and apartments
+      </a>
+
+      <a href="flights.html"
+         data-en="Air tickets"
+         data-ar="تذاكر الطيران"
+         class="service-tab">
+        Air tickets
+      </a>
+
+      <a href="transfer.html"
+         data-en="Transfers"
+         data-ar="الانتقالات"
+         class="service-tab">
+        Transfers
+      </a>
+
+      <a href="trains.html"
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         class="service-tab">
+        Train tickets
+      </a>
+
+    </div>
+
+    <!-- Main Box -->
+    <div class="main-box home-main-box">
+
+      <div class="home-intro-row">
+        <div class="home-intro-text">
+          <h2 data-en="Your smart travel platform"
+              data-ar="منصة السفر الذكية الخاصة بك"
+              class="section-title">
+            Your smart travel platform
+          </h2>
+
+          <p data-en="CheapCheapy helps you search flights, hotels, trains, and transfers in one place."
+             data-ar="يساعدك CheapCheapy في البحث عن الرحلات والفنادق والقطارات وخدمات النقل في مكان واحد."
+             class="lead-text">
+            CheapCheapy helps you search flights, hotels, trains, and transfers in one place.
+          </p>
+
+          <div class="home-mini-badges">
+            <span data-en="Easy search" data-ar="بحث سهل">Easy search</span>
+            <span data-en="Best offers" data-ar="أفضل العروض">Best offers</span>
+            <span data-en="Growing platform" data-ar="منصة متطورة">Growing platform</span>
+          </div>
+        </div>
+
+        <div class="home-highlight-card">
+          <h3 data-en="Why travelers choose us"
+              data-ar="لماذا يختارنا المسافرون">
+            Why travelers choose us
+          </h3>
+
+          <ul class="home-highlight-list">
+            <li data-en="Simple booking experience"
+                data-ar="تجربة حجز بسيطة">Simple booking experience</li>
+            <li data-en="Flights, hotels, trains, and transfers"
+                data-ar="رحلات وفنادق وقطارات وانتقالات">Flights, hotels, trains, and transfers</li>
+            <li data-en="Designed for growth and future API automation"
+                data-ar="مصمم للتطور والتكامل البرمجي مستقبلًا">Designed for growth and future API automation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Buttons -->
+      <div class="home-buttons-row">
+        <a href="flights.html"
+           data-en="Search Flights"
+           data-ar="ابحث عن رحلات"
+           class="home-action-btn dark-action">
+          Search Flights
+        </a>
+
+        <a href="hotels.html"
+           data-en="Search Hotels"
+           data-ar="ابحث عن فنادق"
+           class="home-action-btn light-action">
           Search Hotels
         </a>
       </div>
 
+      <!-- Stats -->
+      <div class="home-stats-row">
+        <div class="home-stat-card">
+          <div class="stat-number">4+</div>
+          <p data-en="Travel services"
+             data-ar="خدمات سفر">Travel services</p>
+        </div>
+
+        <div class="home-stat-card">
+          <div class="stat-number">24/7</div>
+          <p data-en="Booking support flow"
+             data-ar="دعم الحجز">Booking support flow</p>
+        </div>
+
+        <div class="home-stat-card">
+          <div class="stat-number">1</div>
+          <p data-en="Platform experience"
+             data-ar="منصة واحدة">Platform experience</p>
+        </div>
+      </div>
+
       <!-- Cards -->
-      <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:30px;">
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
+      <div class="home-cards-grid">
+        <div class="home-service-card">
+          <div class="service-icon">✈️</div>
           <h3 data-en="Flights" data-ar="الرحلات">Flights</h3>
           <p data-en="One way, round trip, and multi-city."
              data-ar="ذهاب فقط أو ذهاب وعودة أو رحلات متعددة المدن.">
@@ -165,7 +250,8 @@
           </p>
         </div>
 
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
+        <div class="home-service-card">
+          <div class="service-icon">🏨</div>
           <h3 data-en="Hotels" data-ar="الفنادق">Hotels</h3>
           <p data-en="Luxury stays, resorts, and villas."
              data-ar="إقامات فاخرة ومنتجعات وفيلات.">
@@ -173,11 +259,21 @@
           </p>
         </div>
 
-        <div style="flex:1; min-width:220px; background:white; padding:20px; border-radius:16px;">
+        <div class="home-service-card">
+          <div class="service-icon">🚖</div>
           <h3 data-en="Transfers" data-ar="الانتقالات">Transfers</h3>
           <p data-en="Airport and city transport."
              data-ar="خدمات النقل من وإلى المطار وداخل المدن.">
             Airport and city transport.
+          </p>
+        </div>
+
+        <div class="home-service-card">
+          <div class="service-icon">🚆</div>
+          <h3 data-en="Train Tickets" data-ar="تذاكر القطارات">Train Tickets</h3>
+          <p data-en="Comfortable rail journeys and city connections."
+             data-ar="رحلات قطارات مريحة وتنقلات بين المدن.">
+            Comfortable rail journeys and city connections.
           </p>
         </div>
       </div>
@@ -186,7 +282,7 @@
 
   </div>
 
-  <!-- Language Script -->
+  <!-- Language + Slider Script -->
   <script>
     function changeLanguage(lang) {
       const elements = document.querySelectorAll('[data-en]');
@@ -194,39 +290,47 @@
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-      } else {
-        document.body.style.direction = 'ltr';
-      }
+      document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
     }
+
+    const heroSlides = document.querySelectorAll('.home-hero-slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+    }, 4000);
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel"
+           class="powered-text">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
+           data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+          © 2026 CheapCheapy / Auchen Travel. All rights reserved.
+        </p>
+      </div>
+
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
 </body>
 </html>
