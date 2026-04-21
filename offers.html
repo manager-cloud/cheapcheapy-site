@@ -4,43 +4,40 @@
   <title>Offers - CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="offers-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
-        </h1>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
-        <a href="about.html" data-en="About" data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">About</a>
+        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
 
-        <a href="offers.html" data-en="Offers" data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Offers</a>
-
-        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Contact</a>
-
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -48,149 +45,214 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
-          Login
-        </a>
+        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
 
       </div>
     </div>
   </div>
 
   <!-- Hero -->
-  <div style="width:100%; height:420px; overflow:hidden;">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover;">
+  <div class="offers-hero">
+    <div class="offers-hero-overlay"></div>
+    <div class="offers-hero-content container">
+      <div class="offers-badge"
+           data-en="Handpicked travel inspiration"
+           data-ar="إلهام سفر مختار بعناية">
+        Handpicked travel inspiration
+      </div>
+
+      <h2 data-en="Featured travel ideas for your next escape"
+          data-ar="أفكار سفر مميزة لرحلتك القادمة">
+        Featured travel ideas for your next escape
+      </h2>
+
+      <p data-en="Discover inspiring holiday packages, iconic destinations, family fun, and unforgettable getaways with CheapCheapy."
+         data-ar="اكتشف باقات سفر ملهمة ووجهات شهيرة وتجارب عائلية ممتعة ورحلات لا تُنسى مع CheapCheapy.">
+        Discover inspiring holiday packages, iconic destinations, family fun, and unforgettable getaways with CheapCheapy.
+      </p>
+    </div>
   </div>
 
   <!-- Content -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+  <div class="container offers-content-wrap">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <div class="service-tabs">
 
       <a href="index.html"
-        data-en="Home"
+         data-en="Home"
          data-ar="الرئيسية"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Home
       </a>
 
       <a href="hotels.html"
-        data-en="Hotels and apartments"
+         data-en="Hotels and apartments"
          data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Hotels and apartments
       </a>
 
       <a href="flights.html"
-        data-en="Air tickets"
+         data-en="Air tickets"
          data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Air tickets
       </a>
 
       <a href="transfer.html"
-        data-en="Transfers"
+         data-en="Transfers"
          data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         class="service-tab">
         Transfers
       </a>
 
       <a href="trains.html"
-        data-en="Train tickets"
-         data-ar="تذاكرالقطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
+         data-en="Train tickets"
+         data-ar="تذاكر القطارات"
+         class="service-tab">
         Train tickets
       </a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div class="main-box">
 
       <h2 data-en="Special Offers"
           data-ar="العروض الخاصة"
-          style="margin-top:0;">
+          class="section-title">
         Special Offers
       </h2>
 
-      <p data-en="Discover selected travel offers on flights, hotels, trains, and transfers."
-         data-ar="اكتشف مجموعة مختارة من العروض الخاصة على الرحلات والفنادق والقطارات وخدمات النقل."
-         style="font-size:18px; color:#444; margin-bottom:25px;">
-        Discover selected travel offers on flights, hotels, trains, and transfers.
+      <p data-en="Explore a curated collection of destination ideas, holiday escapes, and family travel inspiration."
+         data-ar="استكشف مجموعة مختارة من أفكار الوجهات ورحلات العطلات وإلهام السفر العائلي. "
+         class="lead-text offers-intro">
+        Explore a curated collection of destination ideas, holiday escapes, and family travel inspiration.
       </p>
 
-      <!-- Offer Cards -->
-      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <!-- Featured Large Cards -->
+      <div class="offers-featured-grid">
 
-        <div style="flex:1; min-width:280px; background:white; border-radius:20px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80"
-               style="width:100%; height:180px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h3 data-en="Dubai to Cairo" data-ar="دبي إلى القاهرة">Dubai to Cairo</h3>
-            <p data-en="Special fare starting from AED 890"
-               data-ar="سعر خاص يبدأ من 890 درهم">
-              Special fare starting from AED 890
+        <div class="offer-feature-card">
+          <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=80"
+               alt="Maldives">
+          <div class="offer-feature-content">
+            <span class="offer-tag"
+                  data-en="Beach Escape"
+                  data-ar="عطلة شاطئية">
+              Beach Escape
+            </span>
+            <h3 data-en="Maldives Dream Holiday"
+                data-ar="عطلة الأحلام في المالديف">
+              Maldives Dream Holiday
+            </h3>
+            <p data-en="Crystal-clear waters, overwater stays, and unforgettable island relaxation."
+               data-ar="مياه صافية وإقامات فوق الماء واسترخاء لا يُنسى بين الجزر.">
+              Crystal-clear waters, overwater stays, and unforgettable island relaxation.
             </p>
           </div>
         </div>
 
-        <div style="flex:1; min-width:280px; background:white; border-radius:20px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
-               style="width:100%; height:180px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h3 data-en="Luxury Hotel Escape" data-ar="إقامة فندقية فاخرة">Luxury Hotel Escape</h3>
-            <p data-en="3 nights package with selected premium stays"
-               data-ar="باقة 3 ليالٍ مع إقامة مختارة في فنادق فاخرة">
-              3 nights package with selected premium stays
-            </p>
-          </div>
-        </div>
-
-        <div style="flex:1; min-width:280px; background:white; border-radius:20px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1000&q=80"
-               style="width:100%; height:180px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h3 data-en="Europe Rail Deals" data-ar="عروض قطارات أوروبا">Europe Rail Deals</h3>
-            <p data-en="Selected train routes with seasonal offers"
-               data-ar="مسارات قطارات مختارة مع عروض موسمية">
-              Selected train routes with seasonal offers
+        <div class="offer-feature-card">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80"
+               alt="Europe">
+          <div class="offer-feature-content">
+            <span class="offer-tag"
+                  data-en="City Break"
+                  data-ar="رحلة مدن">
+              City Break
+            </span>
+            <h3 data-en="Europe Highlights Package"
+                data-ar="باقة أبرز وجهات أوروبا">
+              Europe Highlights Package
+            </h3>
+            <p data-en="Elegant cities, scenic train journeys, and memorable cultural stops across Europe."
+               data-ar="مدن أنيقة ورحلات قطارات خلابة وتجارب ثقافية مميزة عبر أوروبا.">
+              Elegant cities, scenic train journeys, and memorable cultural stops across Europe.
             </p>
           </div>
         </div>
 
       </div>
 
-      <!-- More Offers -->
-      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
+      <!-- Secondary Cards -->
+      <div class="offers-cards-grid">
 
-        <div style="flex:1; min-width:280px; background:white; border-radius:20px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1000&q=80"
-               style="width:100%; height:180px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h3 data-en="Airport Transfer Offers" data-ar="عروض الانتقالات من المطار">Airport Transfer Offers</h3>
-            <p data-en="Comfortable rides with competitive prices"
-               data-ar="تنقلات مريحة بأسعار تنافسية">
-              Comfortable rides with competitive prices
+        <div class="offer-card">
+          <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1000&q=80"
+               alt="USA">
+          <div class="offer-card-content">
+            <span class="offer-mini-tag"
+                  data-en="Big Adventure"
+                  data-ar="مغامرة كبيرة">
+              Big Adventure
+            </span>
+            <h3 data-en="USA Travel Ideas"
+                data-ar="أفكار سفر إلى أمريكا">
+              USA Travel Ideas
+            </h3>
+            <p data-en="From iconic skylines to unforgettable road trips and family attractions."
+               data-ar="من ناطحات السحاب الشهيرة إلى رحلات الطرق وتجارب عائلية لا تُنسى.">
+              From iconic skylines to unforgettable road trips and family attractions.
             </p>
           </div>
         </div>
 
-        <div style="flex:1; min-width:280px; background:white; border-radius:20px; overflow:hidden;">
+        <div class="offer-card">
+          <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1000&q=80"
+               alt="Disney">
+          <div class="offer-card-content">
+            <span class="offer-mini-tag"
+                  data-en="Family Fun"
+                  data-ar="مرح عائلي">
+              Family Fun
+            </span>
+            <h3 data-en="Disney Tickets & Family Magic"
+                data-ar="تذاكر ديزني ومتعة العائلة">
+              Disney Tickets & Family Magic
+            </h3>
+            <p data-en="A joyful travel idea for families looking for theme parks, fun days, and magical memories."
+               data-ar="فكرة سفر مبهجة للعائلات الباحثة عن مدن الألعاب والأيام الممتعة والذكريات السحرية.">
+              A joyful travel idea for families looking for theme parks, fun days, and magical memories.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
           <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
-               style="width:100%; height:180px; object-fit:cover;">
-          <div style="padding:20px;">
-            <h3 data-en="Seasonal Travel Promotions" data-ar="عروض السفر الموسمية">Seasonal Travel Promotions</h3>
-            <p data-en="Special offers for selected destinations and dates"
-               data-ar="عروض خاصة لوجهات وتواريخ محددة">
-              Special offers for selected destinations and dates
+               alt="Summer">
+          <div class="offer-card-content">
+            <span class="offer-mini-tag"
+                  data-en="Seasonal Pick"
+                  data-ar="اختيار موسمي">
+              Seasonal Pick
+            </span>
+            <h3 data-en="Sunny Getaway Collection"
+                data-ar="مجموعة الرحلات المشمسة">
+              Sunny Getaway Collection
+            </h3>
+            <p data-en="Perfect travel inspiration for holidays, beach escapes, and refreshing short breaks."
+               data-ar="إلهام مثالي للعطلات والرحلات الشاطئية والاستراحات القصيرة المنعشة.">
+              Perfect travel inspiration for holidays, beach escapes, and refreshing short breaks.
             </p>
           </div>
         </div>
 
+      </div>
+
+      <!-- Promo Strip -->
+      <div class="offers-promo-strip">
+        <div class="promo-text">
+          <h3 data-en="More exciting travel ideas coming soon"
+              data-ar="المزيد من أفكار السفر المميزة قريبًا">
+            More exciting travel ideas coming soon
+          </h3>
+          <p data-en="CheapCheapy is preparing more destination inspiration, holiday packages, and family-friendly promotions."
+             data-ar="يعمل CheapCheapy على تجهيز المزيد من إلهام الوجهات وباقات العطلات والعروض المناسبة للعائلات.">
+            CheapCheapy is preparing more destination inspiration, holiday packages, and family-friendly promotions.
+          </p>
+        </div>
       </div>
 
     </div>
@@ -206,32 +268,35 @@
       document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
     }
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel"
+           class="powered-text">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
+           data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
+          © 2026 CheapCheapy / Auchen Travel. All rights reserved.
+        </p>
+      </div>
+
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
 </body>
 </html>
