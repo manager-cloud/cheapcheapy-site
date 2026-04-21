@@ -4,43 +4,38 @@
   <title>Contact - CheapCheapy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; direction:ltr;">
+<body class="contact-page">
 
   <!-- Header -->
-  <div style="background:black; color:white; padding:22px 20px;">
-    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+  <div class="site-header">
+    <div class="container header-inner">
 
       <div>
-        <h1 style="margin:0; font-size:42px;">
-          <span style="color:white;">Cheap</span><span style="color:#e8c93d;">Cheapy</span> ✈️
+        <h1 class="site-logo">
+          <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
         </h1>
         <p data-en="Powered by Auchen Travel"
            data-ar="مقدم من Auchen Travel"
-           style="margin:6px 0 0 0; font-size:16px;">
+           class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+      <div class="header-actions">
 
-        <a href="about.html" data-en="About" data-ar="من نحن"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">About</a>
+        <a href="about.html" class="top-link" data-en="About" data-ar="من نحن">About</a>
+        <a href="offers.html" class="top-link" data-en="Offers" data-ar="العروض">Offers</a>
+        <a href="contact.html" class="top-link active-link" data-en="Contact" data-ar="اتصل بنا">Contact</a>
 
-        <a href="offers.html" data-en="Offers" data-ar="العروض"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Offers</a>
-
-        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا"
-           style="color:#e8c93d; text-decoration:none; font-size:17px; font-weight:bold;">Contact</a>
-
-        <select onchange="changeLanguage(this.value)"
-                style="padding:10px; border-radius:10px; border:none;">
+        <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
 
-        <select style="padding:10px; border-radius:10px; border:none;">
+        <select class="header-select">
           <option>AED</option>
           <option>USD</option>
           <option>EUR</option>
@@ -48,112 +43,67 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           style="background:white; color:black; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:bold;">
-          Login
-        </a>
+        <a href="#" class="login-btn" data-en="Login" data-ar="تسجيل الدخول">Login</a>
 
       </div>
     </div>
   </div>
 
   <!-- Hero -->
-  <div style="width:100%; height:420px; overflow:hidden;">
+  <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80"
-         style="width:100%; height:100%; object-fit:cover;">
+         class="hero-image">
   </div>
 
   <!-- Content -->
-  <div style="max-width:1200px; margin:-90px auto 40px auto; position:relative; z-index:10;">
+  <div class="container about-content-wrap">
 
     <!-- Tabs -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+    <div class="service-tabs">
 
-      <a href="index.html"
-        data-en="Home"
-        data-ar="الرئيسية"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Home
-      </a>
-
-      <a href="hotels.html"
-        data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-        data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-        data-en="Transfers"
-         data-ar="الانتقالات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-        data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         style="background:#efe8a7; color:#333; padding:18px 30px; border-radius:22px; text-decoration:none; font-size:19px;">
-        Train tickets
-      </a>
+      <a href="index.html" class="service-tab" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="hotels.html" class="service-tab" data-en="Hotels and apartments" data-ar="الفنادق والشقق">Hotels</a>
+      <a href="flights.html" class="service-tab" data-en="Air tickets" data-ar="تذاكر الطيران">Flights</a>
+      <a href="transfer.html" class="service-tab" data-en="Transfers" data-ar="الانتقالات">Transfers</a>
+      <a href="trains.html" class="service-tab" data-en="Train tickets" data-ar="تذاكر القطارات">Trains</a>
 
     </div>
 
     <!-- Main Box -->
-    <div style="background:#efefef; border-radius:26px; padding:28px; box-shadow:0 16px 35px rgba(0,0,0,0.14);">
+    <div class="main-box">
 
-      <h2 data-en="Contact Us"
-          data-ar="اتصل بنا"
-          style="margin-top:0;">
-        Contact Us
-      </h2>
+      <h2 class="section-title" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
 
-      <p data-en="Get in touch with our team for support, bookings, or inquiries."
-         data-ar="تواصل معنا للحصول على الدعم أو الاستفسارات أو المساعدة في الحجز."
-         style="font-size:18px; color:#444; margin-bottom:25px;">
+      <p class="lead-text"
+         data-en="Get in touch with our team for support, bookings, or inquiries."
+         data-ar="تواصل معنا للحصول على الدعم أو الاستفسارات أو المساعدة في الحجز.">
         Get in touch with our team for support, bookings, or inquiries.
       </p>
 
-      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <div class="contact-grid">
 
         <!-- Contact Info -->
-        <div style="flex:1; min-width:260px; background:white; padding:22px; border-radius:20px;">
+        <div class="contact-card">
           <h3 data-en="Contact Information" data-ar="معلومات التواصل">Contact Information</h3>
 
           <p><strong>Email:</strong><br>info@cheapcheapy.com</p>
           <p><strong>Phone:</strong><br>+971 50 000 0000</p>
           <p><strong>WhatsApp:</strong><br>+971 50 000 0000</p>
-
         </div>
 
         <!-- Form -->
-        <div style="flex:2; min-width:300px; background:white; padding:22px; border-radius:20px;">
+        <div class="contact-card form-card">
 
           <h3 data-en="Send Message" data-ar="إرسال رسالة">Send Message</h3>
 
-          <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="form-box">
 
-            <input placeholder="Your Name"
-                   style="padding:14px; border-radius:12px; border:1px solid #ccc;">
+            <input placeholder="Your Name" class="form-input">
+            <input placeholder="Email" class="form-input">
 
-            <input placeholder="Email"
-                   style="padding:14px; border-radius:12px; border:1px solid #ccc;">
+            <textarea placeholder="Message" class="form-input textarea"></textarea>
 
-            <textarea placeholder="Message"
-                      style="padding:14px; border-radius:12px; border:1px solid #ccc; height:120px;"></textarea>
-
-            <button style="height:50px; background:#e8c93d; border:none; border-radius:14px; font-size:18px; font-weight:bold;">
-              Send
-            </button>
+            <button class="send-btn">Send</button>
 
           </div>
 
@@ -170,36 +120,35 @@
       elements.forEach(el => {
         el.textContent = el.getAttribute('data-' + lang);
       });
-
       document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
     }
   </script>
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-logo">
-      <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-      <p data-en="Powered by Auchen Travel"
-         data-ar="مشغل بواسطة Auchen Travel">
-         Powered by Auchen Travel
-      </p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p data-en="Powered by Auchen Travel"
+           data-ar="مشغل بواسطة Auchen Travel">
+          Powered by Auchen Travel
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+        <a href="copyright.html">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
+      </div>
+
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ar="من نحن">About</a>
-      <a href="offers.html" data-en="Offers" data-ar="العروض">Offers</a>
-      <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-      <a href="copyright.html" data-en="Copyright Notice" data-ar="حقوق النشر">Copyright Notice</a>
-    </div>
-
-    <div class="footer-copy">
-      <p data-en="© 2026 CheapCheapy / Auchen Travel. All rights reserved."
-         data-ar="© 2026 CheapCheapy / Auchen Travel. جميع الحقوق محفوظة.">
-         © 2026 CheapCheapy / Auchen Travel. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
 </body>
 </html>
