@@ -12,7 +12,6 @@
   <!-- Header -->
   <div class="site-header">
     <div class="container header-inner">
-
       <div>
         <a href="index.html" class="logo-link">
           <h1 class="site-logo">
@@ -27,27 +26,9 @@
       </div>
 
       <div class="header-actions">
-
-        <a href="about.html"
-           data-en="About"
-           data-ar="من نحن"
-           class="top-link">
-          About
-        </a>
-
-        <a href="offers.html"
-           data-en="Offers"
-           data-ar="العروض"
-           class="top-link">
-          Offers
-        </a>
-
-        <a href="contact.html"
-           data-en="Contact"
-           data-ar="اتصل بنا"
-           class="top-link">
-          Contact
-        </a>
+        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
 
         <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
@@ -62,15 +43,8 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           class="login-btn">
-          Login
-        </a>
-
+        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
       </div>
-
     </div>
   </div>
 
@@ -81,188 +55,127 @@
          alt="Transfers">
   </div>
 
-  <!-- Search Panel -->
+  <!-- Content -->
   <div class="container about-content-wrap">
 
     <!-- Tabs -->
     <div class="service-tabs">
-
-      <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         class="service-tab">
-        Home
-      </a>
-
-      <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         class="service-tab">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         class="service-tab">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         class="service-tab service-tab-active">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         class="service-tab">
-        Train tickets
-      </a>
-
+      <a href="index.html" data-en="Home" data-ar="الرئيسية" class="service-tab">Home</a>
+      <a href="hotels.html" data-en="Hotels and apartments" data-ar="الفنادق والشقق" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" data-en="Air tickets" data-ar="تذاكر الطيران" class="service-tab">Air tickets</a>
+      <a href="transfer.html" data-en="Transfers" data-ar="الانتقالات" class="service-tab service-tab-active">Transfers</a>
+      <a href="trains.html" data-en="Train tickets" data-ar="تذاكر القطارات" class="service-tab">Train tickets</a>
     </div>
 
     <!-- Main Box -->
-    <div class="main-box">
-
-      <h2 data-en="Transfers Search"
-          data-ar="البحث عن الانتقالات"
-          class="section-title">
-        Transfers Search
-      </h2>
-
-      <p data-en="Book airport pickup, private transfers, and city rides."
-         data-ar="احجز الاستقبال من المطار والانتقالات الخاصة والتنقلات داخل المدينة."
-         class="lead-text transfer-intro">
-        Book airport pickup, private transfers, and city rides.
-      </p>
+    <div class="main-box transfer-main-box">
 
       <!-- Transfer Type -->
-      <div class="trip-type-row">
-        <label class="radio-label">
+      <div class="transfer-top-options">
+        <label class="transfer-radio">
           <input type="radio" name="transferType" value="oneway" checked onclick="changeTransferType()">
           <span data-en="One way" data-ar="اتجاه واحد">One way</span>
         </label>
-        <label class="radio-label">
+
+        <label class="transfer-radio">
           <input type="radio" name="transferType" value="roundtrip" onclick="changeTransferType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
       </div>
 
-      <!-- Row 1 -->
-      <div class="flight-grid-two">
-
-        <div class="field-box transfer-location-field">
-          <div data-en="Pickup location"
-               data-ar="مكان الاستلام"
-               class="field-label">
-            Pickup location
+      <!-- Main Route Box -->
+      <div class="transfer-route-box">
+        <div class="transfer-route-half">
+          <div class="transfer-label"
+               data-en="Pick-up point"
+               data-ar="مكان الاستلام">
+            Pick-up point
           </div>
-          <input placeholder="Airport, hotel, address"
-                 class="field-input">
+          <input class="transfer-route-input"
+                 placeholder="Airport, hotel, address"
+                 data-en-placeholder="Airport, hotel, address"
+                 data-ar-placeholder="المطار، الفندق، العنوان">
         </div>
 
-        <div class="field-box transfer-location-field">
-          <div data-en="Drop-off location"
-               data-ar="مكان الوصول"
-               class="field-label">
-            Drop-off location
-          </div>
-          <input placeholder="Airport, hotel, address"
-                 class="field-input">
+        <div class="transfer-route-divider">
+          <span>↔</span>
         </div>
 
+        <div class="transfer-route-half">
+          <div class="transfer-label"
+               data-en="To"
+               data-ar="إلى">
+            To
+          </div>
+          <input class="transfer-route-input"
+                 placeholder="Airport, hotel, address"
+                 data-en-placeholder="Airport, hotel, address"
+                 data-ar-placeholder="المطار، الفندق، العنوان">
+        </div>
       </div>
 
-      <!-- Row 2 -->
-      <div class="transfer-grid-four">
+      <!-- Bottom Search Row -->
+      <div class="transfer-bottom-search">
 
-        <div class="field-box transfer-date-field">
-          <div data-en="Pickup date"
-               data-ar="تاريخ الاستلام"
-               class="field-label">
-            Pickup date
+        <div class="transfer-small-box">
+          <div class="transfer-label"
+               data-en="When"
+               data-ar="متى">
+            When
           </div>
-          <input type="date" class="field-input">
+          <input type="date" class="transfer-small-input">
         </div>
 
-        <div class="field-box transfer-date-field">
-          <div data-en="Pickup time"
-               data-ar="وقت الاستلام"
-               class="field-label">
-            Pickup time
+        <div class="transfer-small-box">
+          <div class="transfer-label"
+               data-en="Pick-up time"
+               data-ar="وقت الاستلام">
+            Pick-up time
           </div>
-          <input type="time" class="field-input">
+          <input type="time" class="transfer-small-input">
         </div>
 
-        <div id="returnDateBox" class="return-date-box">
-          <div class="field-box transfer-date-field">
-            <div data-en="Return date"
-                 data-ar="تاريخ العودة"
-                 class="field-label">
-              Return date
-            </div>
-            <input type="date" class="field-input">
+        <div id="returnDateWrap" class="transfer-small-box transfer-return-box">
+          <div class="transfer-label"
+               data-en="Return date"
+               data-ar="تاريخ العودة">
+            Return date
           </div>
+          <input type="date" class="transfer-small-input">
         </div>
 
-        <div id="returnTimeBox" class="return-date-box">
-          <div class="field-box transfer-date-field">
-            <div data-en="Return time"
-                 data-ar="وقت العودة"
-                 class="field-label">
-              Return time
-            </div>
-            <input type="time" class="field-input">
+        <div id="returnTimeWrap" class="transfer-small-box transfer-return-box">
+          <div class="transfer-label"
+               data-en="Return time"
+               data-ar="وقت العودة">
+            Return time
           </div>
+          <input type="time" class="transfer-small-input">
         </div>
 
-      </div>
-
-      <!-- Row 3 -->
-      <div class="transfer-bottom-row">
-
-        <div class="field-box transfer-select-field">
-          <div data-en="Passengers"
-               data-ar="عدد الركاب"
-               class="field-label">
+        <div class="transfer-small-box passengers-box">
+          <div class="transfer-label"
+               data-en="Passengers"
+               data-ar="الركاب">
             Passengers
           </div>
-          <select class="field-select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
+          <select class="transfer-small-input transfer-select-input">
+            <option>1 adult</option>
+            <option>2 adults</option>
+            <option>3 adults</option>
+            <option>4 adults</option>
+            <option>5 adults</option>
+            <option>6 adults</option>
+            <option>7 adults</option>
+            <option>8 adults</option>
           </select>
         </div>
 
-        <div class="field-box transfer-select-field">
-          <div data-en="Vehicle type"
-               data-ar="نوع المركبة"
-               class="field-label">
-            Vehicle type
-          </div>
-          <select class="field-select">
-            <option>Sedan</option>
-            <option>SUV</option>
-            <option>Van</option>
-            <option>Luxury</option>
-            <option>Minibus</option>
-          </select>
-        </div>
-
-        <button data-en="Search"
-                data-ar="بحث"
-                class="search-btn">
+        <button class="transfer-search-btn"
+                data-en="Search"
+                data-ar="بحث">
           Search
         </button>
-
       </div>
 
     </div>
@@ -271,22 +184,28 @@
   <script>
     function changeTransferType() {
       const selected = document.querySelector('input[name="transferType"]:checked').value;
-      const returnDateBox = document.getElementById('returnDateBox');
-      const returnTimeBox = document.getElementById('returnTimeBox');
+      const returnDateWrap = document.getElementById('returnDateWrap');
+      const returnTimeWrap = document.getElementById('returnTimeWrap');
 
-      if (selected === 'oneway') {
-        returnDateBox.style.display = 'none';
-        returnTimeBox.style.display = 'none';
+      if (selected === 'roundtrip') {
+        returnDateWrap.style.display = 'block';
+        returnTimeWrap.style.display = 'block';
       } else {
-        returnDateBox.style.display = 'block';
-        returnTimeBox.style.display = 'block';
+        returnDateWrap.style.display = 'none';
+        returnTimeWrap.style.display = 'none';
       }
     }
 
     function changeLanguage(lang) {
       const elements = document.querySelectorAll('[data-en]');
       elements.forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.textContent = text;
+      });
+
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const text = el.getAttribute('data-' + lang + '-placeholder');
+        if (text) el.placeholder = text;
       });
 
       document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
@@ -299,7 +218,6 @@
 
   <footer class="footer">
     <div class="footer-container">
-
       <div class="footer-logo">
         <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
         <p data-en="Powered by Auchen Travel"
@@ -322,8 +240,8 @@
           © 2026 CheapCheapy / Auchen Travel. All rights reserved.
         </p>
       </div>
-
     </div>
   </footer>
+
 </body>
 </html>
