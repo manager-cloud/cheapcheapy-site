@@ -9,8 +9,10 @@
 
 <body class="flights-page">
 
+  <!-- Header -->
   <div class="site-header">
     <div class="container header-inner">
+
       <div>
         <a href="index.html" class="logo-link">
           <h1 class="site-logo">
@@ -21,19 +23,50 @@
       </div>
 
       <div class="header-actions">
+        <a href="index.html" class="top-link">Home</a>
         <a href="about.html" class="top-link">About</a>
         <a href="offers.html" class="top-link">Offers</a>
         <a href="contact.html" class="top-link">Contact</a>
+
+        <select class="header-select">
+          <option>AED</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>SAR</option>
+          <option>EGP</option>
+        </select>
+
         <a href="flights.html" class="login-btn">New Search</a>
       </div>
+
     </div>
   </div>
 
+  <!-- Hero Image -->
+  <div class="hero-image-wrap">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1800&auto=format&fit=crop"
+         class="hero-image"
+         alt="Flight Results">
+  </div>
+
+  <!-- Results Panel -->
   <div class="container about-content-wrap">
+
+    <div class="service-tabs">
+      <a href="index.html" class="service-tab">Home</a>
+      <a href="hotels.html" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" class="service-tab service-tab-active">Air tickets</a>
+      <a href="transfer.html" class="service-tab">Transfers</a>
+      <a href="trains.html" class="service-tab">Train tickets</a>
+    </div>
+
     <div class="main-box">
 
       <h2 class="section-title">Available Flights</h2>
-      <p id="searchSummary" class="lead-text">Loading flight results...</p>
+
+      <p id="searchSummary" class="lead-text">
+        Loading flight results...
+      </p>
 
       <div id="loadingBox" style="margin-top:20px;">
         Searching for best flight options...
@@ -49,17 +82,50 @@
       const params = new URLSearchParams(window.location.search);
 
       return {
-        from: params.get("from"),
-        to: params.get("to"),
-        date: params.get("date"),
-        returnDate: params.get("returnDate"),
-        tripType: params.get("tripType"),
-        adults: params.get("adults") || 1,
-        children: params.get("children") || 0,
-        infants: params.get("infants") || 0,
+        tripType: params.get("tripType") || "oneway",
+        from: params.get("from") || "",
+        to: params.get("to") || "",
+        date: params.get("date") || "",
+        returnDate: params.get("returnDate") || "",
+        adults: params.get("adults") || "1",
+        children: params.get("children") || "0",
+        infants: params.get("infants") || "0",
         cabinClass: params.get("cabinClass") || "Economy",
-        directOnly: params.get("directOnly") === "true"
+        directOnly: params.get("directOnly") === "true",
+        segments: params.get("segments") || ""
       };
+    }
+
+    function showSearchSummary(search) {
+      const summaryBox = document.getElementById("searchSummary");
+
+      if (search.tripType === "multicity") {
+        summaryBox.textContent =
+          "Multi-city trip • " +
+          search.adults + " adult(s), " +
+          search.children + " child(ren), " +
+          search.infants + " infant(s) • " +
+          search.cabinClass;
+        return;
+      }
+
+      let summary =
+        search.from + " to " + search.to +
+        " • " + search.date +
+        " • " + search.adults + " adult(s), " +
+        search.children + " child(ren), " +
+        search.infants + " infant(s) • " +
+        search.cabinClass;
+
+      if (search.tripType === "roundtrip" && search.returnDate) {
+        summary += " • Return: " + search.returnDate;
+      }
+
+      if (search.directOnly) {
+        summary += " • Direct only";
+      }
+
+      summaryBox.textContent = summary;
     }
 
     function renderFlightResults(data) {
@@ -68,39 +134,63 @@
 
       loadingBox.style.display = "none";
 
-      if (!data.results || !data.results.length) {
-        resultsBox.innerHTML = "<p>No flights found.</p>";
+      if (!data || !data.results || !data.results.length) {
+        resultsBox.innerHTML = `
+          <div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #ddd;">
+            <strong>No flights found.</strong>
+            <p style="margin-bottom:0;color:#555;">Please try a different search.</p>
+          </div>
+        `;
         return;
       }
 
-      resultsBox.innerHTML = data.results.map(item => `
-        <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
-          <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;">
-            <div>
-              <div style="font-weight:800;font-size:20px;margin-bottom:8px;">${item.airline || "Flight"}</div>
-              <div><strong>Route:</strong> ${item.from || ""} → ${item.to || ""}</div>
-              <div><strong>Departure:</strong> ${item.departure || ""}</div>
-              <div><strong>Arrival:</strong> ${item.arrival || ""}</div>
-            </div>
+      resultsBox.innerHTML = data.results.map(function(item) {
+        return `
+          <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;">
 
-            <div style="text-align:right;">
-              <div style="font-size:22px;font-weight:800;color:#0b7cff;">
-                ${item.price || ""} ${item.currency || "AED"}
+              <div>
+                <div style="font-weight:800;font-size:20px;margin-bottom:8px;">
+                  ${item.airline || "Flight"}
+                </div>
+
+                <div><strong>Route:</strong> ${item.from || ""} → ${item.to || ""}</div>
+                <div><strong>Departure:</strong> ${item.departure || ""}</div>
+                <div><strong>Arrival:</strong> ${item.arrival || ""}</div>
               </div>
-              <button style="margin-top:10px;padding:10px 18px;border:0;border-radius:999px;background:#0b7cff;color:#fff;font-weight:700;cursor:pointer;">
-                Select
-              </button>
+
+              <div style="text-align:right;">
+                <div style="font-size:22px;font-weight:800;color:#0b7cff;">
+                  ${item.price || ""} ${item.currency || "AED"}
+                </div>
+
+                <button type="button"
+                        style="margin-top:10px;padding:10px 18px;border:0;border-radius:999px;background:#0b7cff;color:#fff;font-weight:700;cursor:pointer;">
+                  Select
+                </button>
+              </div>
+
             </div>
           </div>
+        `;
+      }).join("");
+    }
+
+    function renderError() {
+      document.getElementById("loadingBox").style.display = "none";
+
+      document.getElementById("flightResults").innerHTML = `
+        <div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #ddd;">
+          <strong>Error loading flights.</strong>
+          <p style="margin-bottom:0;color:#555;">Please go back and try again.</p>
         </div>
-      `).join("");
+      `;
     }
 
     function loadFlights() {
       const search = getSearchParams();
 
-      document.getElementById("searchSummary").textContent =
-        `${search.from} to ${search.to} • ${search.date} • ${search.adults} adult(s)`;
+      showSearchSummary(search);
 
       fetch("https://api.cheapcheapy.com/api/flights/search", {
         method: "POST",
@@ -109,16 +199,16 @@
         },
         body: JSON.stringify(search)
       })
-      .then(res => res.json())
-      .then(data => {
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
         console.log(data);
         renderFlightResults(data);
       })
-      .catch(err => {
-        console.error(err);
-        document.getElementById("loadingBox").style.display = "none";
-        document.getElementById("flightResults").innerHTML =
-          "<p>Error loading flights. Please try again.</p>";
+      .catch(function(error) {
+        console.error(error);
+        renderError();
       });
     }
 
@@ -127,12 +217,14 @@
 
   <footer class="footer">
     <div class="footer-container">
+
       <div class="footer-logo">
         <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
         <p class="powered-text">Powered by Auchen Travel</p>
       </div>
 
       <div class="footer-links">
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="offers.html">Offers</a>
         <a href="contact.html">Contact</a>
@@ -142,6 +234,7 @@
       <div class="footer-copy">
         <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
       </div>
+
     </div>
   </footer>
 
