@@ -24,20 +24,42 @@
 
       <div class="header-actions">
         <a href="index.html" class="top-link">Home</a>
+        <a href="about.html" class="top-link">About</a>
+        <a href="offers.html" class="top-link">Offers</a>
+        <a href="contact.html" class="top-link">Contact</a>
+
+        <select class="header-select">
+          <option>AED</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>SAR</option>
+          <option>EGP</option>
+        </select>
+
         <a href="transfer.html" class="login-btn">New Search</a>
       </div>
 
     </div>
   </div>
 
-  <!-- Hero -->
+  <!-- Hero Image -->
   <div class="hero-image-wrap">
     <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1800&q=80"
-         class="hero-image">
+         class="hero-image"
+         alt="Transfer Results">
   </div>
 
-  <!-- Results -->
+  <!-- Results Panel -->
   <div class="container about-content-wrap">
+
+    <div class="service-tabs">
+      <a href="index.html" class="service-tab">Home</a>
+      <a href="hotels.html" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" class="service-tab">Air tickets</a>
+      <a href="transfer.html" class="service-tab service-tab-active">Transfers</a>
+      <a href="trains.html" class="service-tab">Train tickets</a>
+    </div>
+
     <div class="main-box">
 
       <h2 class="section-title">Available Transfers</h2>
@@ -56,107 +78,193 @@
   </div>
 
   <script>
-    function getParams() {
-      const p = new URLSearchParams(window.location.search);
+    function getSearchParams() {
+      const params = new URLSearchParams(window.location.search);
 
       return {
-        pickup: p.get("pickup"),
-        dropoff: p.get("dropoff"),
-        date: p.get("date"),
-        time: p.get("time"),
-        passengers: p.get("passengers"),
-        transferType: p.get("transferType")
+        transferType: params.get("transferType") || "oneway",
+        pickup: params.get("pickup") || "",
+        dropoff: params.get("dropoff") || "",
+        date: params.get("date") || "",
+        time: params.get("time") || "",
+        returnDate: params.get("returnDate") || "",
+        returnTime: params.get("returnTime") || "",
+        passengers: params.get("passengers") || "1"
       };
     }
 
-    function showSummary(data) {
-      document.getElementById("searchSummary").textContent =
-        data.pickup + " → " + data.dropoff +
-        " • " + data.date + " " + data.time +
-        " • " + data.passengers + " passenger(s)";
+    function showSearchSummary(search) {
+      let summary =
+        search.pickup +
+        " → " + search.dropoff +
+        " • " + search.date +
+        " " + search.time +
+        " • " + search.passengers + " passenger(s)";
+
+      if (search.transferType === "roundtrip" && search.returnDate) {
+        summary += " • Return: " + search.returnDate + " " + search.returnTime;
+      }
+
+      document.getElementById("searchSummary").textContent = summary;
     }
 
-    function renderTransfers(data) {
-      const box = document.getElementById("transferResults");
-      const loading = document.getElementById("loadingBox");
+    function renderTransfers(data, search) {
+      const resultsBox = document.getElementById("transferResults");
+      const loadingBox = document.getElementById("loadingBox");
 
-      loading.style.display = "none";
+      loadingBox.style.display = "none";
 
-      if (!data || !data.results) {
-        box.innerHTML = "<p>No transfers found</p>";
+      if (!data || !data.results || !data.results.length) {
+        resultsBox.innerHTML = `
+          <div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #ddd;">
+            <strong>No transfers found.</strong>
+            <p style="margin-bottom:0;color:#555;">Please try a different search.</p>
+          </div>
+        `;
         return;
       }
 
-      box.innerHTML = data.results.map(t => {
-        const price = t.price || Math.floor(Math.random()*100 + 50);
+      resultsBox.innerHTML = data.results.map(function(item) {
+        const vehicle = item.vehicle || item.vehicleType || item.name || "Private Transfer";
+        const pickup = item.pickup || item.from || search.pickup;
+        const dropoff = item.dropoff || item.to || search.dropoff;
+        const time = item.time || item.pickupTime || search.time;
+        const duration = item.duration || "";
+        const passengers = item.passengers || search.passengers;
+        const price = item.price || item.amount || Math.floor(Math.random() * 100 + 50);
+        const currency = item.currency || "USD";
+
+        const bookingParams = new URLSearchParams({
+          type: "transfer",
+          itemName: vehicle,
+          pickup: pickup,
+          dropoff: dropoff,
+          date: search.date,
+          time: time,
+          passengers: passengers,
+          price: price,
+          currency: currency
+        });
 
         return `
-          <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+          <div style="background:#fff;border:1px solid #ddd;border-radius:18px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,0.06);padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;">
 
-            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-
-              <div>
-                <div style="font-weight:800;font-size:20px;">
-                  ${t.vehicle || "Private Transfer"}
+              <div style="flex:1;min-width:260px;">
+                <div style="font-weight:800;font-size:22px;margin-bottom:8px;">
+                  ${vehicle}
                 </div>
-                <div>${t.pickup} → ${t.dropoff}</div>
-                <div>${t.time}</div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Route:</strong> ${pickup} → ${dropoff}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Pick-up:</strong> ${search.date} ${time}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Duration:</strong> ${duration || "Available on request"}
+                </div>
+
+                <div style="color:#666;">
+                  Passengers: ${passengers}
+                </div>
               </div>
 
-              <div style="text-align:right;">
-                <div style="font-size:22px;font-weight:800;color:#0b7cff;">
-                  ${price} USD
+              <div style="min-width:220px;text-align:right;">
+                <div style="font-size:24px;font-weight:800;color:#0b7cff;">
+                  ${price} ${currency}
                 </div>
 
-                <button onclick="bookTransfer('${t.vehicle}', ${price})"
-                  style="margin-top:10px;padding:10px 18px;border-radius:999px;background:#0b7cff;color:#fff;border:0;font-weight:700;">
+                <a href="booking.html?${bookingParams.toString()}"
+                   style="display:inline-block;margin-top:14px;padding:12px 20px;border-radius:999px;background:#0b7cff;color:#fff;text-decoration:none;font-weight:700;text-align:center;">
                   Book Now
-                </button>
+                </a>
               </div>
 
             </div>
-
           </div>
         `;
       }).join("");
     }
 
-    function bookTransfer(name, price) {
-      const params = new URLSearchParams({
-        type: "transfer",
-        itemName: name,
-        price: price
-      });
-
-      window.location.href = "booking.html?" + params.toString();
+    function renderError(search) {
+      renderTransfers({
+        source: "fallback",
+        results: [
+          {
+            vehicle: "Sedan Private Transfer",
+            pickup: search.pickup,
+            dropoff: search.dropoff,
+            time: search.time,
+            duration: "35 min",
+            price: 45,
+            currency: "USD"
+          },
+          {
+            vehicle: "SUV Private Transfer",
+            pickup: search.pickup,
+            dropoff: search.dropoff,
+            time: search.time,
+            duration: "35 min",
+            price: 70,
+            currency: "USD"
+          }
+        ]
+      }, search);
     }
 
     function loadTransfers() {
-      const data = getParams();
-      showSummary(data);
+      const search = getSearchParams();
+
+      showSearchSummary(search);
 
       fetch("https://api.cheapcheapy.com/api/transfers/search", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data)
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(search)
       })
-      .then(r => r.json())
-      .then(res => {
-        console.log(res);
-        renderTransfers(res);
+      .then(function(response) {
+        return response.json();
       })
-      .catch(() => {
-        renderTransfers({
-          results: [
-            { vehicle: "Sedan", pickup: data.pickup, dropoff: data.dropoff, time: data.time },
-            { vehicle: "SUV", pickup: data.pickup, dropoff: data.dropoff, time: data.time }
-          ]
-        });
+      .then(function(data) {
+        console.log(data);
+        renderTransfers(data, search);
+      })
+      .catch(function(error) {
+        console.error(error);
+        renderError(search);
       });
     }
 
     document.addEventListener("DOMContentLoaded", loadTransfers);
   </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+        <a href="copyright.html">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
