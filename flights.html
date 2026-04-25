@@ -623,20 +623,38 @@
 
       updateTravelersUI();
     }
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("searchForm");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const tripType = document.querySelector('input[name="tripType"]:checked').value;
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const date = document.getElementById("date").value;
+    const returnDate = document.getElementById("returnDate").value;
+    const cabinClass = document.getElementById("cabinClass").value;
+    const directOnly = document.getElementById("directOnly").checked;
+
+    const params = new URLSearchParams({
+      tripType: tripType,
+      from: from,
+      to: to,
+      date: date,
+      returnDate: returnDate,
+      adults: adults,
+      children: children,
+      infants: infants,
+      cabinClass: cabinClass,
+      directOnly: directOnly
+    });
+
+    window.location.href = "flight-results.html?" + params.toString();
+  });
+});
    
-      resultsBox.innerHTML = `
-        <h3 style="margin-bottom:16px;">Available Flights</h3>
-        ${data.results.map(item => `
-          <div style="background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-            <div style="font-weight:700;font-size:18px;margin-bottom:8px;">${item.airline}</div>
-            <div><strong>Route:</strong> ${item.from} → ${item.to}</div>
-            <div><strong>Departure:</strong> ${item.departure}</div>
-            <div><strong>Arrival:</strong> ${item.arrival}</div>
-            <div><strong>Price:</strong> ${item.price} ${item.currency}</div>
-          </div>
-        `).join("")}
-      `;
+      
     }
 
     window.onload = function () {
