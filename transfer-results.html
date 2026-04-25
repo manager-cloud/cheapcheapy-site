@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Transfer Results - CheapCheapy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="transfer-page">
+
+  <!-- Header -->
+  <div class="site-header">
+    <div class="container header-inner">
+
+      <div>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="header-actions">
+        <a href="index.html" class="top-link">Home</a>
+        <a href="transfer.html" class="login-btn">New Search</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-image-wrap">
+    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1800&q=80"
+         class="hero-image">
+  </div>
+
+  <!-- Results -->
+  <div class="container about-content-wrap">
+    <div class="main-box">
+
+      <h2 class="section-title">Available Transfers</h2>
+
+      <p id="searchSummary" class="lead-text">
+        Loading transfer results...
+      </p>
+
+      <div id="loadingBox" style="margin-top:20px;">
+        Searching for transfer options...
+      </div>
+
+      <div id="transferResults" style="margin-top:24px;"></div>
+
+    </div>
+  </div>
+
+  <script>
+    function getParams() {
+      const p = new URLSearchParams(window.location.search);
+
+      return {
+        pickup: p.get("pickup"),
+        dropoff: p.get("dropoff"),
+        date: p.get("date"),
+        time: p.get("time"),
+        passengers: p.get("passengers"),
+        transferType: p.get("transferType")
+      };
+    }
+
+    function showSummary(data) {
+      document.getElementById("searchSummary").textContent =
+        data.pickup + " → " + data.dropoff +
+        " • " + data.date + " " + data.time +
+        " • " + data.passengers + " passenger(s)";
+    }
+
+    function renderTransfers(data) {
+      const box = document.getElementById("transferResults");
+      const loading = document.getElementById("loadingBox");
+
+      loading.style.display = "none";
+
+      if (!data || !data.results) {
+        box.innerHTML = "<p>No transfers found</p>";
+        return;
+      }
+
+      box.innerHTML = data.results.map(t => {
+        const price = t.price || Math.floor(Math.random()*100 + 50);
+
+        return `
+          <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+
+              <div>
+                <div style="font-weight:800;font-size:20px;">
+                  ${t.vehicle || "Private Transfer"}
+                </div>
+                <div>${t.pickup} → ${t.dropoff}</div>
+                <div>${t.time}</div>
+              </div>
+
+              <div style="text-align:right;">
+                <div style="font-size:22px;font-weight:800;color:#0b7cff;">
+                  ${price} USD
+                </div>
+
+                <button onclick="bookTransfer('${t.vehicle}', ${price})"
+                  style="margin-top:10px;padding:10px 18px;border-radius:999px;background:#0b7cff;color:#fff;border:0;font-weight:700;">
+                  Book Now
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }).join("");
+    }
+
+    function bookTransfer(name, price) {
+      const params = new URLSearchParams({
+        type: "transfer",
+        itemName: name,
+        price: price
+      });
+
+      window.location.href = "booking.html?" + params.toString();
+    }
+
+    function loadTransfers() {
+      const data = getParams();
+      showSummary(data);
+
+      fetch("https://api.cheapcheapy.com/api/transfers/search", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+      })
+      .then(r => r.json())
+      .then(res => {
+        console.log(res);
+        renderTransfers(res);
+      })
+      .catch(() => {
+        renderTransfers({
+          results: [
+            { vehicle: "Sedan", pickup: data.pickup, dropoff: data.dropoff, time: data.time },
+            { vehicle: "SUV", pickup: data.pickup, dropoff: data.dropoff, time: data.time }
+          ]
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadTransfers);
+  </script>
+
+</body>
+</html>
