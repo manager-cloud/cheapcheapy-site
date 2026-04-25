@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Train Results - CheapCheapy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="trains-page">
+
+  <!-- Header -->
+  <div class="site-header">
+    <div class="container header-inner">
+
+      <div>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="header-actions">
+        <a href="index.html" class="top-link">Home</a>
+        <a href="about.html" class="top-link">About</a>
+        <a href="offers.html" class="top-link">Offers</a>
+        <a href="contact.html" class="top-link">Contact</a>
+
+        <select class="header-select">
+          <option>AED</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>SAR</option>
+          <option>EGP</option>
+        </select>
+
+        <a href="trains.html" class="login-btn">New Search</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image-wrap">
+    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=80"
+         class="hero-image"
+         alt="Train Results">
+  </div>
+
+  <!-- Results Panel -->
+  <div class="container about-content-wrap">
+
+    <div class="service-tabs">
+      <a href="index.html" class="service-tab">Home</a>
+      <a href="hotels.html" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" class="service-tab">Air tickets</a>
+      <a href="transfer.html" class="service-tab">Transfers</a>
+      <a href="trains.html" class="service-tab service-tab-active">Train tickets</a>
+    </div>
+
+    <div class="main-box">
+
+      <h2 class="section-title">Available Trains</h2>
+
+      <p id="searchSummary" class="lead-text">
+        Loading train results...
+      </p>
+
+      <div id="loadingBox" style="margin-top:20px;">
+        Searching for train options...
+      </div>
+
+      <div id="trainResults" style="margin-top:24px;"></div>
+
+    </div>
+  </div>
+
+  <script>
+    function getSearchParams() {
+      const params = new URLSearchParams(window.location.search);
+
+      return {
+        tripType: params.get("tripType") || "oneway",
+        from: params.get("from") || "",
+        to: params.get("to") || "",
+        date: params.get("date") || "",
+        returnDate: params.get("returnDate") || "",
+        passengers: params.get("passengers") || "1"
+      };
+    }
+
+    function showSearchSummary(search) {
+      let summary =
+        search.from +
+        " → " + search.to +
+        " • " + search.date +
+        " • " + search.passengers + " passenger(s)";
+
+      if (search.tripType === "roundtrip" && search.returnDate) {
+        summary += " • Return: " + search.returnDate;
+      }
+
+      document.getElementById("searchSummary").textContent = summary;
+    }
+
+    function renderTrains(data, search) {
+      const resultsBox = document.getElementById("trainResults");
+      const loadingBox = document.getElementById("loadingBox");
+
+      loadingBox.style.display = "none";
+
+      if (!data || !data.results || !data.results.length) {
+        resultsBox.innerHTML = `
+          <div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #ddd;">
+            <strong>No trains found.</strong>
+            <p style="margin-bottom:0;color:#555;">Please try a different search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      resultsBox.innerHTML = data.results.map(function(train) {
+        const name = train.name || train.trainName || train.operator || "Train";
+        const from = train.from || train.departureStation || search.from;
+        const to = train.to || train.arrivalStation || search.to;
+        const departure = train.departure || train.departureTime || search.date;
+        const arrival = train.arrival || train.arrivalTime || "";
+        const duration = train.duration || "";
+        const travelClass = train.class || train.travelClass || train.cabin || "Standard";
+        const price = train.price || train.amount || Math.floor(Math.random() * 80 + 25);
+        const currency = train.currency || "USD";
+
+        const bookingParams = new URLSearchParams({
+          type: "train",
+          itemName: name,
+          from: from,
+          to: to,
+          date: search.date,
+          returnDate: search.returnDate,
+          passengers: search.passengers,
+          price: price,
+          currency: currency,
+          travelClass: travelClass
+        });
+
+        return `
+          <div style="background:#fff;border:1px solid #ddd;border-radius:18px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,0.06);padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;">
+
+              <div style="flex:1;min-width:260px;">
+                <div style="font-weight:800;font-size:22px;margin-bottom:8px;">
+                  ${name}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Route:</strong> ${from} → ${to}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Departure:</strong> ${departure}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Arrival:</strong> ${arrival || "Available on request"}
+                </div>
+
+                <div style="margin-bottom:6px;">
+                  <strong>Duration:</strong> ${duration || "Available on request"}
+                </div>
+
+                <div style="color:#666;">
+                  Class: ${travelClass} • Passengers: ${search.passengers}
+                </div>
+              </div>
+
+              <div style="min-width:220px;text-align:right;">
+                <div style="font-size:24px;font-weight:800;color:#0b7cff;">
+                  ${price} ${currency}
+                </div>
+
+                <a href="booking.html?${bookingParams.toString()}"
+                   style="display:inline-block;margin-top:14px;padding:12px 20px;border-radius:999px;background:#0b7cff;color:#fff;text-decoration:none;font-weight:700;text-align:center;">
+                  Book Now
+                </a>
+              </div>
+
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderError() {
+      document.getElementById("loadingBox").style.display = "none";
+
+      document.getElementById("trainResults").innerHTML = `
+        <div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #ddd;">
+          <strong>Error loading trains.</strong>
+          <p style="margin-bottom:0;color:#555;">
+            Train API is not ready yet or the endpoint is not available.
+          </p>
+        </div>
+      `;
+    }
+
+    function loadTrains() {
+      const search = getSearchParams();
+
+      showSearchSummary(search);
+
+      fetch("https://api.cheapcheapy.com/api/trains/search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(search)
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        renderTrains(data, search);
+      })
+      .catch(function(error) {
+        console.error(error);
+
+        renderTrains({
+          source: "fallback",
+          results: [
+            {
+              name: "Express Train",
+              from: search.from,
+              to: search.to,
+              departure: search.date + " 09:00",
+              arrival: search.date + " 12:30",
+              duration: "3h 30m",
+              travelClass: "Standard",
+              price: 45,
+              currency: "USD"
+            },
+            {
+              name: "Comfort Train",
+              from: search.from,
+              to: search.to,
+              departure: search.date + " 14:00",
+              arrival: search.date + " 17:20",
+              duration: "3h 20m",
+              travelClass: "First Class",
+              price: 70,
+              currency: "USD"
+            }
+          ]
+        }, search);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadTrains);
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+        <a href="copyright.html">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
