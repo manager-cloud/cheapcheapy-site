@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hotel Results - CheapCheapy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="hotels-page">
+
+  <!-- Header -->
+  <div class="site-header">
+    <div class="container header-inner">
+
+      <div>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="header-actions">
+        <a href="index.html" class="top-link">Home</a>
+        <a href="hotels.html" class="login-btn">New Search</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="container about-content-wrap">
+    <div class="main-box">
+
+      <h2 class="section-title">Available Hotels</h2>
+
+      <p id="searchSummary" class="lead-text">
+        Loading results...
+      </p>
+
+      <div id="hotelResults" style="margin-top:24px;"></div>
+
+    </div>
+  </div>
+
+  <script>
+    function getParams() {
+      const params = new URLSearchParams(window.location.search);
+
+      return {
+        destination: params.get("destination"),
+        checkin: params.get("checkin"),
+        checkout: params.get("checkout"),
+        rooms: params.get("rooms"),
+        adults: params.get("adults"),
+        children: params.get("children")
+      };
+    }
+
+    function showSummary(data) {
+      document.getElementById("searchSummary").textContent =
+        data.destination + " • " +
+        data.checkin + " → " + data.checkout + " • " +
+        data.rooms + " room(s), " +
+        data.adults + " adult(s)";
+    }
+
+    function renderHotels() {
+      const box = document.getElementById("hotelResults");
+
+      // Demo data (مؤقت لحد ما نربط API)
+      const hotels = [
+        { name: "Grand Cairo Hotel", price: 450, rating: "5⭐" },
+        { name: "Nile View Resort", price: 320, rating: "4⭐" },
+        { name: "Budget Stay Inn", price: 180, rating: "3⭐" }
+      ];
+
+      box.innerHTML = hotels.map(hotel => `
+        <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+
+            <div>
+              <div style="font-weight:800;font-size:20px;">
+                ${hotel.name}
+              </div>
+              <div>${hotel.rating}</div>
+            </div>
+
+            <div style="text-align:right;">
+              <div style="font-size:22px;font-weight:800;color:#0b7cff;">
+                ${hotel.price} AED / night
+              </div>
+
+              <button onclick="bookHotel('${hotel.name}', ${hotel.price})"
+                style="margin-top:10px;padding:10px 18px;border:0;border-radius:999px;background:#0b7cff;color:#fff;font-weight:700;cursor:pointer;">
+                Book Now
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      `).join("");
+    }
+
+    function bookHotel(name, price) {
+      const params = new URLSearchParams({
+        hotel: name,
+        price: price
+      });
+
+      window.location.href = "hotel-booking.html?" + params.toString();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const data = getParams();
+      showSummary(data);
+      renderHotels();
+    });
+  </script>
+
+</body>
+</html>
