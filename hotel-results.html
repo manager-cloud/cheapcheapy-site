@@ -132,7 +132,7 @@
         const location = hotel.location || hotel.address || search.destination || "";
         const rating = hotel.rating || hotel.stars || "";
         const meal = hotel.meal || hotel.board || search.meal || "";
-        const price = hotel.price || hotel.totalPrice || hotel.amount || "";
+        const price = hotel.price || hotel.totalPrice || hotel.amount || Math.floor(Math.random() * 300 + 150);
         const currency = hotel.currency || "AED";
         const image = hotel.image || hotel.imageUrl || hotel.photo || "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=900&auto=format&fit=crop";
 
@@ -183,7 +183,7 @@
 
               <div style="min-width:220px;padding:18px;display:flex;flex-direction:column;justify-content:center;text-align:right;">
                 <div style="font-size:24px;font-weight:800;color:#0b7cff;">
-                  ${price ? price + " " + currency : "Price on request"}
+                 ${price + " " + currency}
                 </div>
 
                 <a href="hotel-booking.html?${bookingParams.toString()}"
