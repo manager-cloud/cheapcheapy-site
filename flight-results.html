@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flight Results - CheapCheapy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flights-page">
+
+  <div class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a href="index.html" class="logo-link">
+          <h1 class="site-logo">
+            <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
+          </h1>
+        </a>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="header-actions">
+        <a href="about.html" class="top-link">About</a>
+        <a href="offers.html" class="top-link">Offers</a>
+        <a href="contact.html" class="top-link">Contact</a>
+        <a href="flights.html" class="login-btn">New Search</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container about-content-wrap">
+    <div class="main-box">
+
+      <h2 class="section-title">Available Flights</h2>
+      <p id="searchSummary" class="lead-text">Loading flight results...</p>
+
+      <div id="loadingBox" style="margin-top:20px;">
+        Searching for best flight options...
+      </div>
+
+      <div id="flightResults" style="margin-top:24px;"></div>
+
+    </div>
+  </div>
+
+  <script>
+    function getSearchParams() {
+      const params = new URLSearchParams(window.location.search);
+
+      return {
+        from: params.get("from"),
+        to: params.get("to"),
+        date: params.get("date"),
+        returnDate: params.get("returnDate"),
+        tripType: params.get("tripType"),
+        adults: params.get("adults") || 1,
+        children: params.get("children") || 0,
+        infants: params.get("infants") || 0,
+        cabinClass: params.get("cabinClass") || "Economy",
+        directOnly: params.get("directOnly") === "true"
+      };
+    }
+
+    function renderFlightResults(data) {
+      const resultsBox = document.getElementById("flightResults");
+      const loadingBox = document.getElementById("loadingBox");
+
+      loadingBox.style.display = "none";
+
+      if (!data.results || !data.results.length) {
+        resultsBox.innerHTML = "<p>No flights found.</p>";
+        return;
+      }
+
+      resultsBox.innerHTML = data.results.map(item => `
+        <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;">
+            <div>
+              <div style="font-weight:800;font-size:20px;margin-bottom:8px;">${item.airline || "Flight"}</div>
+              <div><strong>Route:</strong> ${item.from || ""} → ${item.to || ""}</div>
+              <div><strong>Departure:</strong> ${item.departure || ""}</div>
+              <div><strong>Arrival:</strong> ${item.arrival || ""}</div>
+            </div>
+
+            <div style="text-align:right;">
+              <div style="font-size:22px;font-weight:800;color:#0b7cff;">
+                ${item.price || ""} ${item.currency || "AED"}
+              </div>
+              <button style="margin-top:10px;padding:10px 18px;border:0;border-radius:999px;background:#0b7cff;color:#fff;font-weight:700;cursor:pointer;">
+                Select
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function loadFlights() {
+      const search = getSearchParams();
+
+      document.getElementById("searchSummary").textContent =
+        `${search.from} to ${search.to} • ${search.date} • ${search.adults} adult(s)`;
+
+      fetch("https://api.cheapcheapy.com/api/flights/search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(search)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        renderFlightResults(data);
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("loadingBox").style.display = "none";
+        document.getElementById("flightResults").innerHTML =
+          "<p>Error loading flights. Please try again.</p>";
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadFlights);
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
+        <p class="powered-text">Powered by Auchen Travel</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+        <a href="copyright.html">Copyright Notice</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 CheapCheapy / Auchen Travel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
