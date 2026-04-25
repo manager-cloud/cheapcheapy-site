@@ -19,35 +19,15 @@
             <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span> ✈️
           </h1>
         </a>
-        <p data-en="Powered by Auchen Travel"
-           data-ar="مقدم من Auchen Travel"
-           class="powered-text">
+        <p data-en="Powered by Auchen Travel" data-ar="مقدم من Auchen Travel" class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
 
       <div class="header-actions">
-
-        <a href="about.html"
-           data-en="About"
-           data-ar="من نحن"
-           class="top-link">
-          About
-        </a>
-
-        <a href="offers.html"
-           data-en="Offers"
-           data-ar="العروض"
-           class="top-link">
-          Offers
-        </a>
-
-        <a href="contact.html"
-           data-en="Contact"
-           data-ar="اتصل بنا"
-           class="top-link">
-          Contact
-        </a>
+        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
 
         <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
@@ -62,13 +42,7 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           class="login-btn">
-          Login
-        </a>
-
+        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
       </div>
 
     </div>
@@ -86,85 +60,50 @@
 
     <!-- Tabs -->
     <div class="service-tabs">
-
-      <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         class="service-tab">
-        Home
-      </a>
-
-      <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         class="service-tab service-tab-active">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         class="service-tab">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         class="service-tab">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         class="service-tab">
-        Train tickets
-      </a>
-
+      <a href="index.html" data-en="Home" data-ar="الرئيسية" class="service-tab">Home</a>
+      <a href="hotels.html" data-en="Hotels and apartments" data-ar="الفنادق والشقق" class="service-tab service-tab-active">Hotels and apartments</a>
+      <a href="flights.html" data-en="Air tickets" data-ar="تذاكر الطيران" class="service-tab">Air tickets</a>
+      <a href="transfer.html" data-en="Transfers" data-ar="الانتقالات" class="service-tab">Transfers</a>
+      <a href="trains.html" data-en="Train tickets" data-ar="تذاكر القطارات" class="service-tab">Train tickets</a>
     </div>
 
     <!-- Main Box -->
     <div class="main-box">
 
+      <h2 data-en="Hotels Search" data-ar="البحث عن الفنادق" class="section-title">
+        Hotels Search
+      </h2>
+
+      <p data-en="Search hotels, apartments, resorts and villas."
+         data-ar="ابحث عن الفنادق والشقق والمنتجعات والفلل."
+         class="lead-text flight-intro">
+        Search hotels, apartments, resorts and villas.
+      </p>
+
       <!-- Top Row -->
       <div class="hotels-top-row">
 
         <div class="field-box hotel-destination-field">
-          <div data-en="Destination"
-               data-ar="الوجهة"
-               class="field-label">
-            Destination
-          </div>
-          <input placeholder="City, hotel, resort, villa or apartment"
-                 class="field-input">
+          <div data-en="Destination" data-ar="الوجهة" class="field-label">Destination</div>
+          <input id="hotelDestination"
+                 placeholder="City, hotel, resort, villa or apartment"
+                 class="field-input"
+                 required>
         </div>
 
         <div class="field-box hotel-date-field">
-          <div data-en="Check-in"
-               data-ar="تاريخ الوصول"
-               class="field-label">
-            Check-in
-          </div>
-          <input type="date" class="field-input">
+          <div data-en="Check-in" data-ar="تاريخ الوصول" class="field-label">Check-in</div>
+          <input id="hotelCheckin" type="date" class="field-input" required>
         </div>
 
         <div class="field-box hotel-date-field">
-          <div data-en="Check-out"
-               data-ar="تاريخ المغادرة"
-               class="field-label">
-            Check-out
-          </div>
-          <input type="date" class="field-input">
+          <div data-en="Check-out" data-ar="تاريخ المغادرة" class="field-label">Check-out</div>
+          <input id="hotelCheckout" type="date" class="field-input" required>
         </div>
 
         <div class="hotel-guests-wrap">
           <button type="button" onclick="toggleGuestsBox()" class="travelers-toggle">
-            <div data-en="Rooms & Guests"
-                 data-ar="الغرف والنزلاء"
-                 class="field-label">
-              Rooms & Guests
-            </div>
+            <div data-en="Rooms & Guests" data-ar="الغرف والنزلاء" class="field-label">Rooms & Guests</div>
             <div id="guestsSummary" class="travelers-summary">1 room for 2 guests</div>
           </button>
 
@@ -204,34 +143,25 @@
             </div>
 
             <div id="childrenAgesBox" class="children-ages-box">
-              <div data-en="Children Ages"
-                   data-ar="أعمار الأطفال"
-                   class="traveler-title children-ages-title">
+              <div data-en="Children Ages" data-ar="أعمار الأطفال" class="traveler-title children-ages-title">
                 Children Ages
               </div>
               <div id="childrenAgesWrapper" class="children-ages-wrapper"></div>
             </div>
 
-            <button type="button" onclick="closeGuestsBox()"
-                    data-en="Done"
-                    data-ar="تم"
-                    class="done-btn">
+            <button type="button" onclick="closeGuestsBox()" data-en="Done" data-ar="تم" class="done-btn">
               Done
             </button>
           </div>
         </div>
 
-        <button data-en="Search"
-                data-ar="بحث"
-                class="hotel-search-btn">
+        <button type="button" onclick="searchHotels()" data-en="Search" data-ar="بحث" class="hotel-search-btn">
           Search
         </button>
       </div>
 
       <!-- Additional parameters -->
-      <div data-en="Additional parameters"
-           data-ar="خيارات إضافية"
-           class="additional-params-title">
+      <div data-en="Additional parameters" data-ar="خيارات إضافية" class="additional-params-title">
         Additional parameters
       </div>
 
@@ -239,29 +169,26 @@
       <div class="hotel-params-row">
 
         <div class="field-box citizenship-field">
-          <div data-en="Guests' citizenship"
-               data-ar="جنسية النزيل"
-               class="field-label">
+          <div data-en="Guests' citizenship" data-ar="جنسية النزيل" class="field-label">
             Guests' citizenship
           </div>
-          <input placeholder="Will be activated with API"
-                 class="field-input">
+          <input id="hotelCitizenship" placeholder="Will be activated with API" class="field-input">
         </div>
 
         <div class="stars-wrap">
-          <button type="button" class="star-btn" onclick="selectStar(this)">No stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)">2 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)">3 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)">4 stars</button>
-          <button type="button" class="star-btn" onclick="selectStar(this)">5 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this, 'No stars')">No stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this, '2 stars')">2 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this, '3 stars')">3 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this, '4 stars')">4 stars</button>
+          <button type="button" class="star-btn" onclick="selectStar(this, '5 stars')">5 stars</button>
         </div>
 
         <div class="meal-wrap">
-          <button type="button" class="meal-btn" onclick="selectMeal(this)">RO</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)">BB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)">HB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)">FB</button>
-          <button type="button" class="meal-btn" onclick="selectMeal(this)">AI</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this, 'RO')">RO</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this, 'BB')">BB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this, 'HB')">HB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this, 'FB')">FB</button>
+          <button type="button" class="meal-btn" onclick="selectMeal(this, 'AI')">AI</button>
         </div>
       </div>
 
@@ -270,9 +197,11 @@
 
   <script>
     let rooms = 1;
-    let adults = 2;
-    let children = 0;
+    let hotelAdults = 2;
+    let hotelChildren = 0;
     let childAges = [];
+    let selectedStars = "";
+    let selectedMeal = "";
 
     function toggleGuestsBox() {
       const box = document.getElementById('guestsBox');
@@ -285,31 +214,30 @@
 
     function updateGuestsUI() {
       document.getElementById('roomsCount').textContent = rooms;
-      document.getElementById('hotelAdultsCount').textContent = adults;
-      document.getElementById('hotelChildrenCount').textContent = children;
+      document.getElementById('hotelAdultsCount').textContent = hotelAdults;
+      document.getElementById('hotelChildrenCount').textContent = hotelChildren;
 
-      const totalGuests = adults + children;
-      const bodyDir = document.body.style.direction;
+      const totalGuests = hotelAdults + hotelChildren;
+      const isArabic = document.body.style.direction === 'rtl';
 
-      if (bodyDir === 'rtl') {
-        document.getElementById('guestsSummary').textContent = `${rooms} غرفة لـ ${totalGuests} نزيل`;
-      } else {
-        document.getElementById('guestsSummary').textContent = `${rooms} room${rooms > 1 ? 's' : ''} for ${totalGuests} guest${totalGuests > 1 ? 's' : ''}`;
-      }
+      document.getElementById('guestsSummary').textContent = isArabic
+        ? `${rooms} غرفة لـ ${totalGuests} نزيل`
+        : `${rooms} room${rooms > 1 ? 's' : ''} for ${totalGuests} guest${totalGuests > 1 ? 's' : ''}`;
 
       const childrenAgesBox = document.getElementById('childrenAgesBox');
       const childrenAgesWrapper = document.getElementById('childrenAgesWrapper');
 
-      if (children > 0) {
+      if (hotelChildren > 0) {
         childrenAgesBox.style.display = 'block';
         childrenAgesWrapper.innerHTML = '';
 
-        while (childAges.length < children) childAges.push('1');
-        while (childAges.length > children) childAges.pop();
+        while (childAges.length < hotelChildren) childAges.push('1');
+        while (childAges.length > hotelChildren) childAges.pop();
 
-        for (let i = 0; i < children; i++) {
+        for (let i = 0; i < hotelChildren; i++) {
           const select = document.createElement('select');
           select.className = 'child-age-select';
+
           select.onchange = function () {
             childAges[i] = this.value;
           };
@@ -317,8 +245,12 @@
           for (let age = 0; age <= 11; age++) {
             const option = document.createElement('option');
             option.value = age;
-            option.text = document.body.style.direction === 'rtl' ? `الطفل ${i + 1}: ${age}` : `Child ${i + 1}: ${age}`;
-            if (String(childAges[i]) === String(age)) option.selected = true;
+            option.text = isArabic ? `الطفل ${i + 1}: ${age}` : `Child ${i + 1}: ${age}`;
+
+            if (String(childAges[i]) === String(age)) {
+              option.selected = true;
+            }
+
             select.appendChild(option);
           }
 
@@ -327,13 +259,14 @@
       } else {
         childrenAgesBox.style.display = 'none';
         childrenAgesWrapper.innerHTML = '';
+        childAges = [];
       }
     }
 
     function changeGuests(type, delta) {
       let newRooms = rooms;
-      let newAdults = adults;
-      let newChildren = children;
+      let newAdults = hotelAdults;
+      let newChildren = hotelChildren;
 
       if (type === 'rooms') newRooms += delta;
       if (type === 'adults') newAdults += delta;
@@ -342,61 +275,89 @@
       if (newRooms < 1) return;
       if (newAdults < 1) return;
       if (newChildren < 0) return;
-      if ((newAdults + newChildren) > 9) return;
+      if (newAdults + newChildren > 9) return;
 
       rooms = newRooms;
-      adults = newAdults;
-      children = newChildren;
+      hotelAdults = newAdults;
+      hotelChildren = newChildren;
 
       updateGuestsUI();
     }
 
-    function selectStar(button) {
-      const buttons = document.querySelectorAll('.star-btn');
-      buttons.forEach(btn => {
+    function selectStar(button, value) {
+      selectedStars = value;
+
+      document.querySelectorAll('.star-btn').forEach(btn => {
         btn.style.background = 'white';
         btn.style.fontWeight = 'normal';
       });
+
       button.style.background = '#f3f3f3';
       button.style.fontWeight = 'bold';
     }
 
-    function selectMeal(button) {
-      const buttons = document.querySelectorAll('.meal-btn');
-      buttons.forEach(btn => {
+    function selectMeal(button, value) {
+      selectedMeal = value;
+
+      document.querySelectorAll('.meal-btn').forEach(btn => {
         btn.style.background = 'white';
         btn.style.fontWeight = 'normal';
       });
+
       button.style.background = '#f3f3f3';
       button.style.fontWeight = 'bold';
     }
 
     function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-en]');
-      elements.forEach(el => {
+      document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-      } else {
-        document.body.style.direction = 'ltr';
-      }
-
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
       updateGuestsUI();
     }
 
-    window.onload = function () {
-      updateGuestsUI();
-    };
+    function searchHotels() {
+      const destination = document.getElementById('hotelDestination').value.trim();
+      const checkin = document.getElementById('hotelCheckin').value;
+      const checkout = document.getElementById('hotelCheckout').value;
+      const citizenship = document.getElementById('hotelCitizenship').value.trim();
+
+      if (!destination || !checkin || !checkout) {
+        alert(document.body.style.direction === 'rtl'
+          ? 'من فضلك أدخل الوجهة وتواريخ الوصول والمغادرة.'
+          : 'Please enter destination, check-in and check-out dates.');
+        return;
+      }
+
+      const params = new URLSearchParams({
+        destination: destination,
+        checkin: checkin,
+        checkout: checkout,
+        rooms: rooms,
+        adults: hotelAdults,
+        children: hotelChildren,
+        childAges: JSON.stringify(childAges),
+        citizenship: citizenship,
+        stars: selectedStars,
+        meal: selectedMeal
+      });
+
+      window.location.href = 'hotel-results.html?' + params.toString();
+    }
 
     document.addEventListener('click', function(event) {
       const box = document.getElementById('guestsBox');
-      if (!box) return;
+      const clickedToggle = event.target.closest('.travelers-toggle');
+      const clickedBox = event.target.closest('.travelers-box');
 
-      if (!box.contains(event.target) && !event.target.closest('button[onclick="toggleGuestsBox()"]')) {
+      if (box && !clickedToggle && !clickedBox) {
         box.style.display = 'none';
       }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      updateGuestsUI();
     });
   </script>
 
@@ -405,9 +366,7 @@
 
       <div class="footer-logo">
         <span class="cheap">Cheap</span><span class="cheapy">Cheapy</span>
-        <p data-en="Powered by Auchen Travel"
-           data-ar="مشغل بواسطة Auchen Travel"
-           class="powered-text">
+        <p data-en="Powered by Auchen Travel" data-ar="مشغل بواسطة Auchen Travel" class="powered-text">
           Powered by Auchen Travel
         </p>
       </div>
@@ -428,5 +387,6 @@
 
     </div>
   </footer>
+
 </body>
 </html>
