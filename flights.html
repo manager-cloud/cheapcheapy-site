@@ -12,7 +12,6 @@
   <!-- Header -->
   <div class="site-header">
     <div class="container header-inner">
-
       <div>
         <a href="index.html" class="logo-link">
           <h1 class="site-logo">
@@ -27,27 +26,9 @@
       </div>
 
       <div class="header-actions">
-
-        <a href="about.html"
-           data-en="About"
-           data-ar="من نحن"
-           class="top-link">
-          About
-        </a>
-
-        <a href="offers.html"
-           data-en="Offers"
-           data-ar="العروض"
-           class="top-link">
-          Offers
-        </a>
-
-        <a href="contact.html"
-           data-en="Contact"
-           data-ar="اتصل بنا"
-           class="top-link">
-          Contact
-        </a>
+        <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
+        <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
+        <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
 
         <select onchange="changeLanguage(this.value)" class="header-select">
           <option value="en">English</option>
@@ -62,15 +43,8 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           class="login-btn">
-          Login
-        </a>
-
+        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
       </div>
-
     </div>
   </div>
 
@@ -86,42 +60,11 @@
 
     <!-- Tabs -->
     <div class="service-tabs">
-
-      <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         class="service-tab">
-        Home
-      </a>
-
-      <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         class="service-tab">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         class="service-tab service-tab-active">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         class="service-tab">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         class="service-tab">
-        Train tickets
-      </a>
-
+      <a href="index.html" data-en="Home" data-ar="الرئيسية" class="service-tab">Home</a>
+      <a href="hotels.html" data-en="Hotels and apartments" data-ar="الفنادق والشقق" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" data-en="Air tickets" data-ar="تذاكر الطيران" class="service-tab service-tab-active">Air tickets</a>
+      <a href="transfer.html" data-en="Transfers" data-ar="الانتقالات" class="service-tab">Transfers</a>
+      <a href="trains.html" data-en="Train tickets" data-ar="تذاكر القطارات" class="service-tab">Train tickets</a>
     </div>
 
     <!-- Main Box -->
@@ -145,10 +88,12 @@
           <input type="radio" name="tripType" value="oneway" checked onclick="changeTripType()">
           <span data-en="One way" data-ar="ذهاب فقط">One way</span>
         </label>
+
         <label class="radio-label">
           <input type="radio" name="tripType" value="roundtrip" onclick="changeTripType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
+
         <label class="radio-label">
           <input type="radio" name="tripType" value="multicity" onclick="changeTripType()">
           <span data-en="Multi-city" data-ar="رحلات متعددة المدن">Multi-city</span>
@@ -157,63 +102,34 @@
 
       <!-- Main Search Form -->
       <form id="searchForm">
+
         <!-- One way / Round trip -->
         <div id="mainSearchBox">
+
           <div class="flight-grid-two">
-
             <div class="field-box flight-field">
-              <div data-en="From" data-ar="من" class="field-label">
-                From
-              </div>
-              <input
-                name="from"
-                id="from"
-                placeholder="Departure city or airport"
-                class="field-input"
-                required>
+              <div data-en="From" data-ar="من" class="field-label">From</div>
+              <input name="from" id="from" placeholder="Departure city or airport" class="field-input" required>
             </div>
 
             <div class="field-box flight-field">
-              <div data-en="To" data-ar="إلى" class="field-label">
-                To
-              </div>
-              <input
-                name="to"
-                id="to"
-                placeholder="Arrival city or airport"
-                class="field-input"
-                required>
+              <div data-en="To" data-ar="إلى" class="field-label">To</div>
+              <input name="to" id="to" placeholder="Arrival city or airport" class="field-input" required>
             </div>
-
           </div>
 
           <div class="flight-grid-two">
-
             <div class="field-box flight-field date-field">
-              <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">
-                Departure date
-              </div>
-              <input
-                name="date"
-                id="date"
-                type="date"
-                class="field-input"
-                required>
+              <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">Departure date</div>
+              <input name="date" id="date" type="date" class="field-input" required>
             </div>
 
             <div id="returnDateBox" class="return-date-box">
               <div class="field-box flight-field date-field">
-                <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">
-                  Return date
-                </div>
-                <input
-                  name="returnDate"
-                  id="returnDate"
-                  type="date"
-                  class="field-input">
+                <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">Return date</div>
+                <input name="returnDate" id="returnDate" type="date" class="field-input">
               </div>
             </div>
-
           </div>
 
           <div class="flight-grid-two-top">
@@ -221,16 +137,11 @@
             <!-- Travelers Selector -->
             <div class="travelers-wrap">
               <button type="button" onclick="toggleTravelersBox('main')" class="travelers-toggle">
-                <div data-en="Travelers"
-                     data-ar="المسافرون"
-                     class="field-label">
-                  Travelers
-                </div>
+                <div data-en="Travelers" data-ar="المسافرون" class="field-label">Travelers</div>
                 <div id="travelersSummary" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
               </button>
 
               <div id="travelersBoxMain" class="travelers-box">
-
                 <div class="traveler-row">
                   <div>
                     <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
@@ -273,21 +184,14 @@
                   Maximum adults + children: 9. Infants cannot exceed adults.
                 </div>
 
-                <button type="button" onclick="closeTravelersBox('main')"
-                        data-en="Done"
-                        data-ar="تم"
-                        class="done-btn">
+                <button type="button" onclick="closeTravelersBox('main')" data-en="Done" data-ar="تم" class="done-btn">
                   Done
                 </button>
               </div>
             </div>
 
             <div class="field-box flight-field cabin-field">
-              <div data-en="Cabin class"
-                   data-ar="درجة السفر"
-                   class="field-label">
-                Cabin class
-              </div>
+              <div data-en="Cabin class" data-ar="درجة السفر" class="field-label">Cabin class</div>
               <select class="field-select" name="cabinClass" id="cabinClass">
                 <option>Economy</option>
                 <option>Premium Economy</option>
@@ -299,12 +203,7 @@
           </div>
 
           <div class="search-btn-row">
-            <button type="submit"
-                    data-en="Search"
-                    data-ar="بحث"
-                    class="search-btn">
-              Search
-            </button>
+            <button type="submit" data-en="Search" data-ar="بحث" class="search-btn">Search</button>
           </div>
 
           <div class="checkbox-row">
@@ -313,14 +212,13 @@
               <span data-en="Direct flights only" data-ar="رحلات مباشرة فقط">Direct flights only</span>
             </label>
           </div>
+
         </div>
       </form>
 
       <!-- Multi-city Box -->
       <div id="multiCityBox" class="multi-city-box">
-        <h3 data-en="Multi-city Trips"
-            data-ar="رحلات متعددة المدن"
-            class="multi-city-title">
+        <h3 data-en="Multi-city Trips" data-ar="رحلات متعددة المدن" class="multi-city-title">
           Multi-city Trips
         </h3>
 
@@ -328,59 +226,50 @@
           <div class="segment flight-segment">
             <div class="field-box segment-field">
               <div data-en="From" data-ar="من" class="field-label">From</div>
-              <input placeholder="Departure city or airport" class="field-input">
+              <input placeholder="Departure city or airport" class="field-input segment-from">
             </div>
 
             <div class="field-box segment-field">
               <div data-en="To" data-ar="إلى" class="field-label">To</div>
-              <input placeholder="Arrival city or airport" class="field-input">
+              <input placeholder="Arrival city or airport" class="field-input segment-to">
             </div>
 
             <div class="field-box segment-field">
               <div data-en="Date" data-ar="التاريخ" class="field-label">Date</div>
-              <input type="date" class="field-input">
+              <input type="date" class="field-input segment-date">
             </div>
 
-            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
-              ✕
-            </button>
+            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">✕</button>
           </div>
 
           <div class="segment flight-segment">
             <div class="field-box segment-field">
               <div data-en="From" data-ar="من" class="field-label">From</div>
-              <input placeholder="Departure city or airport" class="field-input">
+              <input placeholder="Departure city or airport" class="field-input segment-from">
             </div>
 
             <div class="field-box segment-field">
               <div data-en="To" data-ar="إلى" class="field-label">To</div>
-              <input placeholder="Arrival city or airport" class="field-input">
+              <input placeholder="Arrival city or airport" class="field-input segment-to">
             </div>
 
             <div class="field-box segment-field">
               <div data-en="Date" data-ar="التاريخ" class="field-label">Date</div>
-              <input type="date" class="field-input">
+              <input type="date" class="field-input segment-date">
             </div>
 
-            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
-              ✕
-            </button>
+            <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">✕</button>
           </div>
         </div>
 
         <div class="flight-grid-two-top">
           <div class="travelers-wrap">
             <button type="button" onclick="toggleTravelersBox('multi')" class="travelers-toggle">
-              <div data-en="Travelers"
-                   data-ar="المسافرون"
-                   class="field-label">
-                Travelers
-              </div>
+              <div data-en="Travelers" data-ar="المسافرون" class="field-label">Travelers</div>
               <div id="travelersSummaryMulti" class="travelers-summary">1 Adult, 0 Children, 0 Infants</div>
             </button>
 
             <div id="travelersBoxMulti" class="travelers-box">
-
               <div class="traveler-row">
                 <div>
                   <div data-en="Adults" data-ar="البالغون" class="traveler-title">Adults</div>
@@ -423,22 +312,15 @@
                 Maximum adults + children: 9. Infants cannot exceed adults.
               </div>
 
-              <button type="button" onclick="closeTravelersBox('multi')"
-                      data-en="Done"
-                      data-ar="تم"
-                      class="done-btn">
+              <button type="button" onclick="closeTravelersBox('multi')" data-en="Done" data-ar="تم" class="done-btn">
                 Done
               </button>
             </div>
           </div>
 
           <div class="field-box flight-field cabin-field">
-            <div data-en="Cabin class"
-                 data-ar="درجة السفر"
-                 class="field-label">
-              Cabin class
-            </div>
-            <select class="field-select">
+            <div data-en="Cabin class" data-ar="درجة السفر" class="field-label">Cabin class</div>
+            <select class="field-select" id="cabinClassMulti">
               <option>Economy</option>
               <option>Premium Economy</option>
               <option>Business</option>
@@ -447,23 +329,18 @@
           </div>
         </div>
 
-        <button type="button"
-                onclick="addSegment()"
-                data-en="Add another flight"
-                data-ar="إضافة رحلة أخرى"
-                class="add-flight-btn">
+        <button type="button" onclick="addSegment()" data-en="Add another flight" data-ar="إضافة رحلة أخرى" class="add-flight-btn">
           Add another flight
         </button>
 
         <div class="search-btn-row">
-          <button type="button"
-                  data-en="Search"
-                  data-ar="بحث"
-                  class="search-btn">
+          <button type="button" onclick="submitMultiCity()" data-en="Search" data-ar="بحث" class="search-btn">
             Search
           </button>
         </div>
-     
+      </div>
+
+    </div>
   </div>
 
   <script>
@@ -485,10 +362,10 @@
         returnDateBox.style.display = 'block';
         multiCityBox.style.display = 'none';
         mainSearchBox.style.display = 'block';
-      } else if (selected === 'multicity') {
+      } else {
         returnDateBox.style.display = 'none';
-        multiCityBox.style.display = 'block';
         mainSearchBox.style.display = 'none';
+        multiCityBox.style.display = 'block';
       }
     }
 
@@ -506,38 +383,31 @@
     }
 
     function closeTravelersBox(type) {
-      if (type === 'main') {
-        document.getElementById('travelersBoxMain').style.display = 'none';
-      } else {
-        document.getElementById('travelersBoxMulti').style.display = 'none';
-      }
+      const box = type === 'main'
+        ? document.getElementById('travelersBoxMain')
+        : document.getElementById('travelersBoxMulti');
+
+      box.style.display = 'none';
     }
 
     function updateTravelersUI() {
-      const adultsMain = document.getElementById('adultsCount');
-      const childrenMain = document.getElementById('childrenCount');
-      const infantsMain = document.getElementById('infantsCount');
-
-      if (adultsMain) adultsMain.textContent = adults;
-      if (childrenMain) childrenMain.textContent = children;
-      if (infantsMain) infantsMain.textContent = infants;
+      document.getElementById('adultsCount').textContent = adults;
+      document.getElementById('childrenCount').textContent = children;
+      document.getElementById('infantsCount').textContent = infants;
 
       document.querySelectorAll('.traveler-adults-multi').forEach(el => el.textContent = adults);
       document.querySelectorAll('.traveler-children-multi').forEach(el => el.textContent = children);
       document.querySelectorAll('.traveler-infants-multi').forEach(el => el.textContent = infants);
 
-      const bodyDir = document.body.style.direction;
-      let summary = '';
-
-      if (bodyDir === 'rtl') {
-        summary = `${adults} بالغ، ${children} طفل، ${infants} رضيع`;
-      } else {
-        summary = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}, ${infants} Infant${infants > 1 ? 's' : ''}`;
-      }
+      const isArabic = document.body.style.direction === 'rtl';
+      const summary = isArabic
+        ? `${adults} بالغ، ${children} طفل، ${infants} رضيع`
+        : `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Child${children === 1 ? '' : 'ren'}, ${infants} Infant${infants > 1 ? 's' : ''}`;
 
       document.getElementById('travelersSummary').textContent = summary;
-      const multi = document.getElementById('travelersSummaryMulti');
-      if (multi) multi.textContent = summary;
+
+      const multiSummary = document.getElementById('travelersSummaryMulti');
+      if (multiSummary) multiSummary.textContent = summary;
     }
 
     function changeTravelers(type, delta) {
@@ -552,7 +422,7 @@
       if (newAdults < 1) return;
       if (newChildren < 0) return;
       if (newInfants < 0) return;
-      if ((newAdults + newChildren) > 9) return;
+      if (newAdults + newChildren > 9) return;
       if (newInfants > newAdults) return;
 
       adults = newAdults;
@@ -564,12 +434,13 @@
 
     function addSegment() {
       const wrapper = document.getElementById('segmentsWrapper');
-      const bodyDir = document.body.style.direction;
-      const fromLabel = bodyDir === 'rtl' ? 'من' : 'From';
-      const toLabel = bodyDir === 'rtl' ? 'إلى' : 'To';
-      const dateLabel = bodyDir === 'rtl' ? 'التاريخ' : 'Date';
-      const fromPlaceholder = bodyDir === 'rtl' ? 'مدينة أو مطار المغادرة' : 'Departure city or airport';
-      const toPlaceholder = bodyDir === 'rtl' ? 'مدينة أو مطار الوصول' : 'Arrival city or airport';
+      const isArabic = document.body.style.direction === 'rtl';
+
+      const fromLabel = isArabic ? 'من' : 'From';
+      const toLabel = isArabic ? 'إلى' : 'To';
+      const dateLabel = isArabic ? 'التاريخ' : 'Date';
+      const fromPlaceholder = isArabic ? 'مدينة أو مطار المغادرة' : 'Departure city or airport';
+      const toPlaceholder = isArabic ? 'مدينة أو مطار الوصول' : 'Arrival city or airport';
 
       const segment = document.createElement('div');
       segment.className = 'segment flight-segment';
@@ -577,22 +448,20 @@
       segment.innerHTML = `
         <div class="field-box segment-field">
           <div class="field-label">${fromLabel}</div>
-          <input placeholder="${fromPlaceholder}" class="field-input">
+          <input placeholder="${fromPlaceholder}" class="field-input segment-from">
         </div>
 
         <div class="field-box segment-field">
           <div class="field-label">${toLabel}</div>
-          <input placeholder="${toPlaceholder}" class="field-input">
+          <input placeholder="${toPlaceholder}" class="field-input segment-to">
         </div>
 
         <div class="field-box segment-field">
           <div class="field-label">${dateLabel}</div>
-          <input type="date" class="field-input">
+          <input type="date" class="field-input segment-date">
         </div>
 
-        <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">
-          ✕
-        </button>
+        <button type="button" onclick="removeSegment(this)" class="remove-segment-btn">✕</button>
       `;
 
       wrapper.appendChild(segment);
@@ -610,99 +479,74 @@
     }
 
     function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-en]');
-      elements.forEach(el => {
+      document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-      } else {
-        document.body.style.direction = 'ltr';
-      }
-
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
       updateTravelersUI();
     }
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("searchForm");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    function submitMultiCity() {
+      const segments = [];
 
-    const tripType = document.querySelector('input[name="tripType"]:checked').value;
-    const from = document.getElementById("from").value;
-    const to = document.getElementById("to").value;
-    const date = document.getElementById("date").value;
-    const returnDate = document.getElementById("returnDate").value;
-    const cabinClass = document.getElementById("cabinClass").value;
-    const directOnly = document.getElementById("directOnly").checked;
+      document.querySelectorAll('#segmentsWrapper .segment').forEach(segment => {
+        segments.push({
+          from: segment.querySelector('.segment-from').value,
+          to: segment.querySelector('.segment-to').value,
+          date: segment.querySelector('.segment-date').value
+        });
+      });
 
-    const params = new URLSearchParams({
-      tripType: tripType,
-      from: from,
-      to: to,
-      date: date,
-      returnDate: returnDate,
-      adults: adults,
-      children: children,
-      infants: infants,
-      cabinClass: cabinClass,
-      directOnly: directOnly
-    });
+      const params = new URLSearchParams({
+        tripType: 'multicity',
+        segments: JSON.stringify(segments),
+        adults: adults,
+        children: children,
+        infants: infants,
+        cabinClass: document.getElementById('cabinClassMulti').value
+      });
 
-    window.location.href = "flight-results.html?" + params.toString();
-  });
-});
-   
-      
+      window.location.href = 'flight-results.html?' + params.toString();
     }
-
-    window.onload = function () {
-      changeTripType();
-      updateTravelersUI();
-    };
 
     document.addEventListener('click', function(event) {
-      const main = document.getElementById('travelersBoxMain');
-      const multi = document.getElementById('travelersBoxMulti');
-      const clickedToggle = event.target.closest('button[onclick^="toggleTravelersBox"]');
+      const clickedToggle = event.target.closest('.travelers-toggle');
+      const clickedBox = event.target.closest('.travelers-box');
 
-      if (!clickedToggle) {
-        if (main && !main.contains(event.target)) main.style.display = 'none';
-        if (multi && !multi.contains(event.target)) multi.style.display = 'none';
+      if (!clickedToggle && !clickedBox) {
+        document.getElementById('travelersBoxMain').style.display = 'none';
+        document.getElementById('travelersBoxMulti').style.display = 'none';
       }
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("searchForm");
+    document.addEventListener('DOMContentLoaded', function () {
+      changeTripType();
+      updateTravelersUI();
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+      const form = document.getElementById('searchForm');
 
-    const tripType = document.querySelector('input[name="tripType"]:checked').value;
-    const from = document.getElementById("from").value;
-    const to = document.getElementById("to").value;
-    const date = document.getElementById("date").value;
-    const returnDate = document.getElementById("returnDate").value;
-    const cabinClass = document.getElementById("cabinClass").value;
-    const directOnly = document.getElementById("directOnly").checked;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    const params = new URLSearchParams({
-      tripType: tripType,
-      from: from,
-      to: to,
-      date: date,
-      returnDate: returnDate,
-      adults: adults,
-      children: children,
-      infants: infants,
-      cabinClass: cabinClass,
-      directOnly: directOnly
+        const tripType = document.querySelector('input[name="tripType"]:checked').value;
+
+        const params = new URLSearchParams({
+          tripType: tripType,
+          from: document.getElementById('from').value,
+          to: document.getElementById('to').value,
+          date: document.getElementById('date').value,
+          returnDate: document.getElementById('returnDate').value,
+          adults: adults,
+          children: children,
+          infants: infants,
+          cabinClass: document.getElementById('cabinClass').value,
+          directOnly: document.getElementById('directOnly').checked
+        });
+
+        window.location.href = 'flight-results.html?' + params.toString();
+      });
     });
-
-    window.location.href = "flight-results.html?" + params.toString();
-  });
-});
   </script>
 
   <footer class="footer">
