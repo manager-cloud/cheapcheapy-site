@@ -463,12 +463,7 @@
             Search
           </button>
         </div>
-      </div>
-
-      <!-- Results -->
-      <div id="flightResults" style="margin-top: 24px;"></div>
-
-    </div>
+     
   </div>
 
   <script>
@@ -629,14 +624,7 @@
       updateTravelersUI();
     }
 
-    function renderFlightResults(data) {
-      const resultsBox = document.getElementById("flightResults");
-
-      if (!data.results || !data.results.length) {
-        resultsBox.innerHTML = "<p>No flights found.</p>";
-        return;
-      }
-
+   
       resultsBox.innerHTML = `
         <h3 style="margin-bottom:16px;">Available Flights</h3>
         ${data.results.map(item => `
@@ -668,37 +656,35 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("searchForm");
+  const form = document.getElementById("searchForm");
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        const from = document.getElementById("from").value;
-        const to = document.getElementById("to").value;
-        const date = document.getElementById("date").value;
+    const tripType = document.querySelector('input[name="tripType"]:checked').value;
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const date = document.getElementById("date").value;
+    const returnDate = document.getElementById("returnDate").value;
+    const cabinClass = document.getElementById("cabinClass").value;
+    const directOnly = document.getElementById("directOnly").checked;
 
-        fetch("https://api.cheapcheapy.com/api/flights/search", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            from: from,
-            to: to,
-            date: date
-          })
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          renderFlightResults(data);
-        })
-        .catch(err => {
-          console.error(err);
-          alert("Error loading flights");
-        });
-      });
+    const params = new URLSearchParams({
+      tripType: tripType,
+      from: from,
+      to: to,
+      date: date,
+      returnDate: returnDate,
+      adults: adults,
+      children: children,
+      infants: infants,
+      cabinClass: cabinClass,
+      directOnly: directOnly
     });
+
+    window.location.href = "flight-results.html?" + params.toString();
+  });
+});
   </script>
 
   <footer class="footer">
