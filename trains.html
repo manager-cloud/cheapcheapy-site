@@ -27,7 +27,6 @@
       </div>
 
       <div class="header-actions">
-
         <a href="about.html" data-en="About" data-ar="من نحن" class="top-link">About</a>
         <a href="offers.html" data-en="Offers" data-ar="العروض" class="top-link">Offers</a>
         <a href="contact.html" data-en="Contact" data-ar="اتصل بنا" class="top-link">Contact</a>
@@ -45,13 +44,7 @@
           <option>EGP</option>
         </select>
 
-        <a href="#"
-           data-en="Login"
-           data-ar="تسجيل الدخول"
-           class="login-btn">
-          Login
-        </a>
-
+        <a href="#" data-en="Login" data-ar="تسجيل الدخول" class="login-btn">Login</a>
       </div>
 
     </div>
@@ -69,42 +62,11 @@
 
     <!-- Tabs -->
     <div class="service-tabs">
-
-      <a href="index.html"
-         data-en="Home"
-         data-ar="الرئيسية"
-         class="service-tab">
-        Home
-      </a>
-
-      <a href="hotels.html"
-         data-en="Hotels and apartments"
-         data-ar="الفنادق والشقق"
-         class="service-tab">
-        Hotels and apartments
-      </a>
-
-      <a href="flights.html"
-         data-en="Air tickets"
-         data-ar="تذاكر الطيران"
-         class="service-tab">
-        Air tickets
-      </a>
-
-      <a href="transfer.html"
-         data-en="Transfers"
-         data-ar="الانتقالات"
-         class="service-tab">
-        Transfers
-      </a>
-
-      <a href="trains.html"
-         data-en="Train tickets"
-         data-ar="تذاكر القطارات"
-         class="service-tab service-tab-active">
-        Train tickets
-      </a>
-
+      <a href="index.html" data-en="Home" data-ar="الرئيسية" class="service-tab">Home</a>
+      <a href="hotels.html" data-en="Hotels and apartments" data-ar="الفنادق والشقق" class="service-tab">Hotels and apartments</a>
+      <a href="flights.html" data-en="Air tickets" data-ar="تذاكر الطيران" class="service-tab">Air tickets</a>
+      <a href="transfer.html" data-en="Transfers" data-ar="الانتقالات" class="service-tab">Transfers</a>
+      <a href="trains.html" data-en="Train tickets" data-ar="تذاكر القطارات" class="service-tab service-tab-active">Train tickets</a>
     </div>
 
     <!-- Main Box -->
@@ -125,12 +87,12 @@
       <!-- Trip Type -->
       <div class="trip-type-row">
         <label class="radio-label">
-          <input type="radio" name="tripType" checked onclick="changeTripType()">
+          <input type="radio" name="tripType" value="oneway" checked onclick="changeTripType()">
           <span data-en="One way" data-ar="اتجاه واحد">One way</span>
         </label>
 
         <label class="radio-label">
-          <input type="radio" name="tripType" onclick="changeTripType()">
+          <input type="radio" name="tripType" value="roundtrip" onclick="changeTripType()">
           <span data-en="Round trip" data-ar="ذهاب وعودة">Round trip</span>
         </label>
       </div>
@@ -140,12 +102,12 @@
 
         <div class="field-box flight-field">
           <div data-en="From" data-ar="من" class="field-label">From</div>
-          <input placeholder="City or station" class="field-input">
+          <input id="trainFrom" placeholder="City or station" class="field-input">
         </div>
 
         <div class="field-box flight-field">
           <div data-en="To" data-ar="إلى" class="field-label">To</div>
-          <input placeholder="City or station" class="field-input">
+          <input id="trainTo" placeholder="City or station" class="field-input">
         </div>
 
       </div>
@@ -153,15 +115,15 @@
       <!-- Row 2 -->
       <div class="flight-grid-two">
 
-        <div class="field-box date-field">
+        <div class="field-box flight-field date-field">
           <div data-en="Departure date" data-ar="تاريخ السفر" class="field-label">Departure</div>
-          <input type="date" class="field-input">
+          <input id="trainDate" type="date" class="field-input">
         </div>
 
         <div id="returnBox" class="return-date-box">
-          <div class="field-box date-field">
+          <div class="field-box flight-field date-field">
             <div data-en="Return date" data-ar="تاريخ العودة" class="field-label">Return</div>
-            <input type="date" class="field-input">
+            <input id="trainReturnDate" type="date" class="field-input">
           </div>
         </div>
 
@@ -172,15 +134,21 @@
 
         <div class="field-box train-passenger-field">
           <div data-en="Passengers" data-ar="عدد الركاب" class="field-label">Passengers</div>
-          <select class="field-select">
+          <select id="trainPassengers" class="field-select">
             <option>1</option>
-            <option>2</option>
+            <option selected>2</option>
             <option>3</option>
             <option>4</option>
           </select>
         </div>
 
-        <button class="search-btn">Search</button>
+        <button type="button"
+                onclick="searchTrains()"
+                data-en="Search"
+                data-ar="بحث"
+                class="search-btn">
+          Search
+        </button>
 
       </div>
 
@@ -189,24 +157,57 @@
 
   <script>
     function changeTripType() {
-      const radios = document.getElementsByName('tripType');
+      const selected = document.querySelector('input[name="tripType"]:checked').value;
       const returnBox = document.getElementById('returnBox');
 
-      if (radios[1].checked) {
-        returnBox.style.display = 'block';
-      } else {
-        returnBox.style.display = 'none';
-      }
+      returnBox.style.display = selected === 'roundtrip' ? 'block' : 'none';
     }
 
     function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-en]');
-      elements.forEach(el => {
+      document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + lang);
       });
 
-      document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
     }
+
+    function searchTrains() {
+      const tripType = document.querySelector('input[name="tripType"]:checked').value;
+      const from = document.getElementById('trainFrom').value.trim();
+      const to = document.getElementById('trainTo').value.trim();
+      const date = document.getElementById('trainDate').value;
+      const returnDate = document.getElementById('trainReturnDate').value;
+      const passengers = document.getElementById('trainPassengers').value;
+
+      if (!from || !to || !date) {
+        alert(document.body.style.direction === 'rtl'
+          ? 'من فضلك أدخل محطة المغادرة والوصول وتاريخ السفر.'
+          : 'Please enter from, to and departure date.');
+        return;
+      }
+
+      if (tripType === 'roundtrip' && !returnDate) {
+        alert(document.body.style.direction === 'rtl'
+          ? 'من فضلك أدخل تاريخ العودة.'
+          : 'Please enter return date.');
+        return;
+      }
+
+      const params = new URLSearchParams({
+        tripType: tripType,
+        from: from,
+        to: to,
+        date: date,
+        returnDate: returnDate,
+        passengers: passengers
+      });
+
+      window.location.href = 'train-results.html?' + params.toString();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      changeTripType();
+    });
   </script>
 
   <footer class="footer">
@@ -237,5 +238,6 @@
 
     </div>
   </footer>
+
 </body>
 </html>
