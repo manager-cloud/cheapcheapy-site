@@ -349,6 +349,7 @@ body {
   flex: 1;
   min-width: 260px;
   position: relative;
+  z-index: 9999;
 }
 
 .travelers-toggle {
@@ -369,16 +370,15 @@ body {
 .travelers-box {
   display: none;
   position: absolute;
-  top: 88px;
+  top: calc(100% + 10px);
   left: 0;
-  width: 100%;
+  width: 320px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
   padding: 18px;
-  z-index: 50;
-  box-sizing: border-box;
+  z-index: 999999; /* 🔥 مهم */
 }
 
 .traveler-row {
